@@ -5,9 +5,6 @@ from telegram.ext import Application, CommandHandler, MessageHandler, filters, C
 TOKEN: Final = "6468413070:AAH2MqghzbnZiBG4Dx-l7DpqD6qBTEExuEw"
 USER_NAME: Final = "@GavanAssistant_bot"
 
-# Dictionary to store the user's to-do list
-todo_lists = {}
-
 
 # Command handler for /start command
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
