@@ -8,9 +8,8 @@ USER_NAME: Final = "@GavanAssistant_bot"
 # Dictionary to store the user's to-do list
 todo_lists = {}
 
+
 # Command handler for /start command
-
-
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 
     keyboard = [
