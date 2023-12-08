@@ -18,7 +18,8 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
             KeyboardButton("shopping"),
         ],
         [KeyboardButton("To Do List"),
-         KeyboardButton("wellness")],
+         KeyboardButton("wellness"),
+         KeyboardButton("test")]
     ]
 
     reply_markup = ReplyKeyboardMarkup(keyboard)
