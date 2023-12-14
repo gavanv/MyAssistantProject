@@ -5,6 +5,8 @@ from telegram.ext import Application, CommandHandler, MessageHandler, filters, C
 TOKEN: Final = "6468413070:AAH2MqghzbnZiBG4Dx-l7DpqD6qBTEExuEw"
 USER_NAME: Final = "@GavanAssistant_bot"
 
+add_client = {}
+
 
 # Command handler for /start command
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
@@ -112,13 +114,42 @@ async def wellness(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     await update.message.reply_text("Please choose:", reply_markup=reply_markup)
 
 
+# async def generalMsgHandler(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+
+#     global add_client
+
+#     text = str(update.message.text)
+
+#     if add_client.get("started"):
+#         if add_client.get("full_name", None) is None:
+#             # The text is related to new client's full name
+#             add_client["full_name"] = text
+
+#             print(f"add client object: {add_client}")
+#             await update.message.reply_text("please write the address of the client")
+
+#         elif add_client.get("address", None) is None:
+#             add_client["address"] = text
+#             print(f"add client object: {add_client}")
+
+#     print(f"text: {text}")
+
 async def button(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    """Parses the CallbackQuery and updates the message text."""
+
     query = update.callback_query
+
+    if query.data == "add client":
+        global add_client
+        add_client = {
+            "started": True
+        }
+        await update.callback_query.message.edit_text("please write the full name of the client")
+
+        # await update.message.reply_text("please write the full name of the client")
 
     await query.answer()
 
-    await query.edit_message_text(text=f"Selected option: {query.data}")
+    # await query.edit_message_text(text=f"Selected option: {query.data}")
 
 
 def main():
@@ -139,6 +170,7 @@ def main():
     app.add_handler(MessageHandler(filters.Regex("shopping"), shopping))
     app.add_handler(MessageHandler(filters.Regex("To Do List"), todolist))
     app.add_handler(MessageHandler(filters.Regex("wellness"), wellness))
+    # app.add_handler(MessageHandler(filters.TEXT, generalMsgHandler))
 
     # Start the Bot
     app.run_polling()
