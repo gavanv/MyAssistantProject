@@ -1,12 +1,17 @@
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, KeyboardButton, ReplyKeyboardMarkup, ReplyKeyboardRemove, Update
-from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes, CallbackQueryHandler, CallbackContext, ConversationHandler
-import mysql.connector
+from telegram.ext import ContextTypes, CallbackContext, ConversationHandler, CallbackQueryHandler, MessageHandler, CommandHandler, filters
+from db_connection import add_client_to_database
+from consts import (
+    ADD_CLIENT_FULL_NAME,
+    ADD_CLIENT_ADDRESS,
+    ADD_ANOTHER_CLIENT
+)
+from commands import start
 
-# Define states
-ADD_CLIENT_FULL_NAME, ADD_CLIENT_ADDRESS, ADD_ANOTHER_CLIENT = range(3)
+user_data = {}
 
 
-async def clients(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
+async def clients_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
 
     keyboard = [
         [
@@ -42,7 +47,7 @@ async def add_client_full_name(update: Update, context: CallbackContext) -> int:
 
     user_details = update.message.from_user
     user_id = user_details.id
-    username = user_details.first_name + user_details.last_name
+    username = user_details.first_name + " " + user_details.last_name
     full_name = update.message.text
 
     user_data["user_id"] = user_id
@@ -91,32 +96,20 @@ async def add_another_client(update: Update, context: CallbackContext) -> int:
         return ConversationHandler.END
 
 
-def add_client_to_database(user_data: dict) -> bool:
+# Define the cancel command to end the conversation
+async def cancel(update: Update, context: CallbackContext) -> int:
+    await update.message.reply_text(text="*the action was cancelled.* press /start if you'll need my help 🙂", parse_mode="markdown")
+    return ConversationHandler.END
 
-    if user_data["full_name"] is None or user_data["address"] is None or user_data["user_id"] is None:
-        raise KeyError("clients details not full!")
 
-    try:
-        # Check if the client already exists in the table
-        sql_check_if_exists = "SELECT * FROM clients WHERE full_name = %s AND address = %s AND user_id = %s"
-        db_cursor.execute(
-            sql_check_if_exists, (user_data["full_name"], user_data["address"], user_data["user_id"]))
-        existing_client = db_cursor.fetchone()
-
-        if existing_client:
-            # Client already exists, respond according
-            raise Exception("Client already exists in the list.")
-            # await update.message.reply_text("Client already exists in the list.")
-        else:
-            # Client does not exist, proceed to add to the table
-            sql_insert_client = "INSERT INTO clients (user_id, username, full_name, address) VALUES (%s, %s, %s, %s)"
-            values = (user_data["user_id"], user_data.get("username"),
-                      user_data["full_name"], user_data["address"])
-            db_cursor.execute(sql_insert_client, values)
-            db_connection.commit()
-            return True
-
-    except Exception as e:
-        # Handle any errors
-        print(f"Error: {e}")
-        raise
+# Set up the conversation handler
+add_client_conv_handler = ConversationHandler(
+    entry_points=[CallbackQueryHandler(
+        add_client_callback, pattern='^add_client$')],
+    states={
+        ADD_CLIENT_FULL_NAME: [MessageHandler(filters.TEXT & ~filters.COMMAND, add_client_full_name)],
+        ADD_CLIENT_ADDRESS: [MessageHandler(filters.TEXT & ~filters.COMMAND, add_client_address)],
+        ADD_ANOTHER_CLIENT: [MessageHandler(
+            filters.TEXT & ~filters.COMMAND, add_another_client)]
+    },
+    fallbacks=[CommandHandler('cancel', cancel), CommandHandler("start", start), CommandHandler("clients", clients_command)])
