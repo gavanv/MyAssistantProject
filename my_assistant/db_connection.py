@@ -1,3 +1,4 @@
+from logger import setup_logger
 import mysql.connector
 from consts import (
     DB_HOST,
@@ -5,6 +6,8 @@ from consts import (
     DB_PASSWORD,
     DB_NAME
 )
+
+db_connection_logger = setup_logger("db_connection_logger")
 
 db_cursor = None
 db_connector = None
@@ -28,6 +31,7 @@ def add_client_to_database(user_data: dict) -> bool:
     global db_cursor, db_connector
 
     if user_data["full_name"] is None or user_data["address"] is None or user_data["user_id"] is None:
+        db_connection_logger.error("clients details not full!")
         raise KeyError("clients details not full!")
 
     try:
@@ -38,9 +42,11 @@ def add_client_to_database(user_data: dict) -> bool:
         existing_client = db_cursor.fetchone()
 
         if existing_client:
-            # Client already exists, respond according
+            # Client already exists, respond accordingly
+            db_connection_logger.info(
+                "user tried to add client that is already in the list")
             raise Exception("Client already exists in the list.")
-            # await update.message.reply_text("Client already exists in the list.")
+
         else:
             # Client does not exist, proceed to add to the table
             sql_insert_client = "INSERT INTO clients (user_id, username, full_name, address) VALUES (%s, %s, %s, %s)"
@@ -52,5 +58,21 @@ def add_client_to_database(user_data: dict) -> bool:
 
     except Exception as e:
         # Handle any errors
-        print(f"Error: {e}")
+        db_connection_logger.error("unable to add client to data base")
+        raise
+
+
+def get_user_clients_from_database(user_id):
+    global db_cursor
+
+    try:
+        # Fetch clients from the database based on the user_id
+        sql_get_clients = "SELECT * FROM clients WHERE user_id = %s"
+        db_cursor.execute(sql_get_clients, (user_id,))
+        clients_list = db_cursor.fetchall()
+        return clients_list
+
+    except Exception as e:
+        db_connection_logger.exception(
+            "unable to get clients list from the data base")
         raise

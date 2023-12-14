@@ -1,6 +1,7 @@
+from logger import setup_logger
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, KeyboardButton, ReplyKeyboardMarkup, ReplyKeyboardRemove, Update
 from telegram.ext import ContextTypes, CallbackContext, ConversationHandler, CallbackQueryHandler, MessageHandler, CommandHandler, filters
-from db_connection import add_client_to_database
+from db_connection import add_client_to_database, get_user_clients_from_database
 from consts import (
     ADD_CLIENT_FULL_NAME,
     ADD_CLIENT_ADDRESS,
@@ -8,6 +9,9 @@ from consts import (
 )
 from commands import start
 
+clients_logger = setup_logger("clients_logger")
+
+# dict to store the user_data
 user_data = {}
 
 
@@ -22,8 +26,8 @@ async def clients_command(update: Update, context: ContextTypes.DEFAULT_TYPE) ->
         [InlineKeyboardButton("add debt", callback_data="add debt"),
          InlineKeyboardButton("delete debt", callback_data="delete debt"),
          InlineKeyboardButton("show all debts", callback_data="show all debts")],
-        [InlineKeyboardButton("show clients details",
-                              callback_data="show clients details")]
+        [InlineKeyboardButton("show clients list",
+                              callback_data="show_clients_list")]
     ]
 
     reply_markup = InlineKeyboardMarkup(keyboard)
@@ -31,8 +35,11 @@ async def clients_command(update: Update, context: ContextTypes.DEFAULT_TYPE) ->
     await update.message.reply_text("*Please choose:*", reply_markup=reply_markup, parse_mode='Markdown')
     return ConversationHandler.END
 
+# functions for add client conversation
+
 
 async def add_client_callback(update: Update, context: CallbackContext) -> int:
+
     query = update.callback_query
 
     await query.answer()
@@ -96,13 +103,37 @@ async def add_another_client(update: Update, context: CallbackContext) -> int:
         return ConversationHandler.END
 
 
+# callback for the "show clients list" button in the clients menu
+async def show_clients_callback(update: Update, context: CallbackContext) -> None:
+
+    query = update.callback_query
+    await query.answer()
+    # get the user id
+    user_id = update.effective_user.id
+
+    try:
+        clients_list = get_user_clients_from_database(user_id)
+
+        if len(clients_list) == 0:
+            await update.callback_query.message.reply_text("you don't have any clients.")
+
+        else:
+            clients_list_text = "\n".join([f"{index + 1}. {client['full_name']} - {
+                                          client['address']}" for index, client in enumerate(clients_list)])
+            await update.callback_query.message.reply_text(text="*here is your clients list:*\n" + clients_list_text, parse_mode="markdown")
+
+    except Exception as e:
+        await update.callback_query.message.reply_text("Something went wrong 😕 I was unable show your clients list.")
+
 # Define the cancel command to end the conversation
+
+
 async def cancel(update: Update, context: CallbackContext) -> int:
     await update.message.reply_text(text="*the action was cancelled.* press /start if you'll need my help 🙂", parse_mode="markdown")
     return ConversationHandler.END
 
 
-# Set up the conversation handler
+# Conversation handler for adding a client to the db
 add_client_conv_handler = ConversationHandler(
     entry_points=[CallbackQueryHandler(
         add_client_callback, pattern='^add_client$')],
@@ -113,3 +144,7 @@ add_client_conv_handler = ConversationHandler(
             filters.TEXT & ~filters.COMMAND, add_another_client)]
     },
     fallbacks=[CommandHandler('cancel', cancel), CommandHandler("start", start), CommandHandler("clients", clients_command)])
+
+# handler for pressing the show clients list button in the clients menu
+show_clients_handler = CallbackQueryHandler(
+    show_clients_callback, pattern='^show_clients_list$')

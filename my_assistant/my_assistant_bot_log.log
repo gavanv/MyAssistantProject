@@ -1,0 +1,56 @@
+2023-12-14 14:39:45,789 - logger - INFO - Bot started!
+2023-12-14 14:42:49,619 - logger - INFO - Bot started!
+2023-12-14 14:45:36,366 - my_logger - INFO - Bot started!
+2023-12-14 14:51:59,358 - main logger - INFO - Bot started!
+2023-12-14 15:01:07,567 - main_logger - INFO - Bot started! Connecting to DB
+2023-12-14 15:01:08,867 - main_logger - INFO - Connected to DB
+2023-12-14 15:10:52,409 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-14 15:10:53,719 - main_logger - INFO - Connected to DB
+2023-12-14 15:11:40,297 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-14 15:11:41,520 - main_logger - INFO - Connected to DB
+2023-12-14 15:11:46,165 - clients_logger - INFO - user גוון chose clients option
+2023-12-14 15:13:23,840 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-14 15:13:25,210 - main_logger - INFO - Connected to DB
+2023-12-14 15:22:46,740 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-14 15:22:47,983 - main_logger - INFO - Connected to DB
+2023-12-14 15:23:08,508 - db_connection_logger - INFO - user tried to add client that is already in the list
+2023-12-14 15:23:08,509 - db_connection_logger - ERROR - can't add client to db
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\db_connection.py", line 48, in add_client_to_database
+    raise Exception("Client already exists in the list.")
+Exception: Client already exists in the list.
+2023-12-14 15:23:08,510 - clients_logger - ERROR - unable to add client to data base
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\clients.py", line 77, in add_client_address
+    add_client_to_database(user_data)
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\db_connection.py", line 48, in add_client_to_database
+    raise Exception("Client already exists in the list.")
+Exception: Client already exists in the list.
+2023-12-14 15:25:38,781 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-14 15:25:40,601 - main_logger - INFO - Connected to DB
+2023-12-14 15:26:03,970 - db_connection_logger - INFO - user tried to add client that is already in the list
+2023-12-14 15:26:03,972 - db_connection_logger - ERROR - unable to add client to data base
+2023-12-14 16:27:10,620 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-14 16:27:12,532 - main_logger - INFO - Connected to DB
+2023-12-14 16:41:27,968 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-14 16:41:30,054 - main_logger - INFO - Connected to DB
+2023-12-14 16:46:06,340 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-14 16:46:07,636 - main_logger - INFO - Connected to DB
+2023-12-14 16:50:00,577 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-14 16:50:01,820 - main_logger - INFO - Connected to DB
+2023-12-14 16:50:14,239 - db_connection_logger - DEBUG - [{'id': 2, 'full_name': 'yali cohen', 'address': 'har timna 722 macabim', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 12, 22, 30, 57), 'user_id': '222151854', 'username': None}, {'id': 3, 'full_name': 'ella yanai', 'address': 'har hazon 551 macabim', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 12, 22, 35, 26), 'user_id': '222151854', 'username': None}, {'id': 4, 'full_name': 'assaf bobek', 'address': 'zoom', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 12, 22, 35, 55), 'user_id': '222151854', 'username': None}, {'id': 5, 'full_name': 'romi mizrahi', 'address': 'shevet 37 modiin', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 12, 22, 40, 13), 'user_id': '222151854', 'username': None}, {'id': 6, 'full_name': 'koren ovadia', 'address': 'zoom', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 12, 22, 44, 51), 'user_id': '222151854', 'username': None}, {'id': 7, 'full_name': 'dvir sulami', 'address': 'zoom', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 12, 22, 51, 8), 'user_id': '222151854', 'username': None}, {'id': 8, 'full_name': 'omri nof', 'address': 'zoom', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 12, 22, 55, 28), 'user_id': '222151854', 'username': None}, {'id': 9, 'full_name': 'lia genzman', 'address': 'zoom', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 12, 22, 58, 39), 'user_id': '222151854', 'username': None}, {'id': 10, 'full_name': 'ofri ezra', 'address': 'zoom', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 12, 23, 3, 1), 'user_id': '222151854', 'username': None}, {'id': 11, 'full_name': 'adi ezra', 'address': 'zoom', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 12, 23, 10, 35), 'user_id': '222151854', 'username': None}, {'id': 12, 'full_name': 'adi ezra', 'address': 'honololo', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 13, 9, 48, 53), 'user_id': '222151854', 'username': None}, {'id': 14, 'full_name': 'Adi Levi', 'address': 'shivtey israel 17 modiin', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 13, 12, 5, 22), 'user_id': '222151854', 'username': None}, {'id': 15, 'full_name': 'ariel vainshtein', 'address': 'yesaschar 13 modiin', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 13, 12, 15, 26), 'user_id': '222151854', 'username': None}, {'id': 16, 'full_name': 'Test1', 'address': 'Testaddress2', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 13, 21, 29, 50), 'user_id': '222151854', 'username': 'גווןויינברגר'}, {'id': 17, 'full_name': 'Test2', 'address': 'Adress2', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 13, 21, 30, 7), 'user_id': '222151854', 'username': 'גווןויינברגר'}, {'id': 18, 'full_name': 'Test3', 'address': 'Adress3', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 13, 21, 31, 52), 'user_id': '222151854', 'username': 'גווןויינברגר'}, {'id': 19, 'full_name': 'test4', 'address': 'test4', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 14, 11, 43, 58), 'user_id': '222151854', 'username': 'גווןויינברגר'}, {'id': 20, 'full_name': 'test5', 'address': 'test5', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 14, 11, 45, 8), 'user_id': '222151854', 'username': 'גווןויינברגר'}, {'id': 21, 'full_name': 'test 6', 'address': 'test 6', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 14, 12, 4, 11), 'user_id': '222151854', 'username': 'גוון ויינברגר'}, {'id': 22, 'full_name': 'test 8', 'address': 'test 8', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 14, 12, 6, 50), 'user_id': '222151854', 'username': 'גוון ויינברגר'}]
+2023-12-14 16:53:08,336 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-14 16:53:10,060 - main_logger - INFO - Connected to DB
+2023-12-14 17:03:19,500 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-14 17:03:20,761 - main_logger - INFO - Connected to DB
+2023-12-14 17:06:30,508 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-14 17:06:32,238 - main_logger - INFO - Connected to DB
+2023-12-14 17:07:42,867 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-14 17:07:44,182 - main_logger - INFO - Connected to DB
+2023-12-14 17:07:50,104 - db_connection_logger - DEBUG - []
+2023-12-14 17:10:14,271 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-14 17:10:16,030 - main_logger - INFO - Connected to DB
+2023-12-14 17:10:23,212 - db_connection_logger - DEBUG - []
+2023-12-14 17:10:25,474 - db_connection_logger - DEBUG - []
+2023-12-14 17:11:39,816 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-14 17:11:41,761 - main_logger - INFO - Connected to DB

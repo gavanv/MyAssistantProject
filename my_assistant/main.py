@@ -1,3 +1,5 @@
+from logger import setup_logger
+
 from consts import (
     TOKEN
 )
@@ -7,6 +9,8 @@ from telegram.ext import Application, CommandHandler, MessageHandler, filters, C
 import clients
 from commands import start, shopping
 from db_connection import connect_to_db
+
+main_logger = setup_logger("main_logger")
 
 
 async def todolist(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
@@ -62,17 +66,22 @@ async def wellness(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 
 def main():
 
-    print("bot started!")
+    main_logger.info("Bot started! Connecting to DB...")
+    try:
+        connect_to_db()
 
-    print("Connecting to db..")
-    connect_to_db()
-    print("Connected!")
+    except Exception as e:
+        main_logger.exception(
+            "An error occurred - Unable to connect to the database")
+
+    main_logger.info("Connected to DB")
 
     # Create the Application and pass it your bot's token.
     app = Application.builder().token(TOKEN).build()
 
     # on different commands - answer in Telegram
     app.add_handler(clients.add_client_conv_handler)
+    app.add_handler(clients.show_clients_handler)
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CommandHandler("clients", clients.clients_command))
     app.add_handler(CommandHandler("shopping", shopping))
