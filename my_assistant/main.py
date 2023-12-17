@@ -81,7 +81,8 @@ def main():
 
     # on different commands - answer in Telegram
     app.add_handler(clients.add_client_conv_handler)
-    app.add_handler(clients.show_clients_handler)
+    app.add_handler(clients.show_clients_conv_handler)
+    app.add_handler(clients.delete_client_conv_handler)
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CommandHandler("clients", clients.clients_command))
     app.add_handler(CommandHandler("shopping", shopping))
@@ -89,7 +90,7 @@ def main():
     app.add_handler(CommandHandler("wellness", todolist))
     # app.add_handler(CallbackQueryHandler(button))
     app.add_handler(MessageHandler(
-        filters.Regex("clients"), clients.clients_command))
+        filters.Regex("לקוחות"), clients.clients_command))
     app.add_handler(MessageHandler(filters.Regex("shopping"), shopping))
     app.add_handler(MessageHandler(filters.Regex("To Do List"), todolist))
     app.add_handler(MessageHandler(filters.Regex("wellness"), wellness))

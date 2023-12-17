@@ -6,7 +6,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
 
     keyboard = [
         [
-            KeyboardButton("clients"),
+            KeyboardButton("לקוחות"),
             KeyboardButton("shopping"),
         ],
         [KeyboardButton("To Do List"),
@@ -16,7 +16,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
 
     reply_markup = ReplyKeyboardMarkup(keyboard)
 
-    await update.message.reply_text("Hi SIS, I'm your AsSIStant. \nHow can I help you?", reply_markup=reply_markup)
+    await update.message.reply_text(text="היי, במה אוכל לעזור?", reply_markup=reply_markup, parse_mode='HTML')
     return ConversationHandler.END
 
 

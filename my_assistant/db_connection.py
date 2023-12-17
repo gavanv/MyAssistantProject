@@ -4,7 +4,8 @@ from consts import (
     DB_HOST,
     DB_USER,
     DB_PASSWORD,
-    DB_NAME
+    DB_NAME,
+    CLIENTS_PER_PAGE
 )
 
 db_connection_logger = setup_logger("db_connection_logger")
@@ -32,7 +33,7 @@ def add_client_to_database(user_data: dict) -> bool:
 
     if user_data["full_name"] is None or user_data["address"] is None or user_data["user_id"] is None:
         db_connection_logger.error("clients details not full!")
-        raise KeyError("clients details not full!")
+        raise KeyError("לא כל פרטי הלקוח מלאים, נא השלם את הפרטים החסרים.")
 
     try:
         # Check if the client already exists in the table
@@ -45,7 +46,7 @@ def add_client_to_database(user_data: dict) -> bool:
             # Client already exists, respond accordingly
             db_connection_logger.info(
                 "user tried to add client that is already in the list")
-            raise Exception("Client already exists in the list.")
+            raise Exception("הלקוח כבר קיים ברשימת הלקוחות שלך")
 
         else:
             # Client does not exist, proceed to add to the table
@@ -67,7 +68,7 @@ def get_user_clients_from_database(user_id):
 
     try:
         # Fetch clients from the database based on the user_id
-        sql_get_clients = "SELECT * FROM clients WHERE user_id = %s"
+        sql_get_clients = "SELECT * FROM clients WHERE user_id = %s ORDER BY full_name"
         db_cursor.execute(sql_get_clients, (user_id,))
         clients_list = db_cursor.fetchall()
         return clients_list
@@ -75,4 +76,35 @@ def get_user_clients_from_database(user_id):
     except Exception as e:
         db_connection_logger.exception(
             "unable to get clients list from the data base")
+        raise
+
+
+def get_ten_clients_from_database(user_id, offset):
+    global db_cursor
+
+    try:
+        # Fetch 10 clients from the database based on the user_id
+        sql_get_clients = "SELECT * FROM clients WHERE user_id = %s ORDER BY full_name LIMIT %s OFFSET %s"
+        db_cursor.execute(sql_get_clients, (user_id, CLIENTS_PER_PAGE, offset))
+        clients_list = db_cursor.fetchall()
+        return clients_list
+
+    except Exception as e:
+        db_connection_logger.exception(
+            "unable to get the 10 clients list from the data base")
+        raise
+
+
+def delete_client_from_database(user_id, client_id):
+    global db_cursor, db_connector
+
+    try:
+        sql_delete_client = "DELETE FROM clients WHERE id = %s AND user_id = %s"
+        db_cursor.execute(sql_delete_client, (client_id, user_id))
+        db_connector.commit()
+        return True
+
+    except Exception as e:
+        # Handle any errors
+        db_connection_logger.error("unable to delete client from data base")
         raise

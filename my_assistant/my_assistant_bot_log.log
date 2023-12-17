@@ -54,3 +54,424 @@ Exception: Client already exists in the list.
 2023-12-14 17:10:25,474 - db_connection_logger - DEBUG - []
 2023-12-14 17:11:39,816 - main_logger - INFO - Bot started! Connecting to DB...
 2023-12-14 17:11:41,761 - main_logger - INFO - Connected to DB
+2023-12-14 18:26:09,201 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-14 18:26:10,915 - main_logger - INFO - Connected to DB
+2023-12-14 18:30:22,548 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-14 18:30:24,517 - main_logger - INFO - Connected to DB
+2023-12-14 18:32:17,772 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-14 18:32:20,387 - main_logger - INFO - Connected to DB
+2023-12-14 18:34:25,304 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-14 18:34:27,950 - main_logger - INFO - Connected to DB
+2023-12-14 18:36:18,417 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-14 18:36:20,255 - main_logger - INFO - Connected to DB
+2023-12-14 18:39:21,997 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-14 18:39:24,291 - main_logger - INFO - Connected to DB
+2023-12-14 18:52:18,234 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-14 18:52:19,948 - main_logger - INFO - Connected to DB
+2023-12-14 18:56:03,644 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-14 18:56:05,856 - main_logger - INFO - Connected to DB
+2023-12-14 18:57:12,189 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-14 18:57:14,042 - main_logger - INFO - Connected to DB
+2023-12-14 19:01:16,297 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-14 19:01:18,385 - main_logger - INFO - Connected to DB
+2023-12-14 19:09:39,792 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-14 19:09:42,488 - main_logger - INFO - Connected to DB
+2023-12-14 19:11:27,438 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-14 19:11:29,365 - main_logger - INFO - Connected to DB
+2023-12-14 19:12:09,709 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-14 19:12:11,401 - main_logger - INFO - Connected to DB
+2023-12-14 19:13:43,399 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-14 19:13:45,384 - main_logger - INFO - Connected to DB
+2023-12-14 19:14:35,116 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-14 19:14:36,915 - main_logger - INFO - Connected to DB
+2023-12-14 19:15:07,245 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-14 19:15:08,965 - main_logger - INFO - Connected to DB
+2023-12-14 19:17:07,652 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-14 19:17:09,492 - main_logger - INFO - Connected to DB
+2023-12-14 23:56:22,698 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-14 23:56:24,095 - main_logger - INFO - Connected to DB
+2023-12-16 17:24:42,564 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-16 17:24:44,533 - main_logger - INFO - Connected to DB
+2023-12-16 17:25:16,475 - db_connection_logger - INFO - user tried to add client that is already in the list
+2023-12-16 17:25:16,476 - db_connection_logger - ERROR - unable to add client to data base
+2023-12-16 17:25:37,778 - db_connection_logger - INFO - user tried to add client that is already in the list
+2023-12-16 17:25:37,780 - db_connection_logger - ERROR - unable to add client to data base
+2023-12-16 17:58:20,246 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-16 17:58:22,027 - main_logger - INFO - Connected to DB
+2023-12-16 17:58:28,090 - db_connection_logger - ERROR - unable to get the 10 clients list from the data base
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\db_connection.py", line 88, in get_ten_clients_from_database
+    db_cursor.execute(sql_get_clients, (user_id, CLIENTS_PER_PAGE, offset))
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\cursor_cext.py", line 325, in execute
+    raise ProgrammingError(
+mysql.connector.errors.ProgrammingError: Not all parameters were used in the SQL statement
+2023-12-16 18:05:38,016 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-16 18:05:40,017 - main_logger - INFO - Connected to DB
+2023-12-16 18:06:48,613 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-16 18:06:50,342 - main_logger - INFO - Connected to DB
+2023-12-16 18:10:49,893 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-16 18:10:51,726 - main_logger - INFO - Connected to DB
+2023-12-16 18:10:59,151 - db_connection_logger - DEBUG - [{'id': 26, 'full_name': 'אגם כהן', 'address': 'זום', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 14, 21, 57, 13), 'user_id': '222151854', 'username': 'גוון ויינברגר'}, {'id': 27, 'full_name': 'לקוח מומצא', 'address': 'המצאתי', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 16, 15, 25, 47), 'user_id': '222151854', 'username': 'גוון ויינברגר'}, {'id': 24, 'full_name': 'עדי עזרא', 'address': 'זום', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 14, 16, 52, 45), 'user_id': '222151854', 'username': 'גוון ויינברגר'}, {'id': 25, 'full_name': 'עופרי עזרא', 'address': 'זום', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 14, 16, 53, 15), 'user_id': '222151854', 'username': 'גוון ויינברגר'}]
+2023-12-16 18:10:59,175 - clients_logger - DEBUG - [InlineKeyboardButton(callback_data='clientId:26:clientName:אגם כהן', text='אגם כהן'), InlineKeyboardButton(callback_data='clientId:27:clientName:לקוח מומצא', text='לקוח מומצא'), InlineKeyboardButton(callback_data='clientId:24:clientName:עדי עזרא', text='עדי עזרא'), InlineKeyboardButton(callback_data='clientId:25:clientName:עופרי עזרא', text='עופרי עזרא'), InlineKeyboardButton(callback_data='nextPage=1', text='next')]
+2023-12-16 18:15:57,149 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-16 18:15:59,074 - main_logger - INFO - Connected to DB
+2023-12-16 18:16:02,908 - clients_logger - DEBUG - None
+2023-12-16 20:18:55,270 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-16 20:18:57,153 - main_logger - INFO - Connected to DB
+2023-12-16 20:19:27,948 - clients_logger - DEBUG - [[InlineKeyboardButton(callback_data='clientId:26:clientName:אגם כהן', text='אגם כהן')], [InlineKeyboardButton(callback_data='clientId:27:clientName:לקוח מומצא', text='לקוח מומצא')], [InlineKeyboardButton(callback_data='clientId:24:clientName:עדי עזרא', text='עדי עזרא')], [InlineKeyboardButton(callback_data='clientId:25:clientName:עופרי עזרא', text='עופרי עזרא')], InlineKeyboardButton(callback_data='nextPage=1', text='next')]
+2023-12-16 20:21:19,592 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-16 20:21:22,192 - main_logger - INFO - Connected to DB
+2023-12-16 20:21:34,004 - clients_logger - DEBUG - [[InlineKeyboardButton(callback_data='clientId:26:clientName:אגם כהן', text='אגם כהן')], [InlineKeyboardButton(callback_data='clientId:27:clientName:לקוח מומצא', text='לקוח מומצא')], [InlineKeyboardButton(callback_data='clientId:24:clientName:עדי עזרא', text='עדי עזרא')], [InlineKeyboardButton(callback_data='clientId:25:clientName:עופרי עזרא', text='עופרי עזרא')], InlineKeyboardButton(callback_data='nextPage=1', text='next')]
+2023-12-16 20:21:34,008 - clients_logger - ERROR - can't show buttons with names of client to delete
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\clients.py", line 159, in delete_client_callback
+    reply_markup = InlineKeyboardMarkup(keyboard)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\_inline\inlinekeyboardmarkup.py", line 79, in __init__
+    raise ValueError(
+ValueError: The parameter `inline_keyboard` should be a sequence of sequences of InlineKeyboardButtons
+2023-12-16 20:25:44,157 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-16 20:25:45,704 - main_logger - INFO - Connected to DB
+2023-12-16 20:25:51,130 - clients_logger - DEBUG - [[InlineKeyboardButton(callback_data='clientId:26:clientName:אגם כהן', text='אגם כהן')], [InlineKeyboardButton(callback_data='clientId:27:clientName:לקוח מומצא', text='לקוח מומצא')], [InlineKeyboardButton(callback_data='clientId:24:clientName:עדי עזרא', text='עדי עזרא')], [InlineKeyboardButton(callback_data='clientId:25:clientName:עופרי עזרא', text='עופרי עזרא')], [InlineKeyboardButton(callback_data='nextPage=1', text='next')]]
+2023-12-16 20:26:15,543 - clients_logger - DEBUG - [[InlineKeyboardButton(callback_data='clientId:26:clientName:אגם כהן', text='אגם כהן')], [InlineKeyboardButton(callback_data='clientId:27:clientName:לקוח מומצא', text='לקוח מומצא')], [InlineKeyboardButton(callback_data='clientId:24:clientName:עדי עזרא', text='עדי עזרא')], [InlineKeyboardButton(callback_data='clientId:25:clientName:עופרי עזרא', text='עופרי עזרא')], [InlineKeyboardButton(callback_data='nextPage=1', text='next')]]
+2023-12-16 20:26:25,845 - clients_logger - DEBUG - [[InlineKeyboardButton(callback_data='clientId:26:clientName:אגם כהן', text='אגם כהן')], [InlineKeyboardButton(callback_data='clientId:27:clientName:לקוח מומצא', text='לקוח מומצא')], [InlineKeyboardButton(callback_data='clientId:24:clientName:עדי עזרא', text='עדי עזרא')], [InlineKeyboardButton(callback_data='clientId:25:clientName:עופרי עזרא', text='עופרי עזרא')], [InlineKeyboardButton(callback_data='nextPage=1', text='next')]]
+2023-12-16 20:32:08,963 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-16 20:32:10,553 - main_logger - INFO - Connected to DB
+2023-12-16 20:32:15,379 - clients_logger - DEBUG - [[InlineKeyboardButton(callback_data='clientId:26:clientName:אגם כהן', text='אגם כהן')], [InlineKeyboardButton(callback_data='clientId:27:clientName:לקוח מומצא', text='לקוח מומצא')], [InlineKeyboardButton(callback_data='clientId:24:clientName:עדי עזרא', text='עדי עזרא')], [InlineKeyboardButton(callback_data='clientId:25:clientName:עופרי עזרא', text='עופרי עזרא')], [InlineKeyboardButton(callback_data='nextPage=1', text='next')]]
+2023-12-16 20:43:03,851 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-16 20:43:05,991 - main_logger - INFO - Connected to DB
+2023-12-16 20:43:14,067 - clients_logger - DEBUG - [[InlineKeyboardButton(callback_data='clientId:26:clientName:אגם כהן', text='אגם כהן')], [InlineKeyboardButton(callback_data='clientId:24:clientName:עדי עזרא', text='עדי עזרא')], [InlineKeyboardButton(callback_data='clientId:25:clientName:עופרי עזרא', text='עופרי עזרא')], [InlineKeyboardButton(callback_data='nextPage=1', text='next')]]
+2023-12-16 20:43:52,999 - clients_logger - DEBUG - [[InlineKeyboardButton(callback_data='clientId:26:clientName:אגם כהן', text='אגם כהן')], [InlineKeyboardButton(callback_data='clientId:24:clientName:עדי עזרא', text='עדי עזרא')], [InlineKeyboardButton(callback_data='clientId:28:clientName:עופרי עזרא', text='עופרי עזרא')], [InlineKeyboardButton(callback_data='nextPage=1', text='next')]]
+2023-12-16 20:45:24,773 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-16 20:45:27,022 - main_logger - INFO - Connected to DB
+2023-12-16 20:45:38,367 - clients_logger - DEBUG - [[InlineKeyboardButton(callback_data='clientId:26:clientName:אגם כהן', text='אגם כהן')], [InlineKeyboardButton(callback_data='clientId:24:clientName:עדי עזרא', text='עדי עזרא')], [InlineKeyboardButton(callback_data='clientId:28:clientName:עופרי עזרא', text='עופרי עזרא')], [InlineKeyboardButton(callback_data='nextPage=1', text='next')]]
+2023-12-16 20:46:30,474 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-16 20:46:32,416 - main_logger - INFO - Connected to DB
+2023-12-16 20:46:38,346 - clients_logger - DEBUG - [[InlineKeyboardButton(callback_data='clientId:26:clientName:אגם כהן', text='אגם כהן')], [InlineKeyboardButton(callback_data='clientId:24:clientName:עדי עזרא', text='עדי עזרא')], [InlineKeyboardButton(callback_data='clientId:28:clientName:עופרי עזרא', text='עופרי עזרא')], [InlineKeyboardButton(callback_data='nextPage=1', text='next')]]
+2023-12-16 21:27:23,954 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-16 21:27:25,424 - main_logger - INFO - Connected to DB
+2023-12-16 21:29:50,597 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-16 21:29:52,582 - main_logger - INFO - Connected to DB
+2023-12-16 21:40:50,784 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-16 21:40:52,464 - main_logger - INFO - Connected to DB
+2023-12-16 21:41:13,893 - clients_logger - DEBUG - [[InlineKeyboardButton(callback_data='clientId:26:clientName:אגם כהן', text='אגם כהן')], [InlineKeyboardButton(callback_data='clientId:35:clientName:אלכסנדרה אהרון', text='אלכסנדרה אהרון')], [InlineKeyboardButton(callback_data='clientId:30:clientName:אסף בובק', text='אסף בובק')], [InlineKeyboardButton(callback_data='clientId:31:clientName:דביר סולמי', text='דביר סולמי')], [InlineKeyboardButton(callback_data='clientId:37:clientName:דרור מזרחי', text='דרור מזרחי')], [InlineKeyboardButton(callback_data='clientId:36:clientName:נדב כהן', text='נדב כהן')], [InlineKeyboardButton(callback_data='clientId:33:clientName:נועם אפשטיין', text='נועם אפשטיין')], [InlineKeyboardButton(callback_data='clientId:29:clientName:עדי לוי', text='עדי לוי')], [InlineKeyboardButton(callback_data='clientId:24:clientName:עדי עזרא', text='עדי עזרא')], [InlineKeyboardButton(callback_data='clientId:32:clientName:עומרי נוף', text='עומרי נוף')]]
+2023-12-16 21:45:29,067 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-16 21:45:31,019 - main_logger - INFO - Connected to DB
+2023-12-16 21:45:39,400 - clients_logger - DEBUG - [[InlineKeyboardButton(callback_data='clientId:26:clientName:אגם כהן', text='אגם כהן')], [InlineKeyboardButton(callback_data='clientId:35:clientName:אלכסנדרה אהרון', text='אלכסנדרה אהרון')], [InlineKeyboardButton(callback_data='clientId:30:clientName:אסף בובק', text='אסף בובק')], [InlineKeyboardButton(callback_data='clientId:31:clientName:דביר סולמי', text='דביר סולמי')], [InlineKeyboardButton(callback_data='clientId:37:clientName:דרור מזרחי', text='דרור מזרחי')], [InlineKeyboardButton(callback_data='clientId:36:clientName:נדב כהן', text='נדב כהן')], [InlineKeyboardButton(callback_data='clientId:33:clientName:נועם אפשטיין', text='נועם אפשטיין')], [InlineKeyboardButton(callback_data='clientId:29:clientName:עדי לוי', text='עדי לוי')], [InlineKeyboardButton(callback_data='clientId:24:clientName:עדי עזרא', text='עדי עזרא')], [InlineKeyboardButton(callback_data='clientId:32:clientName:עומרי נוף', text='עומרי נוף')], [InlineKeyboardButton(callback_data='nextPage:1', text='next')]]
+2023-12-16 21:48:50,394 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-16 21:48:52,687 - main_logger - INFO - Connected to DB
+2023-12-16 21:48:58,667 - clients_logger - DEBUG - [[InlineKeyboardButton(callback_data='clientId:26:clientName:אגם כהן', text='אגם כהן')], [InlineKeyboardButton(callback_data='clientId:35:clientName:אלכסנדרה אהרון', text='אלכסנדרה אהרון')], [InlineKeyboardButton(callback_data='clientId:30:clientName:אסף בובק', text='אסף בובק')], [InlineKeyboardButton(callback_data='clientId:31:clientName:דביר סולמי', text='דביר סולמי')], [InlineKeyboardButton(callback_data='clientId:37:clientName:דרור מזרחי', text='דרור מזרחי')], [InlineKeyboardButton(callback_data='clientId:36:clientName:נדב כהן', text='נדב כהן')], [InlineKeyboardButton(callback_data='clientId:33:clientName:נועם אפשטיין', text='נועם אפשטיין')], [InlineKeyboardButton(callback_data='clientId:29:clientName:עדי לוי', text='עדי לוי')], [InlineKeyboardButton(callback_data='clientId:24:clientName:עדי עזרא', text='עדי עזרא')], [InlineKeyboardButton(callback_data='clientId:32:clientName:עומרי נוף', text='עומרי נוף')], [InlineKeyboardButton(callback_data='nextPage:1', text='next')]]
+2023-12-16 21:50:39,378 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-16 21:50:41,088 - main_logger - INFO - Connected to DB
+2023-12-16 21:50:46,226 - clients_logger - DEBUG - [[InlineKeyboardButton(callback_data='clientId:26:clientName:אגם כהן', text='אגם כהן')], [InlineKeyboardButton(callback_data='clientId:35:clientName:אלכסנדרה אהרון', text='אלכסנדרה אהרון')], [InlineKeyboardButton(callback_data='clientId:30:clientName:אסף בובק', text='אסף בובק')], [InlineKeyboardButton(callback_data='clientId:31:clientName:דביר סולמי', text='דביר סולמי')], [InlineKeyboardButton(callback_data='clientId:37:clientName:דרור מזרחי', text='דרור מזרחי')], [InlineKeyboardButton(callback_data='clientId:36:clientName:נדב כהן', text='נדב כהן')], [InlineKeyboardButton(callback_data='clientId:33:clientName:נועם אפשטיין', text='נועם אפשטיין')], [InlineKeyboardButton(callback_data='clientId:29:clientName:עדי לוי', text='עדי לוי')], [InlineKeyboardButton(callback_data='clientId:24:clientName:עדי עזרא', text='עדי עזרא')], [InlineKeyboardButton(callback_data='clientId:32:clientName:עומרי נוף', text='עומרי נוף')], [InlineKeyboardButton(callback_data='nextPage:1', text='next')]]
+2023-12-16 21:52:48,221 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-16 21:52:50,216 - main_logger - INFO - Connected to DB
+2023-12-16 21:52:56,983 - clients_logger - DEBUG - [[InlineKeyboardButton(callback_data='clientId:26:clientName:אגם כהן', text='אגם כהן')], [InlineKeyboardButton(callback_data='clientId:35:clientName:אלכסנדרה אהרון', text='אלכסנדרה אהרון')], [InlineKeyboardButton(callback_data='clientId:30:clientName:אסף בובק', text='אסף בובק')], [InlineKeyboardButton(callback_data='clientId:31:clientName:דביר סולמי', text='דביר סולמי')], [InlineKeyboardButton(callback_data='clientId:37:clientName:דרור מזרחי', text='דרור מזרחי')], [InlineKeyboardButton(callback_data='clientId:36:clientName:נדב כהן', text='נדב כהן')], [InlineKeyboardButton(callback_data='clientId:33:clientName:נועם אפשטיין', text='נועם אפשטיין')], [InlineKeyboardButton(callback_data='clientId:29:clientName:עדי לוי', text='עדי לוי')], [InlineKeyboardButton(callback_data='clientId:24:clientName:עדי עזרא', text='עדי עזרא')], [InlineKeyboardButton(callback_data='clientId:32:clientName:עומרי נוף', text='עומרי נוף')], [InlineKeyboardButton(callback_data='nextPage:1', text='next')]]
+2023-12-16 21:55:43,955 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-16 21:55:46,408 - main_logger - INFO - Connected to DB
+2023-12-16 21:55:56,619 - clients_logger - DEBUG - [[InlineKeyboardButton(callback_data='clientId:26:clientName:אגם כהן', text='אגם כהן')], [InlineKeyboardButton(callback_data='clientId:35:clientName:אלכסנדרה אהרון', text='אלכסנדרה אהרון')], [InlineKeyboardButton(callback_data='clientId:30:clientName:אסף בובק', text='אסף בובק')], [InlineKeyboardButton(callback_data='clientId:31:clientName:דביר סולמי', text='דביר סולמי')], [InlineKeyboardButton(callback_data='clientId:37:clientName:דרור מזרחי', text='דרור מזרחי')], [InlineKeyboardButton(callback_data='clientId:36:clientName:נדב כהן', text='נדב כהן')], [InlineKeyboardButton(callback_data='clientId:33:clientName:נועם אפשטיין', text='נועם אפשטיין')], [InlineKeyboardButton(callback_data='clientId:29:clientName:עדי לוי', text='עדי לוי')], [InlineKeyboardButton(callback_data='clientId:24:clientName:עדי עזרא', text='עדי עזרא')], [InlineKeyboardButton(callback_data='clientId:32:clientName:עומרי נוף', text='עומרי נוף')], [InlineKeyboardButton(callback_data='clientId:nextPage:1', text='next')]]
+2023-12-16 21:58:10,152 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-16 21:58:12,064 - main_logger - INFO - Connected to DB
+2023-12-16 21:58:18,496 - clients_logger - DEBUG - [[InlineKeyboardButton(callback_data='clientId:26:clientName:אגם כהן', text='אגם כהן')], [InlineKeyboardButton(callback_data='clientId:35:clientName:אלכסנדרה אהרון', text='אלכסנדרה אהרון')], [InlineKeyboardButton(callback_data='clientId:30:clientName:אסף בובק', text='אסף בובק')], [InlineKeyboardButton(callback_data='clientId:31:clientName:דביר סולמי', text='דביר סולמי')], [InlineKeyboardButton(callback_data='clientId:37:clientName:דרור מזרחי', text='דרור מזרחי')], [InlineKeyboardButton(callback_data='clientId:36:clientName:נדב כהן', text='נדב כהן')], [InlineKeyboardButton(callback_data='clientId:33:clientName:נועם אפשטיין', text='נועם אפשטיין')], [InlineKeyboardButton(callback_data='clientId:29:clientName:עדי לוי', text='עדי לוי')], [InlineKeyboardButton(callback_data='clientId:24:clientName:עדי עזרא', text='עדי עזרא')], [InlineKeyboardButton(callback_data='clientId:32:clientName:עומרי נוף', text='עומרי נוף')], [InlineKeyboardButton(callback_data='clientId:nextPage:1', text='next')]]
+2023-12-16 22:02:45,721 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-16 22:02:47,827 - main_logger - INFO - Connected to DB
+2023-12-16 22:02:52,927 - clients_logger - DEBUG - [[InlineKeyboardButton(callback_data='clientId:26:clientName:אגם כהן', text='אגם כהן')], [InlineKeyboardButton(callback_data='clientId:35:clientName:אלכסנדרה אהרון', text='אלכסנדרה אהרון')], [InlineKeyboardButton(callback_data='clientId:30:clientName:אסף בובק', text='אסף בובק')], [InlineKeyboardButton(callback_data='clientId:31:clientName:דביר סולמי', text='דביר סולמי')], [InlineKeyboardButton(callback_data='clientId:37:clientName:דרור מזרחי', text='דרור מזרחי')], [InlineKeyboardButton(callback_data='clientId:36:clientName:נדב כהן', text='נדב כהן')], [InlineKeyboardButton(callback_data='clientId:33:clientName:נועם אפשטיין', text='נועם אפשטיין')], [InlineKeyboardButton(callback_data='clientId:29:clientName:עדי לוי', text='עדי לוי')], [InlineKeyboardButton(callback_data='clientId:24:clientName:עדי עזרא', text='עדי עזרא')], [InlineKeyboardButton(callback_data='clientId:32:clientName:עומרי נוף', text='עומרי נוף')], [InlineKeyboardButton(callback_data='clientId:nextPage:1', text='next')]]
+2023-12-16 22:02:55,730 - clients_logger - DEBUG - clientId:nextPage:1
+2023-12-16 22:05:51,004 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-16 22:05:53,456 - main_logger - INFO - Connected to DB
+2023-12-16 22:09:20,748 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-16 22:09:22,580 - main_logger - INFO - Connected to DB
+2023-12-16 22:09:57,518 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-16 22:09:59,642 - main_logger - INFO - Connected to DB
+2023-12-16 22:10:22,619 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-16 22:10:24,814 - main_logger - INFO - Connected to DB
+2023-12-16 22:10:31,942 - clients_logger - DEBUG - clientId:nextPage:1
+2023-12-16 22:10:37,160 - db_connection_logger - ERROR - unable to get the 10 clients list from the data base
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 639, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''1111111111'' at line 1
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\db_connection.py", line 88, in get_ten_clients_from_database
+    db_cursor.execute(sql_get_clients, (user_id, CLIENTS_PER_PAGE, offset))
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 647, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''1111111111'' at line 1
+2023-12-16 22:10:37,278 - clients_logger - ERROR - can't show buttons with names of client to delete
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 639, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''1111111111'' at line 1
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\clients.py", line 241, in next_page
+    clients_list = get_ten_clients_from_database(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\db_connection.py", line 88, in get_ten_clients_from_database
+    db_cursor.execute(sql_get_clients, (user_id, CLIENTS_PER_PAGE, offset))
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 647, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''1111111111'' at line 1
+2023-12-16 22:14:11,792 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-16 22:14:13,913 - main_logger - INFO - Connected to DB
+2023-12-16 22:14:19,742 - clients_logger - DEBUG - clientId:nextPage:1
+2023-12-16 22:14:19,744 - clients_logger - DEBUG - this happens
+2023-12-16 22:15:24,322 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-16 22:15:26,087 - main_logger - INFO - Connected to DB
+2023-12-16 22:15:32,068 - clients_logger - DEBUG - clientId:nextPage:1
+2023-12-16 22:18:29,341 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-16 22:18:31,441 - main_logger - INFO - Connected to DB
+2023-12-16 22:23:07,203 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-16 22:23:09,354 - main_logger - INFO - Connected to DB
+2023-12-16 22:23:25,984 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-16 22:23:27,526 - main_logger - INFO - Connected to DB
+2023-12-16 22:23:35,073 - clients_logger - DEBUG - this happens
+2023-12-16 22:23:35,373 - db_connection_logger - ERROR - unable to get the 10 clients list from the data base
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 639, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''1111111111'' at line 1
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\db_connection.py", line 88, in get_ten_clients_from_database
+    db_cursor.execute(sql_get_clients, (user_id, CLIENTS_PER_PAGE, offset))
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 647, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''1111111111'' at line 1
+2023-12-16 22:23:35,391 - clients_logger - ERROR - can't show buttons with names of client to delete
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 639, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''1111111111'' at line 1
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\clients.py", line 238, in next_page
+    clients_list = get_ten_clients_from_database(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\db_connection.py", line 88, in get_ten_clients_from_database
+    db_cursor.execute(sql_get_clients, (user_id, CLIENTS_PER_PAGE, offset))
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 647, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''1111111111'' at line 1
+2023-12-16 22:24:08,476 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-16 22:24:10,393 - main_logger - INFO - Connected to DB
+2023-12-16 22:24:22,076 - clients_logger - DEBUG - this happens
+2023-12-16 22:24:22,351 - db_connection_logger - ERROR - unable to get the 10 clients list from the data base
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 639, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''1111111111'' at line 1
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\db_connection.py", line 88, in get_ten_clients_from_database
+    db_cursor.execute(sql_get_clients, (user_id, CLIENTS_PER_PAGE, offset))
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 647, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''1111111111'' at line 1
+2023-12-16 22:24:22,372 - clients_logger - ERROR - can't show buttons with names of client to delete
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 639, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''1111111111'' at line 1
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\clients.py", line 238, in next_page
+    clients_list = get_ten_clients_from_database(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\db_connection.py", line 88, in get_ten_clients_from_database
+    db_cursor.execute(sql_get_clients, (user_id, CLIENTS_PER_PAGE, offset))
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 647, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''1111111111'' at line 1
+2023-12-17 11:36:42,687 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-17 11:36:44,364 - main_logger - INFO - Connected to DB
+2023-12-17 11:36:52,913 - clients_logger - DEBUG - the next page func happens
+2023-12-17 11:36:53,515 - db_connection_logger - ERROR - unable to get the 10 clients list from the data base
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 639, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''1111111111'' at line 1
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\db_connection.py", line 88, in get_ten_clients_from_database
+    db_cursor.execute(sql_get_clients, (user_id, CLIENTS_PER_PAGE, offset))
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 647, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''1111111111'' at line 1
+2023-12-17 11:36:53,691 - clients_logger - ERROR - can't show buttons with names of client to delete
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 639, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''1111111111'' at line 1
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\clients.py", line 238, in next_page
+    clients_list = get_ten_clients_from_database(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\db_connection.py", line 88, in get_ten_clients_from_database
+    db_cursor.execute(sql_get_clients, (user_id, CLIENTS_PER_PAGE, offset))
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 647, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''1111111111'' at line 1
+2023-12-17 11:45:03,187 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-17 11:45:05,317 - main_logger - INFO - Connected to DB
+2023-12-17 11:45:11,044 - clients_logger - DEBUG - the next page func happens
+2023-12-17 11:45:11,240 - clients_logger - DEBUG - 222151854
+2023-12-17 11:45:11,444 - db_connection_logger - ERROR - unable to get the 10 clients list from the data base
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 639, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''1111111111'' at line 1
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\db_connection.py", line 88, in get_ten_clients_from_database
+    db_cursor.execute(sql_get_clients, (user_id, CLIENTS_PER_PAGE, offset))
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 647, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''1111111111'' at line 1
+2023-12-17 11:45:11,466 - clients_logger - ERROR - can't show buttons with names of client to delete
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 639, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''1111111111'' at line 1
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\clients.py", line 238, in next_page
+    clients_list = get_ten_clients_from_database(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\db_connection.py", line 88, in get_ten_clients_from_database
+    db_cursor.execute(sql_get_clients, (user_id, CLIENTS_PER_PAGE, offset))
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 647, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''1111111111'' at line 1
+2023-12-17 11:48:57,064 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-17 11:48:58,698 - main_logger - INFO - Connected to DB
+2023-12-17 11:49:11,495 - clients_logger - DEBUG - the next page func happens
+2023-12-17 11:49:31,343 - clients_logger - DEBUG - ask if delete func started
+2023-12-17 11:52:17,922 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-17 11:52:19,898 - main_logger - INFO - Connected to DB
+2023-12-17 11:52:33,836 - clients_logger - DEBUG - the next page func happens
+2023-12-17 11:52:38,196 - clients_logger - DEBUG - ask if delete func started
+2023-12-17 11:52:56,943 - clients_logger - DEBUG - the next page func happens
+2023-12-17 11:53:04,473 - clients_logger - DEBUG - ask if delete func started
+2023-12-17 11:55:36,213 - clients_logger - DEBUG - ask if delete func started
+2023-12-17 11:56:00,488 - clients_logger - DEBUG - the next page func happens
+2023-12-17 11:56:16,136 - clients_logger - DEBUG - ask if delete func started
+2023-12-17 11:56:36,249 - clients_logger - DEBUG - ask if delete func started
+2023-12-17 11:57:08,835 - clients_logger - DEBUG - ask if delete func started
+2023-12-17 12:17:11,743 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-17 12:17:13,743 - main_logger - INFO - Connected to DB
+2023-12-17 12:17:27,030 - clients_logger - DEBUG - ask if delete func started
+2023-12-17 12:18:19,536 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-17 12:18:21,732 - main_logger - INFO - Connected to DB
+2023-12-17 12:18:40,579 - clients_logger - DEBUG - ask if delete func started
+2023-12-17 12:18:48,883 - clients_logger - ERROR - can't show buttons with names of client to delete
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\clients.py", line 248, in delete_another_client
+    await update.callback_query.message.reply_text("*איזה לקוח/ה למחוק?*\nאו לחץ /cancel כדי לבטל", reply_markup=reply_markup, parse_mode='Markdown')
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'message'
+2023-12-17 12:21:05,375 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-17 12:21:07,431 - main_logger - INFO - Connected to DB
+2023-12-17 12:21:17,865 - clients_logger - DEBUG - ask if delete func started
+2023-12-17 12:21:30,110 - clients_logger - DEBUG - the next page func happens
+2023-12-17 12:21:38,138 - clients_logger - DEBUG - ask if delete func started
+2023-12-17 12:21:52,631 - clients_logger - DEBUG - the next page func happens
+2023-12-17 12:21:55,741 - clients_logger - DEBUG - ask if delete func started
+2023-12-17 12:22:07,307 - clients_logger - DEBUG - ask if delete func started
+2023-12-17 12:22:26,619 - clients_logger - DEBUG - the next page func happens
+2023-12-17 12:25:26,173 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-17 12:25:28,349 - main_logger - INFO - Connected to DB
+2023-12-17 12:26:12,952 - clients_logger - DEBUG - {'user_id': 222151854, 'username': 'גוון ויינברגר', 'full_name': 'אלכסנדרה אהרון', 'address': 'זום'}
+2023-12-17 12:26:36,341 - clients_logger - DEBUG - {'user_id': 222151854, 'username': 'גוון ויינברגר', 'full_name': 'בדיקה1', 'address': 'בדיקהכתובת1', 222151854: {}}
+2023-12-17 12:28:09,285 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-17 12:28:11,958 - main_logger - INFO - Connected to DB
+2023-12-17 12:30:17,916 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-17 12:30:19,717 - main_logger - INFO - Connected to DB
+2023-12-17 12:30:42,260 - clients_logger - DEBUG - {'user_id': 222151854, 'username': 'גוון ויינברגר', 'full_name': 'בדיקה2', 'address': 'בדיקה2 כתובת'}
+2023-12-17 12:31:01,662 - clients_logger - DEBUG - {'user_id': 222151854, 'username': 'גוון ויינברגר', 'full_name': 'בדיקה3', 'address': 'בדיקה3 כתובת'}
+2023-12-17 12:32:54,501 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-17 12:32:57,001 - main_logger - INFO - Connected to DB
+2023-12-17 12:34:32,432 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-17 12:34:34,357 - main_logger - INFO - Connected to DB
