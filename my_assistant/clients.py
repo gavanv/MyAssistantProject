@@ -85,6 +85,10 @@ async def add_client_address(update: Update, context: CallbackContext) -> int:
         await update.message.reply_text(f'לקוח נוסף בהצלחה🥳 האם תרצה להוסיף עוד לקוח?', reply_markup=reply_markup, parse_mode='HTML')
         return ADD_ANOTHER_CLIENT
 
+    except KeyError as e:
+        await update.message.reply_text(text=f"{str(e)} לחזרה לתפריט לחץ /clients")
+        return ADD_CLIENT_FULL_NAME
+
     except Exception as e:
         await update.message.reply_text(text=f"{str(e)} לחזרה לתפריט לחץ /clients")
         return ConversationHandler.END
@@ -120,7 +124,10 @@ async def show_clients_callback(update: Update, context: CallbackContext) -> Non
         clients_list = get_user_clients_from_database(user_id)
 
         if len(clients_list) == 0:
-            await update.callback_query.message.reply_text(text="אין לך לקוחות קיימים ברשימה.", parse_mode='HTML')
+            keyboard = [[InlineKeyboardButton(
+                "הוספת לקוח", callback_data="add_client")]]
+            reply_markup = InlineKeyboardMarkup(keyboard)
+            await update.callback_query.message.reply_text(text="אין לך לקוחות קיימים ברשימה. לחזרה לתפריט לקוחות לחץ /clients או הוסף לקוח חדש", reply_markup=reply_markup, parse_mode='HTML')
 
         else:
             clients_list_text = "\n".join([f"{index + 1}. {client['full_name']} - {
@@ -305,7 +312,8 @@ add_client_conv_handler = ConversationHandler(
         ADD_ANOTHER_CLIENT: [MessageHandler(
             filters.TEXT & ~filters.COMMAND, add_another_client)]
     },
-    fallbacks=[CommandHandler('cancel', cancel), CommandHandler("start", start), CommandHandler("clients", clients_command)])
+    fallbacks=[CommandHandler('cancel', cancel), CommandHandler("start", start),
+               CommandHandler("clients", clients_command)])
 
 # handler for pressing the show clients list button in the clients menu
 show_clients_conv_handler = ConversationHandler(
