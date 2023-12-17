@@ -8,7 +8,7 @@
 2023-12-14 15:10:53,719 - main_logger - INFO - Connected to DB
 2023-12-14 15:11:40,297 - main_logger - INFO - Bot started! Connecting to DB...
 2023-12-14 15:11:41,520 - main_logger - INFO - Connected to DB
-2023-12-14 15:11:46,165 - clients_logger - INFO - user вееп chose clients option
+2023-12-14 15:11:46,165 - clients_logger - INFO - user пїЅпїЅпїЅпїЅ chose clients option
 2023-12-14 15:13:23,840 - main_logger - INFO - Bot started! Connecting to DB...
 2023-12-14 15:13:25,210 - main_logger - INFO - Connected to DB
 2023-12-14 15:22:46,740 - main_logger - INFO - Bot started! Connecting to DB...
@@ -16,14 +16,14 @@
 2023-12-14 15:23:08,508 - db_connection_logger - INFO - user tried to add client that is already in the list
 2023-12-14 15:23:08,509 - db_connection_logger - ERROR - can't add client to db
 Traceback (most recent call last):
-  File "c:\Users\User\OneDrive\щемзп дтбегд\My assistant project\my_assistant\db_connection.py", line 48, in add_client_to_database
+  File "c:\Users\User\OneDrive\пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ\My assistant project\my_assistant\db_connection.py", line 48, in add_client_to_database
     raise Exception("Client already exists in the list.")
 Exception: Client already exists in the list.
 2023-12-14 15:23:08,510 - clients_logger - ERROR - unable to add client to data base
 Traceback (most recent call last):
-  File "c:\Users\User\OneDrive\щемзп дтбегд\My assistant project\my_assistant\clients.py", line 77, in add_client_address
+  File "c:\Users\User\OneDrive\пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ\My assistant project\my_assistant\clients.py", line 77, in add_client_address
     add_client_to_database(user_data)
-  File "c:\Users\User\OneDrive\щемзп дтбегд\My assistant project\my_assistant\db_connection.py", line 48, in add_client_to_database
+  File "c:\Users\User\OneDrive\пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ\My assistant project\my_assistant\db_connection.py", line 48, in add_client_to_database
     raise Exception("Client already exists in the list.")
 Exception: Client already exists in the list.
 2023-12-14 15:25:38,781 - main_logger - INFO - Bot started! Connecting to DB...
@@ -38,7 +38,7 @@ Exception: Client already exists in the list.
 2023-12-14 16:46:07,636 - main_logger - INFO - Connected to DB
 2023-12-14 16:50:00,577 - main_logger - INFO - Bot started! Connecting to DB...
 2023-12-14 16:50:01,820 - main_logger - INFO - Connected to DB
-2023-12-14 16:50:14,239 - db_connection_logger - DEBUG - [{'id': 2, 'full_name': 'yali cohen', 'address': 'har timna 722 macabim', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 12, 22, 30, 57), 'user_id': '222151854', 'username': None}, {'id': 3, 'full_name': 'ella yanai', 'address': 'har hazon 551 macabim', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 12, 22, 35, 26), 'user_id': '222151854', 'username': None}, {'id': 4, 'full_name': 'assaf bobek', 'address': 'zoom', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 12, 22, 35, 55), 'user_id': '222151854', 'username': None}, {'id': 5, 'full_name': 'romi mizrahi', 'address': 'shevet 37 modiin', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 12, 22, 40, 13), 'user_id': '222151854', 'username': None}, {'id': 6, 'full_name': 'koren ovadia', 'address': 'zoom', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 12, 22, 44, 51), 'user_id': '222151854', 'username': None}, {'id': 7, 'full_name': 'dvir sulami', 'address': 'zoom', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 12, 22, 51, 8), 'user_id': '222151854', 'username': None}, {'id': 8, 'full_name': 'omri nof', 'address': 'zoom', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 12, 22, 55, 28), 'user_id': '222151854', 'username': None}, {'id': 9, 'full_name': 'lia genzman', 'address': 'zoom', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 12, 22, 58, 39), 'user_id': '222151854', 'username': None}, {'id': 10, 'full_name': 'ofri ezra', 'address': 'zoom', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 12, 23, 3, 1), 'user_id': '222151854', 'username': None}, {'id': 11, 'full_name': 'adi ezra', 'address': 'zoom', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 12, 23, 10, 35), 'user_id': '222151854', 'username': None}, {'id': 12, 'full_name': 'adi ezra', 'address': 'honololo', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 13, 9, 48, 53), 'user_id': '222151854', 'username': None}, {'id': 14, 'full_name': 'Adi Levi', 'address': 'shivtey israel 17 modiin', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 13, 12, 5, 22), 'user_id': '222151854', 'username': None}, {'id': 15, 'full_name': 'ariel vainshtein', 'address': 'yesaschar 13 modiin', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 13, 12, 15, 26), 'user_id': '222151854', 'username': None}, {'id': 16, 'full_name': 'Test1', 'address': 'Testaddress2', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 13, 21, 29, 50), 'user_id': '222151854', 'username': 'веепеййрбшвш'}, {'id': 17, 'full_name': 'Test2', 'address': 'Adress2', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 13, 21, 30, 7), 'user_id': '222151854', 'username': 'веепеййрбшвш'}, {'id': 18, 'full_name': 'Test3', 'address': 'Adress3', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 13, 21, 31, 52), 'user_id': '222151854', 'username': 'веепеййрбшвш'}, {'id': 19, 'full_name': 'test4', 'address': 'test4', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 14, 11, 43, 58), 'user_id': '222151854', 'username': 'веепеййрбшвш'}, {'id': 20, 'full_name': 'test5', 'address': 'test5', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 14, 11, 45, 8), 'user_id': '222151854', 'username': 'веепеййрбшвш'}, {'id': 21, 'full_name': 'test 6', 'address': 'test 6', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 14, 12, 4, 11), 'user_id': '222151854', 'username': 'вееп еййрбшвш'}, {'id': 22, 'full_name': 'test 8', 'address': 'test 8', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 14, 12, 6, 50), 'user_id': '222151854', 'username': 'вееп еййрбшвш'}]
+2023-12-14 16:50:14,239 - db_connection_logger - DEBUG - [{'id': 2, 'full_name': 'yali cohen', 'address': 'har timna 722 macabim', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 12, 22, 30, 57), 'user_id': '222151854', 'username': None}, {'id': 3, 'full_name': 'ella yanai', 'address': 'har hazon 551 macabim', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 12, 22, 35, 26), 'user_id': '222151854', 'username': None}, {'id': 4, 'full_name': 'assaf bobek', 'address': 'zoom', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 12, 22, 35, 55), 'user_id': '222151854', 'username': None}, {'id': 5, 'full_name': 'romi mizrahi', 'address': 'shevet 37 modiin', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 12, 22, 40, 13), 'user_id': '222151854', 'username': None}, {'id': 6, 'full_name': 'koren ovadia', 'address': 'zoom', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 12, 22, 44, 51), 'user_id': '222151854', 'username': None}, {'id': 7, 'full_name': 'dvir sulami', 'address': 'zoom', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 12, 22, 51, 8), 'user_id': '222151854', 'username': None}, {'id': 8, 'full_name': 'omri nof', 'address': 'zoom', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 12, 22, 55, 28), 'user_id': '222151854', 'username': None}, {'id': 9, 'full_name': 'lia genzman', 'address': 'zoom', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 12, 22, 58, 39), 'user_id': '222151854', 'username': None}, {'id': 10, 'full_name': 'ofri ezra', 'address': 'zoom', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 12, 23, 3, 1), 'user_id': '222151854', 'username': None}, {'id': 11, 'full_name': 'adi ezra', 'address': 'zoom', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 12, 23, 10, 35), 'user_id': '222151854', 'username': None}, {'id': 12, 'full_name': 'adi ezra', 'address': 'honololo', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 13, 9, 48, 53), 'user_id': '222151854', 'username': None}, {'id': 14, 'full_name': 'Adi Levi', 'address': 'shivtey israel 17 modiin', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 13, 12, 5, 22), 'user_id': '222151854', 'username': None}, {'id': 15, 'full_name': 'ariel vainshtein', 'address': 'yesaschar 13 modiin', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 13, 12, 15, 26), 'user_id': '222151854', 'username': None}, {'id': 16, 'full_name': 'Test1', 'address': 'Testaddress2', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 13, 21, 29, 50), 'user_id': '222151854', 'username': 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ'}, {'id': 17, 'full_name': 'Test2', 'address': 'Adress2', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 13, 21, 30, 7), 'user_id': '222151854', 'username': 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ'}, {'id': 18, 'full_name': 'Test3', 'address': 'Adress3', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 13, 21, 31, 52), 'user_id': '222151854', 'username': 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ'}, {'id': 19, 'full_name': 'test4', 'address': 'test4', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 14, 11, 43, 58), 'user_id': '222151854', 'username': 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ'}, {'id': 20, 'full_name': 'test5', 'address': 'test5', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 14, 11, 45, 8), 'user_id': '222151854', 'username': 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ'}, {'id': 21, 'full_name': 'test 6', 'address': 'test 6', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 14, 12, 4, 11), 'user_id': '222151854', 'username': 'пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ'}, {'id': 22, 'full_name': 'test 8', 'address': 'test 8', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 14, 12, 6, 50), 'user_id': '222151854', 'username': 'пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ'}]
 2023-12-14 16:53:08,336 - main_logger - INFO - Bot started! Connecting to DB...
 2023-12-14 16:53:10,060 - main_logger - INFO - Connected to DB
 2023-12-14 17:03:19,500 - main_logger - INFO - Bot started! Connecting to DB...
@@ -100,9 +100,9 @@ Exception: Client already exists in the list.
 2023-12-16 17:58:22,027 - main_logger - INFO - Connected to DB
 2023-12-16 17:58:28,090 - db_connection_logger - ERROR - unable to get the 10 clients list from the data base
 Traceback (most recent call last):
-  File "c:\Users\User\OneDrive\щемзп дтбегд\My assistant project\my_assistant\db_connection.py", line 88, in get_ten_clients_from_database
+  File "c:\Users\User\OneDrive\пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ\My assistant project\my_assistant\db_connection.py", line 88, in get_ten_clients_from_database
     db_cursor.execute(sql_get_clients, (user_id, CLIENTS_PER_PAGE, offset))
-  File "C:\Users\User\OneDrive\щемзп дтбегд\My assistant project\venv\Lib\site-packages\mysql\connector\cursor_cext.py", line 325, in execute
+  File "C:\Users\User\OneDrive\пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ\My assistant project\venv\Lib\site-packages\mysql\connector\cursor_cext.py", line 325, in execute
     raise ProgrammingError(
 mysql.connector.errors.ProgrammingError: Not all parameters were used in the SQL statement
 2023-12-16 18:05:38,016 - main_logger - INFO - Bot started! Connecting to DB...
@@ -111,71 +111,71 @@ mysql.connector.errors.ProgrammingError: Not all parameters were used in the SQL
 2023-12-16 18:06:50,342 - main_logger - INFO - Connected to DB
 2023-12-16 18:10:49,893 - main_logger - INFO - Bot started! Connecting to DB...
 2023-12-16 18:10:51,726 - main_logger - INFO - Connected to DB
-2023-12-16 18:10:59,151 - db_connection_logger - DEBUG - [{'id': 26, 'full_name': 'авн лдп', 'address': 'жен', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 14, 21, 57, 13), 'user_id': '222151854', 'username': 'вееп еййрбшвш'}, {'id': 27, 'full_name': 'мчез оеоца', 'address': 'доцаъй', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 16, 15, 25, 47), 'user_id': '222151854', 'username': 'вееп еййрбшвш'}, {'id': 24, 'full_name': 'тгй тжша', 'address': 'жен', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 14, 16, 52, 45), 'user_id': '222151854', 'username': 'вееп еййрбшвш'}, {'id': 25, 'full_name': 'тефшй тжша', 'address': 'жен', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 14, 16, 53, 15), 'user_id': '222151854', 'username': 'вееп еййрбшвш'}]
-2023-12-16 18:10:59,175 - clients_logger - DEBUG - [InlineKeyboardButton(callback_data='clientId:26:clientName:авн лдп', text='авн лдп'), InlineKeyboardButton(callback_data='clientId:27:clientName:мчез оеоца', text='мчез оеоца'), InlineKeyboardButton(callback_data='clientId:24:clientName:тгй тжша', text='тгй тжша'), InlineKeyboardButton(callback_data='clientId:25:clientName:тефшй тжша', text='тефшй тжша'), InlineKeyboardButton(callback_data='nextPage=1', text='next')]
+2023-12-16 18:10:59,151 - db_connection_logger - DEBUG - [{'id': 26, 'full_name': 'пїЅпїЅпїЅ пїЅпїЅпїЅ', 'address': 'пїЅпїЅпїЅ', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 14, 21, 57, 13), 'user_id': '222151854', 'username': 'пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ'}, {'id': 27, 'full_name': 'пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ', 'address': 'пїЅпїЅпїЅпїЅпїЅпїЅ', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 16, 15, 25, 47), 'user_id': '222151854', 'username': 'пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ'}, {'id': 24, 'full_name': 'пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ', 'address': 'пїЅпїЅпїЅ', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 14, 16, 52, 45), 'user_id': '222151854', 'username': 'пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ'}, {'id': 25, 'full_name': 'пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ', 'address': 'пїЅпїЅпїЅ', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 14, 16, 53, 15), 'user_id': '222151854', 'username': 'пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ'}]
+2023-12-16 18:10:59,175 - clients_logger - DEBUG - [InlineKeyboardButton(callback_data='clientId:26:clientName:пїЅпїЅпїЅ пїЅпїЅпїЅ', text='пїЅпїЅпїЅ пїЅпїЅпїЅ'), InlineKeyboardButton(callback_data='clientId:27:clientName:пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ'), InlineKeyboardButton(callback_data='clientId:24:clientName:пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ'), InlineKeyboardButton(callback_data='clientId:25:clientName:пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ'), InlineKeyboardButton(callback_data='nextPage=1', text='next')]
 2023-12-16 18:15:57,149 - main_logger - INFO - Bot started! Connecting to DB...
 2023-12-16 18:15:59,074 - main_logger - INFO - Connected to DB
 2023-12-16 18:16:02,908 - clients_logger - DEBUG - None
 2023-12-16 20:18:55,270 - main_logger - INFO - Bot started! Connecting to DB...
 2023-12-16 20:18:57,153 - main_logger - INFO - Connected to DB
-2023-12-16 20:19:27,948 - clients_logger - DEBUG - [[InlineKeyboardButton(callback_data='clientId:26:clientName:авн лдп', text='авн лдп')], [InlineKeyboardButton(callback_data='clientId:27:clientName:мчез оеоца', text='мчез оеоца')], [InlineKeyboardButton(callback_data='clientId:24:clientName:тгй тжша', text='тгй тжша')], [InlineKeyboardButton(callback_data='clientId:25:clientName:тефшй тжша', text='тефшй тжша')], InlineKeyboardButton(callback_data='nextPage=1', text='next')]
+2023-12-16 20:19:27,948 - clients_logger - DEBUG - [[InlineKeyboardButton(callback_data='clientId:26:clientName:пїЅпїЅпїЅ пїЅпїЅпїЅ', text='пїЅпїЅпїЅ пїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:27:clientName:пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:24:clientName:пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:25:clientName:пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ')], InlineKeyboardButton(callback_data='nextPage=1', text='next')]
 2023-12-16 20:21:19,592 - main_logger - INFO - Bot started! Connecting to DB...
 2023-12-16 20:21:22,192 - main_logger - INFO - Connected to DB
-2023-12-16 20:21:34,004 - clients_logger - DEBUG - [[InlineKeyboardButton(callback_data='clientId:26:clientName:авн лдп', text='авн лдп')], [InlineKeyboardButton(callback_data='clientId:27:clientName:мчез оеоца', text='мчез оеоца')], [InlineKeyboardButton(callback_data='clientId:24:clientName:тгй тжша', text='тгй тжша')], [InlineKeyboardButton(callback_data='clientId:25:clientName:тефшй тжша', text='тефшй тжша')], InlineKeyboardButton(callback_data='nextPage=1', text='next')]
+2023-12-16 20:21:34,004 - clients_logger - DEBUG - [[InlineKeyboardButton(callback_data='clientId:26:clientName:пїЅпїЅпїЅ пїЅпїЅпїЅ', text='пїЅпїЅпїЅ пїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:27:clientName:пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:24:clientName:пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:25:clientName:пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ')], InlineKeyboardButton(callback_data='nextPage=1', text='next')]
 2023-12-16 20:21:34,008 - clients_logger - ERROR - can't show buttons with names of client to delete
 Traceback (most recent call last):
-  File "c:\Users\User\OneDrive\щемзп дтбегд\My assistant project\my_assistant\clients.py", line 159, in delete_client_callback
+  File "c:\Users\User\OneDrive\пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ\My assistant project\my_assistant\clients.py", line 159, in delete_client_callback
     reply_markup = InlineKeyboardMarkup(keyboard)
                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\User\OneDrive\щемзп дтбегд\My assistant project\venv\Lib\site-packages\telegram\_inline\inlinekeyboardmarkup.py", line 79, in __init__
+  File "C:\Users\User\OneDrive\пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ\My assistant project\venv\Lib\site-packages\telegram\_inline\inlinekeyboardmarkup.py", line 79, in __init__
     raise ValueError(
 ValueError: The parameter `inline_keyboard` should be a sequence of sequences of InlineKeyboardButtons
 2023-12-16 20:25:44,157 - main_logger - INFO - Bot started! Connecting to DB...
 2023-12-16 20:25:45,704 - main_logger - INFO - Connected to DB
-2023-12-16 20:25:51,130 - clients_logger - DEBUG - [[InlineKeyboardButton(callback_data='clientId:26:clientName:авн лдп', text='авн лдп')], [InlineKeyboardButton(callback_data='clientId:27:clientName:мчез оеоца', text='мчез оеоца')], [InlineKeyboardButton(callback_data='clientId:24:clientName:тгй тжша', text='тгй тжша')], [InlineKeyboardButton(callback_data='clientId:25:clientName:тефшй тжша', text='тефшй тжша')], [InlineKeyboardButton(callback_data='nextPage=1', text='next')]]
-2023-12-16 20:26:15,543 - clients_logger - DEBUG - [[InlineKeyboardButton(callback_data='clientId:26:clientName:авн лдп', text='авн лдп')], [InlineKeyboardButton(callback_data='clientId:27:clientName:мчез оеоца', text='мчез оеоца')], [InlineKeyboardButton(callback_data='clientId:24:clientName:тгй тжша', text='тгй тжша')], [InlineKeyboardButton(callback_data='clientId:25:clientName:тефшй тжша', text='тефшй тжша')], [InlineKeyboardButton(callback_data='nextPage=1', text='next')]]
-2023-12-16 20:26:25,845 - clients_logger - DEBUG - [[InlineKeyboardButton(callback_data='clientId:26:clientName:авн лдп', text='авн лдп')], [InlineKeyboardButton(callback_data='clientId:27:clientName:мчез оеоца', text='мчез оеоца')], [InlineKeyboardButton(callback_data='clientId:24:clientName:тгй тжша', text='тгй тжша')], [InlineKeyboardButton(callback_data='clientId:25:clientName:тефшй тжша', text='тефшй тжша')], [InlineKeyboardButton(callback_data='nextPage=1', text='next')]]
+2023-12-16 20:25:51,130 - clients_logger - DEBUG - [[InlineKeyboardButton(callback_data='clientId:26:clientName:пїЅпїЅпїЅ пїЅпїЅпїЅ', text='пїЅпїЅпїЅ пїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:27:clientName:пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:24:clientName:пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:25:clientName:пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='nextPage=1', text='next')]]
+2023-12-16 20:26:15,543 - clients_logger - DEBUG - [[InlineKeyboardButton(callback_data='clientId:26:clientName:пїЅпїЅпїЅ пїЅпїЅпїЅ', text='пїЅпїЅпїЅ пїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:27:clientName:пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:24:clientName:пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:25:clientName:пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='nextPage=1', text='next')]]
+2023-12-16 20:26:25,845 - clients_logger - DEBUG - [[InlineKeyboardButton(callback_data='clientId:26:clientName:пїЅпїЅпїЅ пїЅпїЅпїЅ', text='пїЅпїЅпїЅ пїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:27:clientName:пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:24:clientName:пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:25:clientName:пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='nextPage=1', text='next')]]
 2023-12-16 20:32:08,963 - main_logger - INFO - Bot started! Connecting to DB...
 2023-12-16 20:32:10,553 - main_logger - INFO - Connected to DB
-2023-12-16 20:32:15,379 - clients_logger - DEBUG - [[InlineKeyboardButton(callback_data='clientId:26:clientName:авн лдп', text='авн лдп')], [InlineKeyboardButton(callback_data='clientId:27:clientName:мчез оеоца', text='мчез оеоца')], [InlineKeyboardButton(callback_data='clientId:24:clientName:тгй тжша', text='тгй тжша')], [InlineKeyboardButton(callback_data='clientId:25:clientName:тефшй тжша', text='тефшй тжша')], [InlineKeyboardButton(callback_data='nextPage=1', text='next')]]
+2023-12-16 20:32:15,379 - clients_logger - DEBUG - [[InlineKeyboardButton(callback_data='clientId:26:clientName:пїЅпїЅпїЅ пїЅпїЅпїЅ', text='пїЅпїЅпїЅ пїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:27:clientName:пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:24:clientName:пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:25:clientName:пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='nextPage=1', text='next')]]
 2023-12-16 20:43:03,851 - main_logger - INFO - Bot started! Connecting to DB...
 2023-12-16 20:43:05,991 - main_logger - INFO - Connected to DB
-2023-12-16 20:43:14,067 - clients_logger - DEBUG - [[InlineKeyboardButton(callback_data='clientId:26:clientName:авн лдп', text='авн лдп')], [InlineKeyboardButton(callback_data='clientId:24:clientName:тгй тжша', text='тгй тжша')], [InlineKeyboardButton(callback_data='clientId:25:clientName:тефшй тжша', text='тефшй тжша')], [InlineKeyboardButton(callback_data='nextPage=1', text='next')]]
-2023-12-16 20:43:52,999 - clients_logger - DEBUG - [[InlineKeyboardButton(callback_data='clientId:26:clientName:авн лдп', text='авн лдп')], [InlineKeyboardButton(callback_data='clientId:24:clientName:тгй тжша', text='тгй тжша')], [InlineKeyboardButton(callback_data='clientId:28:clientName:тефшй тжша', text='тефшй тжша')], [InlineKeyboardButton(callback_data='nextPage=1', text='next')]]
+2023-12-16 20:43:14,067 - clients_logger - DEBUG - [[InlineKeyboardButton(callback_data='clientId:26:clientName:пїЅпїЅпїЅ пїЅпїЅпїЅ', text='пїЅпїЅпїЅ пїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:24:clientName:пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:25:clientName:пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='nextPage=1', text='next')]]
+2023-12-16 20:43:52,999 - clients_logger - DEBUG - [[InlineKeyboardButton(callback_data='clientId:26:clientName:пїЅпїЅпїЅ пїЅпїЅпїЅ', text='пїЅпїЅпїЅ пїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:24:clientName:пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:28:clientName:пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='nextPage=1', text='next')]]
 2023-12-16 20:45:24,773 - main_logger - INFO - Bot started! Connecting to DB...
 2023-12-16 20:45:27,022 - main_logger - INFO - Connected to DB
-2023-12-16 20:45:38,367 - clients_logger - DEBUG - [[InlineKeyboardButton(callback_data='clientId:26:clientName:авн лдп', text='авн лдп')], [InlineKeyboardButton(callback_data='clientId:24:clientName:тгй тжша', text='тгй тжша')], [InlineKeyboardButton(callback_data='clientId:28:clientName:тефшй тжша', text='тефшй тжша')], [InlineKeyboardButton(callback_data='nextPage=1', text='next')]]
+2023-12-16 20:45:38,367 - clients_logger - DEBUG - [[InlineKeyboardButton(callback_data='clientId:26:clientName:пїЅпїЅпїЅ пїЅпїЅпїЅ', text='пїЅпїЅпїЅ пїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:24:clientName:пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:28:clientName:пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='nextPage=1', text='next')]]
 2023-12-16 20:46:30,474 - main_logger - INFO - Bot started! Connecting to DB...
 2023-12-16 20:46:32,416 - main_logger - INFO - Connected to DB
-2023-12-16 20:46:38,346 - clients_logger - DEBUG - [[InlineKeyboardButton(callback_data='clientId:26:clientName:авн лдп', text='авн лдп')], [InlineKeyboardButton(callback_data='clientId:24:clientName:тгй тжша', text='тгй тжша')], [InlineKeyboardButton(callback_data='clientId:28:clientName:тефшй тжша', text='тефшй тжша')], [InlineKeyboardButton(callback_data='nextPage=1', text='next')]]
+2023-12-16 20:46:38,346 - clients_logger - DEBUG - [[InlineKeyboardButton(callback_data='clientId:26:clientName:пїЅпїЅпїЅ пїЅпїЅпїЅ', text='пїЅпїЅпїЅ пїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:24:clientName:пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:28:clientName:пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='nextPage=1', text='next')]]
 2023-12-16 21:27:23,954 - main_logger - INFO - Bot started! Connecting to DB...
 2023-12-16 21:27:25,424 - main_logger - INFO - Connected to DB
 2023-12-16 21:29:50,597 - main_logger - INFO - Bot started! Connecting to DB...
 2023-12-16 21:29:52,582 - main_logger - INFO - Connected to DB
 2023-12-16 21:40:50,784 - main_logger - INFO - Bot started! Connecting to DB...
 2023-12-16 21:40:52,464 - main_logger - INFO - Connected to DB
-2023-12-16 21:41:13,893 - clients_logger - DEBUG - [[InlineKeyboardButton(callback_data='clientId:26:clientName:авн лдп', text='авн лдп')], [InlineKeyboardButton(callback_data='clientId:35:clientName:амлсргшд адшеп', text='амлсргшд адшеп')], [InlineKeyboardButton(callback_data='clientId:30:clientName:асу бебч', text='асу бебч')], [InlineKeyboardButton(callback_data='clientId:31:clientName:гбйш семой', text='гбйш семой')], [InlineKeyboardButton(callback_data='clientId:37:clientName:гшеш ожшзй', text='гшеш ожшзй')], [InlineKeyboardButton(callback_data='clientId:36:clientName:ргб лдп', text='ргб лдп')], [InlineKeyboardButton(callback_data='clientId:33:clientName:ретн афщиййп', text='ретн афщиййп')], [InlineKeyboardButton(callback_data='clientId:29:clientName:тгй мей', text='тгй мей')], [InlineKeyboardButton(callback_data='clientId:24:clientName:тгй тжша', text='тгй тжша')], [InlineKeyboardButton(callback_data='clientId:32:clientName:теошй реу', text='теошй реу')]]
+2023-12-16 21:41:13,893 - clients_logger - DEBUG - [[InlineKeyboardButton(callback_data='clientId:26:clientName:пїЅпїЅпїЅ пїЅпїЅпїЅ', text='пїЅпїЅпїЅ пїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:35:clientName:пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:30:clientName:пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:31:clientName:пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:37:clientName:пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:36:clientName:пїЅпїЅпїЅ пїЅпїЅпїЅ', text='пїЅпїЅпїЅ пїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:33:clientName:пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:29:clientName:пїЅпїЅпїЅ пїЅпїЅпїЅ', text='пїЅпїЅпїЅ пїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:24:clientName:пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:32:clientName:пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ', text='пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ')]]
 2023-12-16 21:45:29,067 - main_logger - INFO - Bot started! Connecting to DB...
 2023-12-16 21:45:31,019 - main_logger - INFO - Connected to DB
-2023-12-16 21:45:39,400 - clients_logger - DEBUG - [[InlineKeyboardButton(callback_data='clientId:26:clientName:авн лдп', text='авн лдп')], [InlineKeyboardButton(callback_data='clientId:35:clientName:амлсргшд адшеп', text='амлсргшд адшеп')], [InlineKeyboardButton(callback_data='clientId:30:clientName:асу бебч', text='асу бебч')], [InlineKeyboardButton(callback_data='clientId:31:clientName:гбйш семой', text='гбйш семой')], [InlineKeyboardButton(callback_data='clientId:37:clientName:гшеш ожшзй', text='гшеш ожшзй')], [InlineKeyboardButton(callback_data='clientId:36:clientName:ргб лдп', text='ргб лдп')], [InlineKeyboardButton(callback_data='clientId:33:clientName:ретн афщиййп', text='ретн афщиййп')], [InlineKeyboardButton(callback_data='clientId:29:clientName:тгй мей', text='тгй мей')], [InlineKeyboardButton(callback_data='clientId:24:clientName:тгй тжша', text='тгй тжша')], [InlineKeyboardButton(callback_data='clientId:32:clientName:теошй реу', text='теошй реу')], [InlineKeyboardButton(callback_data='nextPage:1', text='next')]]
+2023-12-16 21:45:39,400 - clients_logger - DEBUG - [[InlineKeyboardButton(callback_data='clientId:26:clientName:пїЅпїЅпїЅ пїЅпїЅпїЅ', text='пїЅпїЅпїЅ пїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:35:clientName:пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:30:clientName:пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:31:clientName:пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:37:clientName:пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:36:clientName:пїЅпїЅпїЅ пїЅпїЅпїЅ', text='пїЅпїЅпїЅ пїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:33:clientName:пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:29:clientName:пїЅпїЅпїЅ пїЅпїЅпїЅ', text='пїЅпїЅпїЅ пїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:24:clientName:пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:32:clientName:пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ', text='пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='nextPage:1', text='next')]]
 2023-12-16 21:48:50,394 - main_logger - INFO - Bot started! Connecting to DB...
 2023-12-16 21:48:52,687 - main_logger - INFO - Connected to DB
-2023-12-16 21:48:58,667 - clients_logger - DEBUG - [[InlineKeyboardButton(callback_data='clientId:26:clientName:авн лдп', text='авн лдп')], [InlineKeyboardButton(callback_data='clientId:35:clientName:амлсргшд адшеп', text='амлсргшд адшеп')], [InlineKeyboardButton(callback_data='clientId:30:clientName:асу бебч', text='асу бебч')], [InlineKeyboardButton(callback_data='clientId:31:clientName:гбйш семой', text='гбйш семой')], [InlineKeyboardButton(callback_data='clientId:37:clientName:гшеш ожшзй', text='гшеш ожшзй')], [InlineKeyboardButton(callback_data='clientId:36:clientName:ргб лдп', text='ргб лдп')], [InlineKeyboardButton(callback_data='clientId:33:clientName:ретн афщиййп', text='ретн афщиййп')], [InlineKeyboardButton(callback_data='clientId:29:clientName:тгй мей', text='тгй мей')], [InlineKeyboardButton(callback_data='clientId:24:clientName:тгй тжша', text='тгй тжша')], [InlineKeyboardButton(callback_data='clientId:32:clientName:теошй реу', text='теошй реу')], [InlineKeyboardButton(callback_data='nextPage:1', text='next')]]
+2023-12-16 21:48:58,667 - clients_logger - DEBUG - [[InlineKeyboardButton(callback_data='clientId:26:clientName:пїЅпїЅпїЅ пїЅпїЅпїЅ', text='пїЅпїЅпїЅ пїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:35:clientName:пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:30:clientName:пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:31:clientName:пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:37:clientName:пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:36:clientName:пїЅпїЅпїЅ пїЅпїЅпїЅ', text='пїЅпїЅпїЅ пїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:33:clientName:пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:29:clientName:пїЅпїЅпїЅ пїЅпїЅпїЅ', text='пїЅпїЅпїЅ пїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:24:clientName:пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:32:clientName:пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ', text='пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='nextPage:1', text='next')]]
 2023-12-16 21:50:39,378 - main_logger - INFO - Bot started! Connecting to DB...
 2023-12-16 21:50:41,088 - main_logger - INFO - Connected to DB
-2023-12-16 21:50:46,226 - clients_logger - DEBUG - [[InlineKeyboardButton(callback_data='clientId:26:clientName:авн лдп', text='авн лдп')], [InlineKeyboardButton(callback_data='clientId:35:clientName:амлсргшд адшеп', text='амлсргшд адшеп')], [InlineKeyboardButton(callback_data='clientId:30:clientName:асу бебч', text='асу бебч')], [InlineKeyboardButton(callback_data='clientId:31:clientName:гбйш семой', text='гбйш семой')], [InlineKeyboardButton(callback_data='clientId:37:clientName:гшеш ожшзй', text='гшеш ожшзй')], [InlineKeyboardButton(callback_data='clientId:36:clientName:ргб лдп', text='ргб лдп')], [InlineKeyboardButton(callback_data='clientId:33:clientName:ретн афщиййп', text='ретн афщиййп')], [InlineKeyboardButton(callback_data='clientId:29:clientName:тгй мей', text='тгй мей')], [InlineKeyboardButton(callback_data='clientId:24:clientName:тгй тжша', text='тгй тжша')], [InlineKeyboardButton(callback_data='clientId:32:clientName:теошй реу', text='теошй реу')], [InlineKeyboardButton(callback_data='nextPage:1', text='next')]]
+2023-12-16 21:50:46,226 - clients_logger - DEBUG - [[InlineKeyboardButton(callback_data='clientId:26:clientName:пїЅпїЅпїЅ пїЅпїЅпїЅ', text='пїЅпїЅпїЅ пїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:35:clientName:пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:30:clientName:пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:31:clientName:пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:37:clientName:пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:36:clientName:пїЅпїЅпїЅ пїЅпїЅпїЅ', text='пїЅпїЅпїЅ пїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:33:clientName:пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:29:clientName:пїЅпїЅпїЅ пїЅпїЅпїЅ', text='пїЅпїЅпїЅ пїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:24:clientName:пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:32:clientName:пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ', text='пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='nextPage:1', text='next')]]
 2023-12-16 21:52:48,221 - main_logger - INFO - Bot started! Connecting to DB...
 2023-12-16 21:52:50,216 - main_logger - INFO - Connected to DB
-2023-12-16 21:52:56,983 - clients_logger - DEBUG - [[InlineKeyboardButton(callback_data='clientId:26:clientName:авн лдп', text='авн лдп')], [InlineKeyboardButton(callback_data='clientId:35:clientName:амлсргшд адшеп', text='амлсргшд адшеп')], [InlineKeyboardButton(callback_data='clientId:30:clientName:асу бебч', text='асу бебч')], [InlineKeyboardButton(callback_data='clientId:31:clientName:гбйш семой', text='гбйш семой')], [InlineKeyboardButton(callback_data='clientId:37:clientName:гшеш ожшзй', text='гшеш ожшзй')], [InlineKeyboardButton(callback_data='clientId:36:clientName:ргб лдп', text='ргб лдп')], [InlineKeyboardButton(callback_data='clientId:33:clientName:ретн афщиййп', text='ретн афщиййп')], [InlineKeyboardButton(callback_data='clientId:29:clientName:тгй мей', text='тгй мей')], [InlineKeyboardButton(callback_data='clientId:24:clientName:тгй тжша', text='тгй тжша')], [InlineKeyboardButton(callback_data='clientId:32:clientName:теошй реу', text='теошй реу')], [InlineKeyboardButton(callback_data='nextPage:1', text='next')]]
+2023-12-16 21:52:56,983 - clients_logger - DEBUG - [[InlineKeyboardButton(callback_data='clientId:26:clientName:пїЅпїЅпїЅ пїЅпїЅпїЅ', text='пїЅпїЅпїЅ пїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:35:clientName:пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:30:clientName:пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:31:clientName:пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:37:clientName:пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:36:clientName:пїЅпїЅпїЅ пїЅпїЅпїЅ', text='пїЅпїЅпїЅ пїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:33:clientName:пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:29:clientName:пїЅпїЅпїЅ пїЅпїЅпїЅ', text='пїЅпїЅпїЅ пїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:24:clientName:пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:32:clientName:пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ', text='пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='nextPage:1', text='next')]]
 2023-12-16 21:55:43,955 - main_logger - INFO - Bot started! Connecting to DB...
 2023-12-16 21:55:46,408 - main_logger - INFO - Connected to DB
-2023-12-16 21:55:56,619 - clients_logger - DEBUG - [[InlineKeyboardButton(callback_data='clientId:26:clientName:авн лдп', text='авн лдп')], [InlineKeyboardButton(callback_data='clientId:35:clientName:амлсргшд адшеп', text='амлсргшд адшеп')], [InlineKeyboardButton(callback_data='clientId:30:clientName:асу бебч', text='асу бебч')], [InlineKeyboardButton(callback_data='clientId:31:clientName:гбйш семой', text='гбйш семой')], [InlineKeyboardButton(callback_data='clientId:37:clientName:гшеш ожшзй', text='гшеш ожшзй')], [InlineKeyboardButton(callback_data='clientId:36:clientName:ргб лдп', text='ргб лдп')], [InlineKeyboardButton(callback_data='clientId:33:clientName:ретн афщиййп', text='ретн афщиййп')], [InlineKeyboardButton(callback_data='clientId:29:clientName:тгй мей', text='тгй мей')], [InlineKeyboardButton(callback_data='clientId:24:clientName:тгй тжша', text='тгй тжша')], [InlineKeyboardButton(callback_data='clientId:32:clientName:теошй реу', text='теошй реу')], [InlineKeyboardButton(callback_data='clientId:nextPage:1', text='next')]]
+2023-12-16 21:55:56,619 - clients_logger - DEBUG - [[InlineKeyboardButton(callback_data='clientId:26:clientName:пїЅпїЅпїЅ пїЅпїЅпїЅ', text='пїЅпїЅпїЅ пїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:35:clientName:пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:30:clientName:пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:31:clientName:пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:37:clientName:пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:36:clientName:пїЅпїЅпїЅ пїЅпїЅпїЅ', text='пїЅпїЅпїЅ пїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:33:clientName:пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:29:clientName:пїЅпїЅпїЅ пїЅпїЅпїЅ', text='пїЅпїЅпїЅ пїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:24:clientName:пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:32:clientName:пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ', text='пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:nextPage:1', text='next')]]
 2023-12-16 21:58:10,152 - main_logger - INFO - Bot started! Connecting to DB...
 2023-12-16 21:58:12,064 - main_logger - INFO - Connected to DB
-2023-12-16 21:58:18,496 - clients_logger - DEBUG - [[InlineKeyboardButton(callback_data='clientId:26:clientName:авн лдп', text='авн лдп')], [InlineKeyboardButton(callback_data='clientId:35:clientName:амлсргшд адшеп', text='амлсргшд адшеп')], [InlineKeyboardButton(callback_data='clientId:30:clientName:асу бебч', text='асу бебч')], [InlineKeyboardButton(callback_data='clientId:31:clientName:гбйш семой', text='гбйш семой')], [InlineKeyboardButton(callback_data='clientId:37:clientName:гшеш ожшзй', text='гшеш ожшзй')], [InlineKeyboardButton(callback_data='clientId:36:clientName:ргб лдп', text='ргб лдп')], [InlineKeyboardButton(callback_data='clientId:33:clientName:ретн афщиййп', text='ретн афщиййп')], [InlineKeyboardButton(callback_data='clientId:29:clientName:тгй мей', text='тгй мей')], [InlineKeyboardButton(callback_data='clientId:24:clientName:тгй тжша', text='тгй тжша')], [InlineKeyboardButton(callback_data='clientId:32:clientName:теошй реу', text='теошй реу')], [InlineKeyboardButton(callback_data='clientId:nextPage:1', text='next')]]
+2023-12-16 21:58:18,496 - clients_logger - DEBUG - [[InlineKeyboardButton(callback_data='clientId:26:clientName:пїЅпїЅпїЅ пїЅпїЅпїЅ', text='пїЅпїЅпїЅ пїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:35:clientName:пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:30:clientName:пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:31:clientName:пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:37:clientName:пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:36:clientName:пїЅпїЅпїЅ пїЅпїЅпїЅ', text='пїЅпїЅпїЅ пїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:33:clientName:пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:29:clientName:пїЅпїЅпїЅ пїЅпїЅпїЅ', text='пїЅпїЅпїЅ пїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:24:clientName:пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:32:clientName:пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ', text='пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:nextPage:1', text='next')]]
 2023-12-16 22:02:45,721 - main_logger - INFO - Bot started! Connecting to DB...
 2023-12-16 22:02:47,827 - main_logger - INFO - Connected to DB
-2023-12-16 22:02:52,927 - clients_logger - DEBUG - [[InlineKeyboardButton(callback_data='clientId:26:clientName:авн лдп', text='авн лдп')], [InlineKeyboardButton(callback_data='clientId:35:clientName:амлсргшд адшеп', text='амлсргшд адшеп')], [InlineKeyboardButton(callback_data='clientId:30:clientName:асу бебч', text='асу бебч')], [InlineKeyboardButton(callback_data='clientId:31:clientName:гбйш семой', text='гбйш семой')], [InlineKeyboardButton(callback_data='clientId:37:clientName:гшеш ожшзй', text='гшеш ожшзй')], [InlineKeyboardButton(callback_data='clientId:36:clientName:ргб лдп', text='ргб лдп')], [InlineKeyboardButton(callback_data='clientId:33:clientName:ретн афщиййп', text='ретн афщиййп')], [InlineKeyboardButton(callback_data='clientId:29:clientName:тгй мей', text='тгй мей')], [InlineKeyboardButton(callback_data='clientId:24:clientName:тгй тжша', text='тгй тжша')], [InlineKeyboardButton(callback_data='clientId:32:clientName:теошй реу', text='теошй реу')], [InlineKeyboardButton(callback_data='clientId:nextPage:1', text='next')]]
+2023-12-16 22:02:52,927 - clients_logger - DEBUG - [[InlineKeyboardButton(callback_data='clientId:26:clientName:пїЅпїЅпїЅ пїЅпїЅпїЅ', text='пїЅпїЅпїЅ пїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:35:clientName:пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:30:clientName:пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:31:clientName:пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:37:clientName:пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:36:clientName:пїЅпїЅпїЅ пїЅпїЅпїЅ', text='пїЅпїЅпїЅ пїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:33:clientName:пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:29:clientName:пїЅпїЅпїЅ пїЅпїЅпїЅ', text='пїЅпїЅпїЅ пїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:24:clientName:пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ', text='пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:32:clientName:пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ', text='пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ')], [InlineKeyboardButton(callback_data='clientId:nextPage:1', text='next')]]
 2023-12-16 22:02:55,730 - clients_logger - DEBUG - clientId:nextPage:1
 2023-12-16 22:05:51,004 - main_logger - INFO - Bot started! Connecting to DB...
 2023-12-16 22:05:53,456 - main_logger - INFO - Connected to DB
@@ -188,45 +188,45 @@ ValueError: The parameter `inline_keyboard` should be a sequence of sequences of
 2023-12-16 22:10:31,942 - clients_logger - DEBUG - clientId:nextPage:1
 2023-12-16 22:10:37,160 - db_connection_logger - ERROR - unable to get the 10 clients list from the data base
 Traceback (most recent call last):
-  File "C:\Users\User\OneDrive\щемзп дтбегд\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 639, in cmd_query
+  File "C:\Users\User\OneDrive\пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 639, in cmd_query
     self._cmysql.query(
 _mysql_connector.MySQLInterfaceError: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''1111111111'' at line 1
 
 The above exception was the direct cause of the following exception:
 
 Traceback (most recent call last):
-  File "c:\Users\User\OneDrive\щемзп дтбегд\My assistant project\my_assistant\db_connection.py", line 88, in get_ten_clients_from_database
+  File "c:\Users\User\OneDrive\пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ\My assistant project\my_assistant\db_connection.py", line 88, in get_ten_clients_from_database
     db_cursor.execute(sql_get_clients, (user_id, CLIENTS_PER_PAGE, offset))
-  File "C:\Users\User\OneDrive\щемзп дтбегд\My assistant project\venv\Lib\site-packages\mysql\connector\cursor_cext.py", line 330, in execute
+  File "C:\Users\User\OneDrive\пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ\My assistant project\venv\Lib\site-packages\mysql\connector\cursor_cext.py", line 330, in execute
     result = self._cnx.cmd_query(
              ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\User\OneDrive\щемзп дтбегд\My assistant project\venv\Lib\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 77, in wrapper
+  File "C:\Users\User\OneDrive\пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ\My assistant project\venv\Lib\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 77, in wrapper
     return method(cnx, *args, **kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\User\OneDrive\щемзп дтбегд\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 647, in cmd_query
+  File "C:\Users\User\OneDrive\пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 647, in cmd_query
     raise get_mysql_exception(
 mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''1111111111'' at line 1
 2023-12-16 22:10:37,278 - clients_logger - ERROR - can't show buttons with names of client to delete
 Traceback (most recent call last):
-  File "C:\Users\User\OneDrive\щемзп дтбегд\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 639, in cmd_query
+  File "C:\Users\User\OneDrive\пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 639, in cmd_query
     self._cmysql.query(
 _mysql_connector.MySQLInterfaceError: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''1111111111'' at line 1
 
 The above exception was the direct cause of the following exception:
 
 Traceback (most recent call last):
-  File "c:\Users\User\OneDrive\щемзп дтбегд\My assistant project\my_assistant\clients.py", line 241, in next_page
+  File "c:\Users\User\OneDrive\пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ\My assistant project\my_assistant\clients.py", line 241, in next_page
     clients_list = get_ten_clients_from_database(
                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "c:\Users\User\OneDrive\щемзп дтбегд\My assistant project\my_assistant\db_connection.py", line 88, in get_ten_clients_from_database
+  File "c:\Users\User\OneDrive\пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ\My assistant project\my_assistant\db_connection.py", line 88, in get_ten_clients_from_database
     db_cursor.execute(sql_get_clients, (user_id, CLIENTS_PER_PAGE, offset))
-  File "C:\Users\User\OneDrive\щемзп дтбегд\My assistant project\venv\Lib\site-packages\mysql\connector\cursor_cext.py", line 330, in execute
+  File "C:\Users\User\OneDrive\пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ\My assistant project\venv\Lib\site-packages\mysql\connector\cursor_cext.py", line 330, in execute
     result = self._cnx.cmd_query(
              ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\User\OneDrive\щемзп дтбегд\My assistant project\venv\Lib\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 77, in wrapper
+  File "C:\Users\User\OneDrive\пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ\My assistant project\venv\Lib\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 77, in wrapper
     return method(cnx, *args, **kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\User\OneDrive\щемзп дтбегд\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 647, in cmd_query
+  File "C:\Users\User\OneDrive\пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 647, in cmd_query
     raise get_mysql_exception(
 mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''1111111111'' at line 1
 2023-12-16 22:14:11,792 - main_logger - INFO - Bot started! Connecting to DB...
@@ -245,45 +245,45 @@ mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your
 2023-12-16 22:23:35,073 - clients_logger - DEBUG - this happens
 2023-12-16 22:23:35,373 - db_connection_logger - ERROR - unable to get the 10 clients list from the data base
 Traceback (most recent call last):
-  File "C:\Users\User\OneDrive\щемзп дтбегд\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 639, in cmd_query
+  File "C:\Users\User\OneDrive\пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 639, in cmd_query
     self._cmysql.query(
 _mysql_connector.MySQLInterfaceError: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''1111111111'' at line 1
 
 The above exception was the direct cause of the following exception:
 
 Traceback (most recent call last):
-  File "c:\Users\User\OneDrive\щемзп дтбегд\My assistant project\my_assistant\db_connection.py", line 88, in get_ten_clients_from_database
+  File "c:\Users\User\OneDrive\пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ\My assistant project\my_assistant\db_connection.py", line 88, in get_ten_clients_from_database
     db_cursor.execute(sql_get_clients, (user_id, CLIENTS_PER_PAGE, offset))
-  File "C:\Users\User\OneDrive\щемзп дтбегд\My assistant project\venv\Lib\site-packages\mysql\connector\cursor_cext.py", line 330, in execute
+  File "C:\Users\User\OneDrive\пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ\My assistant project\venv\Lib\site-packages\mysql\connector\cursor_cext.py", line 330, in execute
     result = self._cnx.cmd_query(
              ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\User\OneDrive\щемзп дтбегд\My assistant project\venv\Lib\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 77, in wrapper
+  File "C:\Users\User\OneDrive\пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ\My assistant project\venv\Lib\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 77, in wrapper
     return method(cnx, *args, **kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\User\OneDrive\щемзп дтбегд\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 647, in cmd_query
+  File "C:\Users\User\OneDrive\пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 647, in cmd_query
     raise get_mysql_exception(
 mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''1111111111'' at line 1
 2023-12-16 22:23:35,391 - clients_logger - ERROR - can't show buttons with names of client to delete
 Traceback (most recent call last):
-  File "C:\Users\User\OneDrive\щемзп дтбегд\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 639, in cmd_query
+  File "C:\Users\User\OneDrive\пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 639, in cmd_query
     self._cmysql.query(
 _mysql_connector.MySQLInterfaceError: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''1111111111'' at line 1
 
 The above exception was the direct cause of the following exception:
 
 Traceback (most recent call last):
-  File "c:\Users\User\OneDrive\щемзп дтбегд\My assistant project\my_assistant\clients.py", line 238, in next_page
+  File "c:\Users\User\OneDrive\пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ\My assistant project\my_assistant\clients.py", line 238, in next_page
     clients_list = get_ten_clients_from_database(
                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "c:\Users\User\OneDrive\щемзп дтбегд\My assistant project\my_assistant\db_connection.py", line 88, in get_ten_clients_from_database
+  File "c:\Users\User\OneDrive\пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ\My assistant project\my_assistant\db_connection.py", line 88, in get_ten_clients_from_database
     db_cursor.execute(sql_get_clients, (user_id, CLIENTS_PER_PAGE, offset))
-  File "C:\Users\User\OneDrive\щемзп дтбегд\My assistant project\venv\Lib\site-packages\mysql\connector\cursor_cext.py", line 330, in execute
+  File "C:\Users\User\OneDrive\пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ\My assistant project\venv\Lib\site-packages\mysql\connector\cursor_cext.py", line 330, in execute
     result = self._cnx.cmd_query(
              ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\User\OneDrive\щемзп дтбегд\My assistant project\venv\Lib\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 77, in wrapper
+  File "C:\Users\User\OneDrive\пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ\My assistant project\venv\Lib\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 77, in wrapper
     return method(cnx, *args, **kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\User\OneDrive\щемзп дтбегд\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 647, in cmd_query
+  File "C:\Users\User\OneDrive\пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 647, in cmd_query
     raise get_mysql_exception(
 mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''1111111111'' at line 1
 2023-12-16 22:24:08,476 - main_logger - INFO - Bot started! Connecting to DB...
@@ -291,45 +291,45 @@ mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your
 2023-12-16 22:24:22,076 - clients_logger - DEBUG - this happens
 2023-12-16 22:24:22,351 - db_connection_logger - ERROR - unable to get the 10 clients list from the data base
 Traceback (most recent call last):
-  File "C:\Users\User\OneDrive\щемзп дтбегд\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 639, in cmd_query
+  File "C:\Users\User\OneDrive\пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 639, in cmd_query
     self._cmysql.query(
 _mysql_connector.MySQLInterfaceError: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''1111111111'' at line 1
 
 The above exception was the direct cause of the following exception:
 
 Traceback (most recent call last):
-  File "c:\Users\User\OneDrive\щемзп дтбегд\My assistant project\my_assistant\db_connection.py", line 88, in get_ten_clients_from_database
+  File "c:\Users\User\OneDrive\пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ\My assistant project\my_assistant\db_connection.py", line 88, in get_ten_clients_from_database
     db_cursor.execute(sql_get_clients, (user_id, CLIENTS_PER_PAGE, offset))
-  File "C:\Users\User\OneDrive\щемзп дтбегд\My assistant project\venv\Lib\site-packages\mysql\connector\cursor_cext.py", line 330, in execute
+  File "C:\Users\User\OneDrive\пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ\My assistant project\venv\Lib\site-packages\mysql\connector\cursor_cext.py", line 330, in execute
     result = self._cnx.cmd_query(
              ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\User\OneDrive\щемзп дтбегд\My assistant project\venv\Lib\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 77, in wrapper
+  File "C:\Users\User\OneDrive\пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ\My assistant project\venv\Lib\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 77, in wrapper
     return method(cnx, *args, **kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\User\OneDrive\щемзп дтбегд\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 647, in cmd_query
+  File "C:\Users\User\OneDrive\пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 647, in cmd_query
     raise get_mysql_exception(
 mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''1111111111'' at line 1
 2023-12-16 22:24:22,372 - clients_logger - ERROR - can't show buttons with names of client to delete
 Traceback (most recent call last):
-  File "C:\Users\User\OneDrive\щемзп дтбегд\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 639, in cmd_query
+  File "C:\Users\User\OneDrive\пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 639, in cmd_query
     self._cmysql.query(
 _mysql_connector.MySQLInterfaceError: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''1111111111'' at line 1
 
 The above exception was the direct cause of the following exception:
 
 Traceback (most recent call last):
-  File "c:\Users\User\OneDrive\щемзп дтбегд\My assistant project\my_assistant\clients.py", line 238, in next_page
+  File "c:\Users\User\OneDrive\пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ\My assistant project\my_assistant\clients.py", line 238, in next_page
     clients_list = get_ten_clients_from_database(
                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "c:\Users\User\OneDrive\щемзп дтбегд\My assistant project\my_assistant\db_connection.py", line 88, in get_ten_clients_from_database
+  File "c:\Users\User\OneDrive\пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ\My assistant project\my_assistant\db_connection.py", line 88, in get_ten_clients_from_database
     db_cursor.execute(sql_get_clients, (user_id, CLIENTS_PER_PAGE, offset))
-  File "C:\Users\User\OneDrive\щемзп дтбегд\My assistant project\venv\Lib\site-packages\mysql\connector\cursor_cext.py", line 330, in execute
+  File "C:\Users\User\OneDrive\пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ\My assistant project\venv\Lib\site-packages\mysql\connector\cursor_cext.py", line 330, in execute
     result = self._cnx.cmd_query(
              ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\User\OneDrive\щемзп дтбегд\My assistant project\venv\Lib\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 77, in wrapper
+  File "C:\Users\User\OneDrive\пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ\My assistant project\venv\Lib\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 77, in wrapper
     return method(cnx, *args, **kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\User\OneDrive\щемзп дтбегд\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 647, in cmd_query
+  File "C:\Users\User\OneDrive\пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 647, in cmd_query
     raise get_mysql_exception(
 mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''1111111111'' at line 1
 2023-12-17 11:36:42,687 - main_logger - INFO - Bot started! Connecting to DB...
@@ -337,45 +337,45 @@ mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your
 2023-12-17 11:36:52,913 - clients_logger - DEBUG - the next page func happens
 2023-12-17 11:36:53,515 - db_connection_logger - ERROR - unable to get the 10 clients list from the data base
 Traceback (most recent call last):
-  File "C:\Users\User\OneDrive\щемзп дтбегд\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 639, in cmd_query
+  File "C:\Users\User\OneDrive\пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 639, in cmd_query
     self._cmysql.query(
 _mysql_connector.MySQLInterfaceError: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''1111111111'' at line 1
 
 The above exception was the direct cause of the following exception:
 
 Traceback (most recent call last):
-  File "c:\Users\User\OneDrive\щемзп дтбегд\My assistant project\my_assistant\db_connection.py", line 88, in get_ten_clients_from_database
+  File "c:\Users\User\OneDrive\пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ\My assistant project\my_assistant\db_connection.py", line 88, in get_ten_clients_from_database
     db_cursor.execute(sql_get_clients, (user_id, CLIENTS_PER_PAGE, offset))
-  File "C:\Users\User\OneDrive\щемзп дтбегд\My assistant project\venv\Lib\site-packages\mysql\connector\cursor_cext.py", line 330, in execute
+  File "C:\Users\User\OneDrive\пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ\My assistant project\venv\Lib\site-packages\mysql\connector\cursor_cext.py", line 330, in execute
     result = self._cnx.cmd_query(
              ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\User\OneDrive\щемзп дтбегд\My assistant project\venv\Lib\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 77, in wrapper
+  File "C:\Users\User\OneDrive\пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ\My assistant project\venv\Lib\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 77, in wrapper
     return method(cnx, *args, **kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\User\OneDrive\щемзп дтбегд\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 647, in cmd_query
+  File "C:\Users\User\OneDrive\пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 647, in cmd_query
     raise get_mysql_exception(
 mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''1111111111'' at line 1
 2023-12-17 11:36:53,691 - clients_logger - ERROR - can't show buttons with names of client to delete
 Traceback (most recent call last):
-  File "C:\Users\User\OneDrive\щемзп дтбегд\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 639, in cmd_query
+  File "C:\Users\User\OneDrive\пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 639, in cmd_query
     self._cmysql.query(
 _mysql_connector.MySQLInterfaceError: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''1111111111'' at line 1
 
 The above exception was the direct cause of the following exception:
 
 Traceback (most recent call last):
-  File "c:\Users\User\OneDrive\щемзп дтбегд\My assistant project\my_assistant\clients.py", line 238, in next_page
+  File "c:\Users\User\OneDrive\пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ\My assistant project\my_assistant\clients.py", line 238, in next_page
     clients_list = get_ten_clients_from_database(
                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "c:\Users\User\OneDrive\щемзп дтбегд\My assistant project\my_assistant\db_connection.py", line 88, in get_ten_clients_from_database
+  File "c:\Users\User\OneDrive\пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ\My assistant project\my_assistant\db_connection.py", line 88, in get_ten_clients_from_database
     db_cursor.execute(sql_get_clients, (user_id, CLIENTS_PER_PAGE, offset))
-  File "C:\Users\User\OneDrive\щемзп дтбегд\My assistant project\venv\Lib\site-packages\mysql\connector\cursor_cext.py", line 330, in execute
+  File "C:\Users\User\OneDrive\пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ\My assistant project\venv\Lib\site-packages\mysql\connector\cursor_cext.py", line 330, in execute
     result = self._cnx.cmd_query(
              ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\User\OneDrive\щемзп дтбегд\My assistant project\venv\Lib\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 77, in wrapper
+  File "C:\Users\User\OneDrive\пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ\My assistant project\venv\Lib\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 77, in wrapper
     return method(cnx, *args, **kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\User\OneDrive\щемзп дтбегд\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 647, in cmd_query
+  File "C:\Users\User\OneDrive\пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 647, in cmd_query
     raise get_mysql_exception(
 mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''1111111111'' at line 1
 2023-12-17 11:45:03,187 - main_logger - INFO - Bot started! Connecting to DB...
@@ -384,45 +384,45 @@ mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your
 2023-12-17 11:45:11,240 - clients_logger - DEBUG - 222151854
 2023-12-17 11:45:11,444 - db_connection_logger - ERROR - unable to get the 10 clients list from the data base
 Traceback (most recent call last):
-  File "C:\Users\User\OneDrive\щемзп дтбегд\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 639, in cmd_query
+  File "C:\Users\User\OneDrive\пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 639, in cmd_query
     self._cmysql.query(
 _mysql_connector.MySQLInterfaceError: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''1111111111'' at line 1
 
 The above exception was the direct cause of the following exception:
 
 Traceback (most recent call last):
-  File "c:\Users\User\OneDrive\щемзп дтбегд\My assistant project\my_assistant\db_connection.py", line 88, in get_ten_clients_from_database
+  File "c:\Users\User\OneDrive\пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ\My assistant project\my_assistant\db_connection.py", line 88, in get_ten_clients_from_database
     db_cursor.execute(sql_get_clients, (user_id, CLIENTS_PER_PAGE, offset))
-  File "C:\Users\User\OneDrive\щемзп дтбегд\My assistant project\venv\Lib\site-packages\mysql\connector\cursor_cext.py", line 330, in execute
+  File "C:\Users\User\OneDrive\пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ\My assistant project\venv\Lib\site-packages\mysql\connector\cursor_cext.py", line 330, in execute
     result = self._cnx.cmd_query(
              ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\User\OneDrive\щемзп дтбегд\My assistant project\venv\Lib\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 77, in wrapper
+  File "C:\Users\User\OneDrive\пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ\My assistant project\venv\Lib\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 77, in wrapper
     return method(cnx, *args, **kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\User\OneDrive\щемзп дтбегд\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 647, in cmd_query
+  File "C:\Users\User\OneDrive\пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 647, in cmd_query
     raise get_mysql_exception(
 mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''1111111111'' at line 1
 2023-12-17 11:45:11,466 - clients_logger - ERROR - can't show buttons with names of client to delete
 Traceback (most recent call last):
-  File "C:\Users\User\OneDrive\щемзп дтбегд\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 639, in cmd_query
+  File "C:\Users\User\OneDrive\пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 639, in cmd_query
     self._cmysql.query(
 _mysql_connector.MySQLInterfaceError: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''1111111111'' at line 1
 
 The above exception was the direct cause of the following exception:
 
 Traceback (most recent call last):
-  File "c:\Users\User\OneDrive\щемзп дтбегд\My assistant project\my_assistant\clients.py", line 238, in next_page
+  File "c:\Users\User\OneDrive\пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ\My assistant project\my_assistant\clients.py", line 238, in next_page
     clients_list = get_ten_clients_from_database(
                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "c:\Users\User\OneDrive\щемзп дтбегд\My assistant project\my_assistant\db_connection.py", line 88, in get_ten_clients_from_database
+  File "c:\Users\User\OneDrive\пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ\My assistant project\my_assistant\db_connection.py", line 88, in get_ten_clients_from_database
     db_cursor.execute(sql_get_clients, (user_id, CLIENTS_PER_PAGE, offset))
-  File "C:\Users\User\OneDrive\щемзп дтбегд\My assistant project\venv\Lib\site-packages\mysql\connector\cursor_cext.py", line 330, in execute
+  File "C:\Users\User\OneDrive\пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ\My assistant project\venv\Lib\site-packages\mysql\connector\cursor_cext.py", line 330, in execute
     result = self._cnx.cmd_query(
              ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\User\OneDrive\щемзп дтбегд\My assistant project\venv\Lib\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 77, in wrapper
+  File "C:\Users\User\OneDrive\пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ\My assistant project\venv\Lib\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 77, in wrapper
     return method(cnx, *args, **kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\User\OneDrive\щемзп дтбегд\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 647, in cmd_query
+  File "C:\Users\User\OneDrive\пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 647, in cmd_query
     raise get_mysql_exception(
 mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''1111111111'' at line 1
 2023-12-17 11:48:57,064 - main_logger - INFO - Bot started! Connecting to DB...
@@ -448,8 +448,8 @@ mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your
 2023-12-17 12:18:40,579 - clients_logger - DEBUG - ask if delete func started
 2023-12-17 12:18:48,883 - clients_logger - ERROR - can't show buttons with names of client to delete
 Traceback (most recent call last):
-  File "c:\Users\User\OneDrive\щемзп дтбегд\My assistant project\my_assistant\clients.py", line 248, in delete_another_client
-    await update.callback_query.message.reply_text("*айжд мчез/д мозеч?*\nае мзх /cancel лгй мбим", reply_markup=reply_markup, parse_mode='Markdown')
+  File "c:\Users\User\OneDrive\пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ\My assistant project\my_assistant\clients.py", line 248, in delete_another_client
+    await update.callback_query.message.reply_text("*пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ/пїЅ пїЅпїЅпїЅпїЅпїЅ?*\nпїЅпїЅ пїЅпїЅпїЅ /cancel пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ", reply_markup=reply_markup, parse_mode='Markdown')
           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 AttributeError: 'NoneType' object has no attribute 'message'
 2023-12-17 12:21:05,375 - main_logger - INFO - Bot started! Connecting to DB...
@@ -457,20 +457,16 @@ AttributeError: 'NoneType' object has no attribute 'message'
 2023-12-17 12:21:17,865 - clients_logger - DEBUG - ask if delete func started
 2023-12-17 12:21:30,110 - clients_logger - DEBUG - the next page func happens
 2023-12-17 12:21:38,138 - clients_logger - DEBUG - ask if delete func started
-2023-12-17 12:21:52,631 - clients_logger - DEBUG - the next page func happens
-2023-12-17 12:21:55,741 - clients_logger - DEBUG - ask if delete func started
-2023-12-17 12:22:07,307 - clients_logger - DEBUG - ask if delete func started
-2023-12-17 12:22:26,619 - clients_logger - DEBUG - the next page func happens
 2023-12-17 12:25:26,173 - main_logger - INFO - Bot started! Connecting to DB...
 2023-12-17 12:25:28,349 - main_logger - INFO - Connected to DB
-2023-12-17 12:26:12,952 - clients_logger - DEBUG - {'user_id': 222151854, 'username': 'вееп еййрбшвш', 'full_name': 'амлсргшд адшеп', 'address': 'жен'}
-2023-12-17 12:26:36,341 - clients_logger - DEBUG - {'user_id': 222151854, 'username': 'вееп еййрбшвш', 'full_name': 'бгйчд1', 'address': 'бгйчдлъебъ1', 222151854: {}}
+2023-12-17 12:26:12,952 - clients_logger - DEBUG - {'user_id': 222151854, 'username': 'пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ', 'full_name': 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ', 'address': 'пїЅпїЅпїЅ'}
+2023-12-17 12:26:36,341 - clients_logger - DEBUG - {'user_id': 222151854, 'username': 'пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ', 'full_name': 'пїЅпїЅпїЅпїЅпїЅ1', 'address': 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ1', 222151854: {}}
 2023-12-17 12:28:09,285 - main_logger - INFO - Bot started! Connecting to DB...
 2023-12-17 12:28:11,958 - main_logger - INFO - Connected to DB
 2023-12-17 12:30:17,916 - main_logger - INFO - Bot started! Connecting to DB...
 2023-12-17 12:30:19,717 - main_logger - INFO - Connected to DB
-2023-12-17 12:30:42,260 - clients_logger - DEBUG - {'user_id': 222151854, 'username': 'вееп еййрбшвш', 'full_name': 'бгйчд2', 'address': 'бгйчд2 лъебъ'}
-2023-12-17 12:31:01,662 - clients_logger - DEBUG - {'user_id': 222151854, 'username': 'вееп еййрбшвш', 'full_name': 'бгйчд3', 'address': 'бгйчд3 лъебъ'}
+2023-12-17 12:30:42,260 - clients_logger - DEBUG - {'user_id': 222151854, 'username': 'пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ', 'full_name': 'пїЅпїЅпїЅпїЅпїЅ2', 'address': 'пїЅпїЅпїЅпїЅпїЅ2 пїЅпїЅпїЅпїЅпїЅ'}
+2023-12-17 12:31:01,662 - clients_logger - DEBUG - {'user_id': 222151854, 'username': 'пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ', 'full_name': 'пїЅпїЅпїЅпїЅпїЅ3', 'address': 'пїЅпїЅпїЅпїЅпїЅ3 пїЅпїЅпїЅпїЅпїЅ'}
 2023-12-17 12:32:54,501 - main_logger - INFO - Bot started! Connecting to DB...
 2023-12-17 12:32:57,001 - main_logger - INFO - Connected to DB
 2023-12-17 12:34:32,432 - main_logger - INFO - Bot started! Connecting to DB...
