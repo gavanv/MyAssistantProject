@@ -455,10 +455,7 @@ AttributeError: 'NoneType' object has no attribute 'message'
 2023-12-17 12:21:05,375 - main_logger - INFO - Bot started! Connecting to DB...
 2023-12-17 12:21:07,431 - main_logger - INFO - Connected to DB
 2023-12-17 12:21:17,865 - clients_logger - DEBUG - ask if delete func started
-2023-12-17 12:21:30,110 - clients_logger - DEBUG - the next page func happens
-2023-12-17 12:21:38,138 - clients_logger - DEBUG - ask if delete func started
-2023-12-17 12:25:26,173 - main_logger - INFO - Bot started! Connecting to DB...
-2023-12-17 12:25:28,349 - main_logger - INFO - Connected to DB
+2023-12-17 12:21:30,110 - clients_logger - DEBUG - the next page func happen
 2023-12-17 12:26:12,952 - clients_logger - DEBUG - {'user_id': 222151854, 'username': '���� ��������', 'full_name': '�������� �����', 'address': '���'}
 2023-12-17 12:26:36,341 - clients_logger - DEBUG - {'user_id': 222151854, 'username': '���� ��������', 'full_name': '�����1', 'address': '����������1', 222151854: {}}
 2023-12-17 12:28:09,285 - main_logger - INFO - Bot started! Connecting to DB...
