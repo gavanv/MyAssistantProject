@@ -14,5 +14,11 @@ ADD_CLIENT_FULL_NAME, ADD_CLIENT_ADDRESS, ADD_ANOTHER_CLIENT = range(3)
 # Define states for delete_client conversation
 ASK_IF_DELETE, DELETE_OR_NOT_CLIENT = range(2)
 
+# Define states for add_debt conversation
+DEBT_AMOUNT_TO_ADD, ADD_DEBT = range(2)
+
+# Define states for delete_debt conversation
+ASK_AMOUNT_TO_DELETE, DELETE_ALL_DEBT, DELETE_PART_DEBT = range(3)
+
 # limit for clients per page
 CLIENTS_PER_PAGE = 10

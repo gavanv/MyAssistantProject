@@ -1,14 +1,19 @@
 from logger import setup_logger
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, KeyboardButton, ReplyKeyboardMarkup, ReplyKeyboardRemove, Update
 from telegram.ext import ContextTypes, CallbackContext, ConversationHandler, CallbackQueryHandler, MessageHandler, CommandHandler, filters
-from db_connection import add_client_to_database, get_user_clients_from_database, get_ten_clients_from_database, delete_client_from_database
+from db_connection import add_client_to_db, get_user_clients_from_db, get_ten_clients_from_db, delete_client_from_db, add_debt_to_db, delete_debt_from_db
 from consts import (
     ADD_CLIENT_FULL_NAME,
     ADD_CLIENT_ADDRESS,
     ADD_ANOTHER_CLIENT,
     ASK_IF_DELETE,
     CLIENTS_PER_PAGE,
-    DELETE_OR_NOT_CLIENT
+    DELETE_OR_NOT_CLIENT,
+    DEBT_AMOUNT_TO_ADD,
+    ADD_DEBT,
+    ASK_AMOUNT_TO_DELETE,
+    DELETE_ALL_DEBT,
+    DELETE_PART_DEBT
 )
 from commands import start
 
@@ -16,6 +21,11 @@ clients_logger = setup_logger("clients_logger")
 
 # dict to store the user data of a client he wants to add
 user_data = {}
+
+client_number_to_add_debt = 0
+
+
+delete_debt_data = {}
 
 
 async def clients_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
@@ -26,8 +36,9 @@ async def clients_command(update: Update, context: ContextTypes.DEFAULT_TYPE) ->
                 "מחיקת לקוח", callback_data="delete_client"),
             InlineKeyboardButton("הוספת לקוח", callback_data="add_client"),
         ],
-        [InlineKeyboardButton("add debt", callback_data="add debt"),
-         InlineKeyboardButton("delete debt", callback_data="delete debt"),
+        [InlineKeyboardButton("הוספת חוב", callback_data="add_debt"),
+         InlineKeyboardButton(
+             "מחיקת חוב", callback_data="delete_debt"),
          InlineKeyboardButton("כל החובות", callback_data="show_debts")],
         [InlineKeyboardButton("רשימת לקוחות",
                               callback_data="show_clients_list")]
@@ -78,7 +89,7 @@ async def add_client_address(update: Update, context: CallbackContext) -> int:
     reply_markup = ReplyKeyboardMarkup(keyboard, one_time_keyboard=True)
 
     try:
-        add_client_to_database(user_data)
+        add_client_to_db(user_data)
         # Ask if the user wants to add another client
         await update.message.reply_text(f'לקוח נוסף בהצלחה🥳 האם תרצה להוסיף עוד לקוח?', reply_markup=reply_markup, parse_mode='HTML')
         return ADD_ANOTHER_CLIENT
@@ -118,7 +129,7 @@ async def show_clients_callback(update: Update, context: CallbackContext) -> Non
     user_id = update.effective_user.id
 
     try:
-        clients_list = get_user_clients_from_database(user_id)
+        clients_list = get_user_clients_from_db(user_id)
 
         if len(clients_list) == 0:
             keyboard = [[InlineKeyboardButton(
@@ -151,14 +162,14 @@ async def show_debts_callback(update: Update, context: CallbackContext) -> None:
     user_id = update.effective_user.id
 
     try:
-        clients_list = get_user_clients_from_database(user_id)
+        clients_list = get_user_clients_from_db(user_id)
 
         clients_with_debt_list = [
             client for client in clients_list if client["debt"] != 0]
 
         if len(clients_with_debt_list) == 0:
             keyboard = [[InlineKeyboardButton(
-                "הוספת לקוח", callback_data="add_client")],
+                "הוספת חוב ללקוח", callback_data="add_debt")],
                 [InlineKeyboardButton(
                     "לחזרה לתפריט לקוחות", callback_data="return_to_clients")]]
             reply_markup = InlineKeyboardMarkup(keyboard)
@@ -202,7 +213,7 @@ async def delete_client_callback(update, context):
     user_id = update.effective_user.id
 
     try:
-        clients_list = get_ten_clients_from_database(user_id, offset=0)
+        clients_list = get_ten_clients_from_db(user_id, offset=0)
         keyboard = create_clients_buttons(clients_list, page=0)
 
         reply_markup = InlineKeyboardMarkup(keyboard)
@@ -264,7 +275,7 @@ async def delete_or_not_client(update, context):
 
     if "yes" in query.data:
         try:
-            delete_client_from_database(user_id, client_id)
+            delete_client_from_db(user_id, client_id)
             await update.callback_query.message.reply_text(text=f"*הלקוח/ה {client_name} נמחק/ה בהצלחה.* למחיקת לקוח נוסף לחץ על שם הלקוח שתרצה למחוק.", reply_markup=reply_markup, parse_mode='Markdown')
             return ConversationHandler.END
 
@@ -289,7 +300,7 @@ async def next_page(update, context):
     page = int((query.data.split(":"))[1])
 
     try:
-        clients_list = get_ten_clients_from_database(
+        clients_list = get_ten_clients_from_db(
             user_id=user_id, offset=CLIENTS_PER_PAGE*page)
         keyboard = create_clients_buttons(clients_list, page=page)
 
@@ -304,6 +315,231 @@ async def next_page(update, context):
         return ConversationHandler.END
 
     return ASK_IF_DELETE
+
+
+# functions for "add debt" button in clients menu
+async def add_debt_callback(update, context):
+
+    query = update.callback_query
+    await query.answer()
+    # get the user id
+    user_id = update.effective_user.id
+
+    try:
+        clients_list = get_user_clients_from_db(user_id)
+
+        if len(clients_list) == 0:
+            keyboard = [[InlineKeyboardButton(
+                "הוספת לקוח", callback_data="add_client")],
+                [InlineKeyboardButton(
+                    "לחזרה לתפריט לקוחות", callback_data="return_to_clients")]]
+            reply_markup = InlineKeyboardMarkup(keyboard)
+            await update.callback_query.message.reply_text(text="אין לך לקוחות קיימים ברשימה.", reply_markup=reply_markup, parse_mode='HTML')
+            return ConversationHandler.END
+
+        else:
+            clients_list_text = "\n".join([f"{index + 1}. {client['full_name']} - {
+                                          client['debt']}₪" for index, client in enumerate(clients_list)])
+            clients_list_text += "\n🔚"
+            await update.callback_query.message.reply_text(text="*הקש את מספר הלקוח שתרצה להוסיף לו חוב:*\nלביטול הפעולה לחץ /cancel\n" + clients_list_text, parse_mode="markdown")
+            return DEBT_AMOUNT_TO_ADD
+
+    except Exception as e:
+        clients_logger.exception(str(e))
+        await update.callback_query.message.reply_text("משהו השתבש😕 לא הצלחתי למצוא את רשימת הלקוחות שלך")
+        return ConversationHandler.END
+
+
+async def debt_amount_to_add(update, context):
+
+    global client_number_to_add_debt
+
+    client_number_to_add_debt = int(update.message.text) - 1
+
+    await update.message.reply_text(f'מהו סכום החוב שתרצה להוסיף ללקוח?\n לביטול הפעולה לחץ /cancel', parse_mode='HTML')
+
+    return ADD_DEBT
+
+
+async def add_debt(update, context):
+
+    global client_number_to_add_debt
+
+    user_id = update.message.from_user.id
+    debt = int(update.message.text)
+
+    try:
+        clients_list = get_user_clients_from_db(user_id)
+
+        client_id = (clients_list[client_number_to_add_debt])["id"]
+
+        client_name = clients_list[client_number_to_add_debt]["full_name"]
+
+        add_debt_to_db(client_id=client_id, user_id=user_id, debt_to_add=debt)
+
+        keyboard = [
+            [InlineKeyboardButton(
+                "להוספת חוב נוסף", callback_data="add_debt")],
+            [InlineKeyboardButton(
+                "לחזרה לתפריט לקוחות", callback_data="return_to_clients")]
+        ]
+
+        reply_markup = InlineKeyboardMarkup(keyboard)
+
+        await update.message.reply_text(text=f"*חוב של {debt}₪ נוסף בהצלחה ללקוח/ה: {client_name}*", reply_markup=reply_markup, parse_mode='Markdown')
+        return ConversationHandler.END
+
+    except Exception as e:
+        clients_logger.exception(str(e))
+        await update.message.reply_text("משהו השתבש😕 לא הצלחתי להוסיף חוב ללקוח שלך")
+        return ConversationHandler.END
+
+
+# functions for "delete debt" button in clients menu
+async def delete_debt_callback(update, context):
+
+    query = update.callback_query
+    await query.answer()
+    # get the user id
+    user_id = update.effective_user.id
+
+    try:
+        clients_list = get_user_clients_from_db(user_id)
+
+        if len(clients_list) == 0:
+            keyboard = [[InlineKeyboardButton(
+                "הוספת לקוח", callback_data="add_client")],
+                [InlineKeyboardButton(
+                    "לחזרה לתפריט לקוחות", callback_data="return_to_clients")]]
+            reply_markup = InlineKeyboardMarkup(keyboard)
+            await update.callback_query.message.reply_text(text="אין לך לקוחות קיימים ברשימה.", reply_markup=reply_markup, parse_mode='HTML')
+            return ConversationHandler.END
+
+        else:
+            clients_list_text = "\n".join([f"{index + 1}. {client['full_name']} - {
+                                          client['debt']}₪" for index, client in enumerate(clients_list)])
+            clients_list_text += "\n🔚"
+            await update.callback_query.message.reply_text(text="*הקש את מספר הלקוח שתרצה למחוק לו חוב:*\nלביטול הפעולה לחץ /cancel\n" + clients_list_text, parse_mode="markdown")
+
+            return ASK_AMOUNT_TO_DELETE
+
+    except Exception as e:
+        clients_logger.exception(str(e))
+        await update.callback_query.message.reply_text("משהו השתבש😕 לא הצלחתי למצוא את רשימת הלקוחות שלך")
+        return ConversationHandler.END
+
+
+async def ask_amount_to_delete(update, context):
+
+    global delete_debt_data
+
+    client_number = int(update.message.text) - 1
+    delete_debt_data["client_number"] = client_number
+
+    user_id = update.effective_user.id
+
+    try:
+        clients_list = get_user_clients_from_db(user_id)
+
+        delete_debt_data["client_id"] = (clients_list[client_number])["id"]
+
+        delete_debt_data["client_name"] = clients_list[client_number]["full_name"]
+
+        delete_debt_data["client_debt"] = clients_list[client_number]["debt"]
+
+        keyboard = [[
+            InlineKeyboardButton(
+                    "מחיקת כל החוב", callback_data="deleteDebt:all")],
+                    [InlineKeyboardButton(
+                        "מחיקת חלק מהחוב", callback_data="deleteDebt:part")]
+                    ]
+
+        reply_markup = InlineKeyboardMarkup(keyboard)
+
+        await update.message.reply_text(f'*ללקוח/ה {delete_debt_data["client_name"]} יש חוב של {delete_debt_data["client_debt"]}.*\n בחר את הפעולה הרצוייה או לחץ /cancel לביטול',
+                                        reply_markup=reply_markup, parse_mode="markdown")
+
+        return DELETE_ALL_DEBT
+
+    except Exception as e:
+        clients_logger.exception(str(e))
+        await update.message.reply_text("משהו השתבש😕 לא הצלחתי למחוק חוב ללקוח שלך")
+        return ConversationHandler.END
+
+
+async def delete_all_debt(update, context):
+
+    global delete_debt_data
+
+    query = update.callback_query
+    await query.answer()
+
+    # get the user id
+    user_id = update.effective_user.id
+
+    parts_of_callback = query.data.split(":")
+
+    type_of_delete = parts_of_callback[1]
+
+    if type_of_delete == "all":
+
+        try:
+
+            delete_debt_from_db(
+                user_id=user_id, client_id=delete_debt_data["client_id"], debt_to_delete=delete_debt_data["client_debt"])
+
+            keyboard = [
+                [InlineKeyboardButton(
+                    "למחיקת חוב נוסף", callback_data="delete_debt")],
+                [InlineKeyboardButton(
+                    "לחזרה לתפריט לקוחות", callback_data="return_to_clients")]
+            ]
+
+            reply_markup = InlineKeyboardMarkup(keyboard)
+
+            await update.callback_query.message.reply_text(text=f"*ללקוח/ה {delete_debt_data["client_name"]} נמחק בהצלחה כל החוב.*", reply_markup=reply_markup, parse_mode="markdown")
+            return ConversationHandler.END
+
+        except Exception as e:
+            clients_logger.exception(str(e))
+            await update.callback_query.message.reply_text("משהו השתבש😕 לא הצלחתי למחוק את החוב ללקוח שלך")
+            return ConversationHandler.END
+
+    # if the user wants to delete part of the debt
+    else:
+        await update.callback_query.message.reply_text(text=f"ללקוח/ה {delete_debt_data["client_name"]} יש חוב של {delete_debt_data["client_debt"]}.\n *כמה תרצה להוריד מהחוב?*",
+                                                       parse_mode="markdown")
+        return DELETE_PART_DEBT
+
+
+async def delete_part_debt(update, context):
+
+    global delete_debt_data
+
+    debt_to_delete = int(update.message.text)
+    user_id = update.message.from_user.id
+
+    try:
+
+        delete_debt_from_db(
+            user_id=user_id, client_id=delete_debt_data["client_id"], debt_to_delete=debt_to_delete)
+
+        keyboard = [
+            [InlineKeyboardButton(
+                "למחיקת חוב נוסף", callback_data="delete_debt")],
+            [InlineKeyboardButton(
+                "לחזרה לתפריט לקוחות", callback_data="return_to_clients")]
+        ]
+
+        reply_markup = InlineKeyboardMarkup(keyboard)
+
+        await update.message.reply_text(text=f"*ללקוח/ה {delete_debt_data["client_name"]} נמחקו {debt_to_delete}₪ מהחוב.*", reply_markup=reply_markup, parse_mode="markdown")
+        return ConversationHandler.END
+
+    except Exception as e:
+        clients_logger.exception(str(e))
+        await update.message.reply_text("משהו השתבש😕 לא הצלחתי למחוק את החוב ללקוח שלך")
+        return ConversationHandler.END
 
 
 # define the cancel command to end the conversation
@@ -329,9 +565,10 @@ async def return_to_clients(update, context):
                 "מחיקת לקוח", callback_data="delete_client"),
             InlineKeyboardButton("הוספת לקוח", callback_data="add_client"),
         ],
-        [InlineKeyboardButton("add debt", callback_data="add debt"),
-         InlineKeyboardButton("delete debt", callback_data="delete debt"),
-         InlineKeyboardButton("show all debts", callback_data="show all debts")],
+        [InlineKeyboardButton("הוספת חוב", callback_data="add_debt"),
+         InlineKeyboardButton(
+             "מחיקת חוב", callback_data="delete_debt"),
+         InlineKeyboardButton("כל החובות", callback_data="show_debts")],
         [InlineKeyboardButton("רשימת לקוחות",
                               callback_data="show_clients_list")]
     ]
@@ -386,3 +623,27 @@ delete_client_conv_handler = ConversationHandler(
     },
     fallbacks=[CallbackQueryHandler(next_page, pattern='^nextPage:'), CommandHandler(
         'cancel', cancel), CommandHandler("start", start), CommandHandler("clients", clients_command),  CallbackQueryHandler(ask_if_delete, pattern='^clientId:'), return_to_clients_handler])
+
+
+# conversation handler for add debt to a client
+add_debt_conv_handler = ConversationHandler(
+    entry_points=[CallbackQueryHandler(
+        add_debt_callback, pattern='^add_debt$')],
+    states={
+        DEBT_AMOUNT_TO_ADD: [MessageHandler(filters.TEXT & ~filters.COMMAND, debt_amount_to_add)],
+        ADD_DEBT: [MessageHandler(filters.TEXT & ~filters.COMMAND, add_debt)],
+    },
+    fallbacks=[CommandHandler('cancel', cancel), CommandHandler("start", start), CommandHandler("clients", clients_command), return_to_clients_handler])
+
+
+# conversation handler for add debt to a client
+delete_debt_conv_handler = ConversationHandler(
+    entry_points=[CallbackQueryHandler(
+        delete_debt_callback, pattern='^delete_debt$')],
+    states={
+        ASK_AMOUNT_TO_DELETE: [MessageHandler(filters.TEXT & ~filters.COMMAND, ask_amount_to_delete)],
+        DELETE_ALL_DEBT: [CallbackQueryHandler(delete_all_debt, pattern='^deleteDebt')],
+        DELETE_PART_DEBT:  [MessageHandler(
+            filters.TEXT & ~filters.COMMAND, delete_part_debt)]
+    },
+    fallbacks=[CommandHandler('cancel', cancel), CommandHandler("start", start), CommandHandler("clients", clients_command), return_to_clients_handler])

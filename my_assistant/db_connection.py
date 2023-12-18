@@ -28,7 +28,7 @@ def connect_to_db():
     db_cursor = db_connector.cursor(dictionary=True)
 
 
-def add_client_to_database(user_data: dict) -> bool:
+def add_client_to_db(user_data: dict) -> bool:
     global db_cursor, db_connector
 
     if user_data["full_name"] is None or user_data["address"] is None or user_data["user_id"] is None:
@@ -63,7 +63,7 @@ def add_client_to_database(user_data: dict) -> bool:
         raise
 
 
-def get_user_clients_from_database(user_id):
+def get_user_clients_from_db(user_id):
     global db_cursor
 
     try:
@@ -79,7 +79,7 @@ def get_user_clients_from_database(user_id):
         raise
 
 
-def get_ten_clients_from_database(user_id, offset):
+def get_ten_clients_from_db(user_id, offset):
     global db_cursor
 
     try:
@@ -95,7 +95,7 @@ def get_ten_clients_from_database(user_id, offset):
         raise
 
 
-def delete_client_from_database(user_id, client_id):
+def delete_client_from_db(user_id, client_id):
     global db_cursor, db_connector
 
     try:
@@ -107,4 +107,37 @@ def delete_client_from_database(user_id, client_id):
     except Exception as e:
         # Handle any errors
         db_connection_logger.error("unable to delete client from data base")
+        raise
+
+
+def add_debt_to_db(user_id, client_id, debt_to_add):
+    global db_cursor, db_connector
+
+    try:
+        sql_add_debt = "UPDATE clients SET debt = debt + %s WHERE id = %s AND user_id = %s"
+        db_cursor.execute(sql_add_debt, (debt_to_add, client_id, user_id))
+        db_connector.commit()
+        return True
+
+    except Exception as e:
+        # Handle any errors
+        db_connection_logger.error(
+            "unable to add debt to the client in the data base")
+        raise
+
+
+def delete_debt_from_db(user_id, client_id, debt_to_delete):
+    global db_cursor, db_connector
+
+    try:
+        sql_delete_debt = "UPDATE clients SET debt = debt - %s WHERE id = %s AND user_id = %s"
+        db_cursor.execute(
+            sql_delete_debt, (debt_to_delete, client_id, user_id))
+        db_connector.commit()
+        return True
+
+    except Exception as e:
+        # Handle any errors
+        db_connection_logger.error(
+            "unable to delete debt to the client in the data base")
         raise

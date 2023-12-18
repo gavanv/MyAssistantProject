@@ -121,3 +121,94 @@ ValueError: The parameter `inline_keyboard` should be a sequence of sequences of
 2023-12-18 11:40:08,182 - main_logger - INFO - Connected to DB
 2023-12-18 11:40:58,008 - main_logger - INFO - Bot started! Connecting to DB...
 2023-12-18 11:40:59,238 - main_logger - INFO - Connected to DB
+2023-12-18 13:10:17,173 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-18 13:10:19,016 - main_logger - INFO - Connected to DB
+2023-12-18 13:10:51,047 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-18 13:10:52,696 - main_logger - INFO - Connected to DB
+2023-12-18 13:14:15,856 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-18 13:14:18,050 - main_logger - INFO - Connected to DB
+2023-12-18 13:14:38,329 - db_connection_logger - ERROR - unable to add debt to the client in the data base
+2023-12-18 13:14:38,340 - clients_logger - ERROR - 1054 (42S22): Unknown column 'client_id' in 'where clause'
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 639, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'client_id' in 'where clause'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\clients.py", line 372, in add_debt
+    add_debt_to_db(client_id=client_id, user_id=user_id, debt_to_add=debt)
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\db_connection.py", line 118, in add_debt_to_db
+    db_cursor.execute(sql_add_debt, (debt_to_add, client_id, user_id))
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 647, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'client_id' in 'where clause'
+2023-12-18 13:19:29,371 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-18 13:19:30,746 - main_logger - INFO - Connected to DB
+2023-12-18 13:19:49,998 - clients_logger - DEBUG - 49
+2023-12-18 13:19:50,009 - clients_logger - DEBUG - {'id': 49, 'full_name': 'אלכסנדרה אהרון', 'address': 'זום', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 17, 10, 26, 5), 'user_id': '222151854', 'username': 'גוון ויינברגר'}
+2023-12-18 13:19:50,161 - db_connection_logger - ERROR - unable to add debt to the client in the data base
+2023-12-18 13:19:50,169 - clients_logger - ERROR - 1054 (42S22): Unknown column 'client_id' in 'where clause'
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 639, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'client_id' in 'where clause'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\clients.py", line 376, in add_debt
+    add_debt_to_db(client_id=client_id, user_id=user_id, debt_to_add=debt)
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\db_connection.py", line 118, in add_debt_to_db
+    db_cursor.execute(sql_add_debt, (debt_to_add, client_id, user_id))
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 647, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'client_id' in 'where clause'
+2023-12-18 13:22:15,105 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-18 13:22:16,819 - main_logger - INFO - Connected to DB
+2023-12-18 13:22:39,282 - clients_logger - DEBUG - 49
+2023-12-18 13:22:39,283 - clients_logger - DEBUG - {'id': 49, 'full_name': 'אלכסנדרה אהרון', 'address': 'זום', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 17, 10, 26, 5), 'user_id': '222151854', 'username': 'גוון ויינברגר'}
+2023-12-18 13:23:15,658 - clients_logger - DEBUG - 32
+2023-12-18 13:23:15,660 - clients_logger - DEBUG - {'id': 32, 'full_name': 'עומרי נוף', 'address': 'זום', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 16, 19, 34, 48), 'user_id': '222151854', 'username': 'גוון ויינברגר'}
+2023-12-18 13:23:28,533 - clients_logger - DEBUG - 49
+2023-12-18 13:23:28,535 - clients_logger - DEBUG - {'id': 49, 'full_name': 'אלכסנדרה אהרון', 'address': 'זום', 'debt': 120, 'create_time': datetime.datetime(2023, 12, 17, 10, 26, 5), 'user_id': '222151854', 'username': 'גוון ויינברגר'}
+2023-12-18 13:25:02,091 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-18 13:25:03,987 - main_logger - INFO - Connected to DB
+2023-12-18 13:27:11,572 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-18 13:27:13,297 - main_logger - INFO - Connected to DB
+2023-12-18 14:54:18,586 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-18 14:54:20,456 - main_logger - INFO - Connected to DB
+2023-12-18 14:54:44,595 - clients_logger - ERROR - name 'client_name' is not defined
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\clients.py", line 459, in ask_amount_to_delete
+    await update.message.reply_text(f'*ללקוח/ה {client_name} יש חוב של {client_debt}.*\n בחר את הפעולה הרצוייה או לחץ /cancel לביטול',
+                                                ^^^^^^^^^^^
+NameError: name 'client_name' is not defined. Did you mean: 'client_number'?
+2023-12-18 14:55:43,942 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-18 14:55:45,636 - main_logger - INFO - Connected to DB
+2023-12-18 14:56:01,469 - db_connection_logger - ERROR - unable to delete debt to the client in the data base
+2023-12-18 14:56:01,479 - clients_logger - ERROR - name 'debt_to_add' is not defined
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\clients.py", line 488, in delete_all_debt
+    delete_debt_from_db(
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\db_connection.py", line 134, in delete_debt_from_db
+    db_cursor.execute(sql_delete_debt, (debt_to_add, client_id, user_id))
+                                        ^^^^^^^^^^^
+NameError: name 'debt_to_add' is not defined
+2023-12-18 14:56:38,745 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-18 14:56:40,007 - main_logger - INFO - Connected to DB
+2023-12-18 18:16:28,300 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-18 18:16:31,598 - main_logger - INFO - Connected to DB
