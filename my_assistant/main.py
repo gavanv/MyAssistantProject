@@ -87,6 +87,7 @@ def main():
     app.add_handler(clients.return_to_clients_handler)
     app.add_handler(clients.add_debt_conv_handler)
     app.add_handler(clients.delete_debt_conv_handler)
+    app.add_handler(clients.waze_link_conv_handler)
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CommandHandler("clients", clients.clients_command))
     app.add_handler(CommandHandler("shopping", shopping))

@@ -212,3 +212,17 @@ NameError: name 'debt_to_add' is not defined
 2023-12-18 14:56:40,007 - main_logger - INFO - Connected to DB
 2023-12-18 18:16:28,300 - main_logger - INFO - Bot started! Connecting to DB...
 2023-12-18 18:16:31,598 - main_logger - INFO - Connected to DB
+2023-12-18 18:35:12,612 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-18 18:35:14,330 - main_logger - INFO - Connected to DB
+2023-12-18 18:38:50,323 - clients_logger - ERROR - list index out of range
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\clients.py", line 375, in add_debt
+    client_id = (clients_list[client_number_to_add_debt])["id"]
+                 ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+IndexError: list index out of range
+2023-12-18 18:42:08,714 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-18 18:42:10,387 - main_logger - INFO - Connected to DB
+2023-12-18 19:10:39,554 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-18 19:10:41,147 - main_logger - INFO - Connected to DB
+2023-12-18 19:59:03,614 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-18 19:59:05,236 - main_logger - INFO - Connected to DB

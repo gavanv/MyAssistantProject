@@ -20,5 +20,8 @@ DEBT_AMOUNT_TO_ADD, ADD_DEBT = range(2)
 # Define states for delete_debt conversation
 ASK_AMOUNT_TO_DELETE, DELETE_ALL_DEBT, DELETE_PART_DEBT = range(3)
 
+# Define states for waze_link conversation
+SEND_LINK = 0
+
 # limit for clients per page
 CLIENTS_PER_PAGE = 10

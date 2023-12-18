@@ -13,9 +13,11 @@ from consts import (
     ADD_DEBT,
     ASK_AMOUNT_TO_DELETE,
     DELETE_ALL_DEBT,
-    DELETE_PART_DEBT
+    DELETE_PART_DEBT,
+    SEND_LINK
 )
 from commands import start
+from urllib.parse import quote
 
 clients_logger = setup_logger("clients_logger")
 
@@ -41,7 +43,10 @@ async def clients_command(update: Update, context: ContextTypes.DEFAULT_TYPE) ->
              "מחיקת חוב", callback_data="delete_debt"),
          InlineKeyboardButton("כל החובות", callback_data="show_debts")],
         [InlineKeyboardButton("רשימת לקוחות",
-                              callback_data="show_clients_list")]
+                              callback_data="show_clients_list"),
+         InlineKeyboardButton("קישור ל-waze",
+                              callback_data="waze_link")]
+
     ]
 
     reply_markup = InlineKeyboardMarkup(keyboard)
@@ -542,6 +547,62 @@ async def delete_part_debt(update, context):
         return ConversationHandler.END
 
 
+# functions for "send waze link" button
+async def waze_link_callback(update, context):
+
+    query = update.callback_query
+    await query.answer()
+    # get the user id
+    user_id = update.effective_user.id
+
+    try:
+        clients_list = get_user_clients_from_db(user_id)
+
+        if len(clients_list) == 0:
+            keyboard = [[InlineKeyboardButton(
+                "הוספת לקוח", callback_data="add_client")],
+                [InlineKeyboardButton(
+                    "לחזרה לתפריט לקוחות", callback_data="return_to_clients")]]
+            reply_markup = InlineKeyboardMarkup(keyboard)
+            await update.callback_query.message.reply_text(text="אין לך לקוחות קיימים ברשימה.", reply_markup=reply_markup, parse_mode='HTML')
+            return ConversationHandler.END
+
+        else:
+            clients_list_text = "\n".join([f"{index + 1}. {client['full_name']} - {
+                                          client['address']}" for index, client in enumerate(clients_list)])
+            clients_list_text += "\n🔚"
+            await update.callback_query.message.reply_text(text="*הקש את מספר הלקוח שתרצה לנוט לכתובת שלו:*\nלביטול הפעולה לחץ /cancel\n" + clients_list_text, parse_mode="markdown")
+            return SEND_LINK
+
+    except Exception as e:
+        clients_logger.exception(str(e))
+        await update.callback_query.message.reply_text("משהו השתבש😕 לא הצלחתי למצוא את רשימת הלקוחות שלך")
+        return ConversationHandler.END
+
+
+async def send_link(update, context):
+
+    client_number = int(update.message.text) - 1
+
+    user_id = update.message.from_user.id
+
+    try:
+        clients_list = get_user_clients_from_db(user_id)
+
+        address = (clients_list[client_number])["address"]
+
+        url_encoded_address = quote(address)
+
+        await update.message.reply_text(text=f"https://waze.com/ul?q={url_encoded_address}")
+
+    except Exception as e:
+        clients_logger.exception(str(e))
+        await update.callback_query.message.reply_text("משהו השתבש😕 לא הצלחתי למצוא קישור לכתובת של הלקוח שלך")
+
+    finally:
+        return ConversationHandler.END
+
+
 # define the cancel command to end the conversation
 async def cancel(update, context):
     keyboard = [
@@ -647,3 +708,13 @@ delete_debt_conv_handler = ConversationHandler(
             filters.TEXT & ~filters.COMMAND, delete_part_debt)]
     },
     fallbacks=[CommandHandler('cancel', cancel), CommandHandler("start", start), CommandHandler("clients", clients_command), return_to_clients_handler])
+
+
+# conversation handler for send waze link
+waze_link_conv_handler = ConversationHandler(
+    entry_points=[CallbackQueryHandler(
+        waze_link_callback, pattern='^waze_link$')],
+    states={
+        SEND_LINK: [MessageHandler(filters.TEXT & ~filters.COMMAND, send_link)]
+    },
+    fallbacks=[CommandHandler('cancel', cancel), CommandHandler("start", start), CommandHandler("clients", clients_command)])
