@@ -82,7 +82,9 @@ def main():
     # on different commands - answer in Telegram
     app.add_handler(clients.add_client_conv_handler)
     app.add_handler(clients.show_clients_conv_handler)
+    app.add_handler(clients.show_debts_conv_handler)
     app.add_handler(clients.delete_client_conv_handler)
+    app.add_handler(clients.return_to_clients_handler)
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CommandHandler("clients", clients.clients_command))
     app.add_handler(CommandHandler("shopping", shopping))

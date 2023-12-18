@@ -4,3 +4,120 @@
 2023-12-17 13:07:02,032 - main_logger - INFO - Connected to DB
 2023-12-17 13:14:24,249 - main_logger - INFO - Bot started! Connecting to DB...
 2023-12-17 13:14:26,134 - main_logger - INFO - Connected to DB
+2023-12-17 13:25:21,119 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-17 13:25:22,747 - main_logger - INFO - Connected to DB
+2023-12-17 13:32:18,498 - clients_logger - DEBUG - {'user_id': 222151854, 'username': 'גוון ויינברגר', 'full_name': 'בדיקה1', 'address': 'בדיקה'}
+2023-12-17 13:37:14,053 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-17 13:37:15,971 - main_logger - INFO - Connected to DB
+2023-12-17 13:37:58,371 - clients_logger - DEBUG - {'user_id': 222151854, 'username': 'גוון ויינברגר', 'full_name': 'בדיקה1', 'address': 'בדיקה'}
+2023-12-17 13:38:10,092 - db_connection_logger - INFO - user tried to add client that is already in the list
+2023-12-17 13:38:10,093 - db_connection_logger - ERROR - unable to add client to data base
+2023-12-17 13:41:04,789 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-17 13:41:06,180 - main_logger - INFO - Connected to DB
+2023-12-17 13:42:32,704 - clients_logger - DEBUG - {'user_id': 222151854, 'username': 'גוון ויינברגר', 'full_name': 'בדיקה3', 'address': 'בדיקה'}
+2023-12-17 13:42:42,840 - clients_logger - DEBUG - {'user_id': 222151854, 'username': 'גוון ויינברגר', 'full_name': 'תבדיקה4', 'address': 'בדיקה'}
+2023-12-17 13:44:08,811 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-17 13:44:10,692 - main_logger - INFO - Connected to DB
+2023-12-17 14:01:18,437 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-17 14:01:20,446 - main_logger - INFO - Connected to DB
+2023-12-17 14:01:37,551 - clients_logger - DEBUG - {'user_id': 222151854, 'username': 'גוון ויינברגר', 'full_name': 'בדיקה1', 'address': 'בדיקה'}
+2023-12-17 14:01:50,762 - clients_logger - DEBUG - {'user_id': 222151854, 'username': 'גוון ויינברגר', 'full_name': 'בדיקה2', 'address': 'בדיקה'}
+2023-12-17 14:02:16,679 - clients_logger - DEBUG - {'user_id': 222151854, 'username': 'גוון ויינברגר', 'full_name': 'תבדיקה3', 'address': 'בדיקה'}
+2023-12-17 14:04:17,045 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-17 14:04:19,444 - main_logger - INFO - Connected to DB
+2023-12-17 14:09:52,831 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-17 14:09:55,119 - main_logger - INFO - Connected to DB
+2023-12-17 14:13:08,259 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-17 14:13:10,285 - main_logger - INFO - Connected to DB
+2023-12-17 14:15:45,733 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-17 14:15:47,787 - main_logger - INFO - Connected to DB
+2023-12-17 14:16:21,994 - clients_logger - DEBUG - {'user_id': 222151854, 'username': 'גוון ויינברגר', 'full_name': 'גוון', 'address': 'בדיקה1'}
+2023-12-17 14:16:51,077 - clients_logger - DEBUG - {'user_id': 222151854, 'username': 'גוון ויינברגר', 'full_name': 'בדיקה1', 'address': 'בדיקה2'}
+2023-12-17 14:21:44,854 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-17 14:21:46,529 - main_logger - INFO - Connected to DB
+2023-12-17 14:21:58,130 - clients_logger - DEBUG - {'user_id': 222151854, 'username': 'גוון ויינברגר', 'full_name': 'גוון', 'address': 'ויינברגר'}
+2023-12-17 14:22:49,775 - clients_logger - ERROR - can't show buttons with names of client to delete
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\clients.py", line 258, in next_page
+    await update.callback_query.message.reply_text(reply_markup=reply_markup, parse_mode='Markdown')
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Message.reply_text() missing 1 required positional argument: 'text'
+2023-12-17 14:24:01,160 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-17 14:24:02,988 - main_logger - INFO - Connected to DB
+2023-12-17 14:24:10,550 - clients_logger - ERROR - can't show buttons with names of client to delete
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\clients.py", line 258, in next_page
+    await update.callback_query.message.reply_text("", reply_markup=reply_markup, parse_mode='Markdown')
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\_message.py", line 1094, in reply_text
+    return await self.get_bot().send_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\ext\_extbot.py", line 2624, in send_message
+    return await super().send_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\_bot.py", line 846, in send_message
+    return await self._send_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\ext\_extbot.py", line 522, in _send_message
+    result = await super()._send_message(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\_bot.py", line 703, in _send_message
+    result = await self._post(
+             ^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\_bot.py", line 613, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\ext\_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\_bot.py", line 641, in _do_post
+    return await request.post(
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\request\_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\request\_baserequest.py", line 379, in _request_wrapper
+    raise BadRequest(message)
+telegram.error.BadRequest: Message text is empty
+2023-12-17 14:24:53,645 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-17 14:24:55,216 - main_logger - INFO - Connected to DB
+2023-12-17 14:26:33,536 - clients_logger - DEBUG - {'user_id': 222151854, 'username': 'גוון ויינברגר', 'full_name': 'רומי מזרחי', 'address': 'זום'}
+2023-12-17 14:29:22,414 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-17 14:29:24,273 - main_logger - INFO - Connected to DB
+2023-12-17 14:36:02,061 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-17 14:36:03,818 - main_logger - INFO - Connected to DB
+2023-12-17 14:41:03,549 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-17 14:41:05,174 - main_logger - INFO - Connected to DB
+2023-12-17 14:41:33,681 - clients_logger - ERROR - The parameter `inline_keyboard` should be a sequence of sequences of InlineKeyboardButtons
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\clients.py", line 129, in show_clients_callback
+    reply_markup = InlineKeyboardMarkup(keyboard)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\_inline\inlinekeyboardmarkup.py", line 79, in __init__
+    raise ValueError(
+ValueError: The parameter `inline_keyboard` should be a sequence of sequences of InlineKeyboardButtons
+2023-12-17 14:42:14,116 - clients_logger - ERROR - The parameter `inline_keyboard` should be a sequence of sequences of InlineKeyboardButtons
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\clients.py", line 129, in show_clients_callback
+    reply_markup = InlineKeyboardMarkup(keyboard)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\_inline\inlinekeyboardmarkup.py", line 79, in __init__
+    raise ValueError(
+ValueError: The parameter `inline_keyboard` should be a sequence of sequences of InlineKeyboardButtons
+2023-12-17 14:43:31,693 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-17 14:43:33,566 - main_logger - INFO - Connected to DB
+2023-12-18 10:35:44,035 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-18 10:35:45,873 - main_logger - INFO - Connected to DB
+2023-12-18 10:58:02,952 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-18 10:58:04,880 - main_logger - INFO - Connected to DB
+2023-12-18 10:59:23,953 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-18 10:59:25,727 - main_logger - INFO - Connected to DB
+2023-12-18 11:30:34,999 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-18 11:30:36,729 - main_logger - INFO - Connected to DB
+2023-12-18 11:30:50,622 - clients_logger - DEBUG - [{'id': 26, 'full_name': 'אגם כהן', 'address': 'זום', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 14, 21, 57, 13), 'user_id': '222151854', 'username': 'גוון ויינברגר'}, {'id': 49, 'full_name': 'אלכסנדרה אהרון', 'address': 'זום', 'debt': 120, 'create_time': datetime.datetime(2023, 12, 17, 10, 26, 5), 'user_id': '222151854', 'username': 'גוון ויינברגר'}, {'id': 30, 'full_name': 'אסף בובק', 'address': 'זום', 'debt': 100, 'create_time': datetime.datetime(2023, 12, 16, 19, 31, 58), 'user_id': '222151854', 'username': 'גוון ויינברגר'}, {'id': 31, 'full_name': 'דביר סולמי', 'address': 'זום', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 16, 19, 32, 56), 'user_id': '222151854', 'username': 'גוון ויינברגר'}, {'id': 37, 'full_name': 'דרור מזרחי', 'address': 'זום', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 16, 19, 38, 13), 'user_id': '222151854', 'username': 'גוון ויינברגר'}, {'id': 36, 'full_name': 'נדב כהן', 'address': 'הדקל 22 לפיד', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 16, 19, 37, 34), 'user_id': '222151854', 'username': 'גוון ויינברגר'}, {'id': 33, 'full_name': 'נועם אפשטיין', 'address': 'הזית 74 לפיד', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 16, 19, 35, 27), 'user_id': '222151854', 'username': 'גוון ויינברגר'}, {'id': 29, 'full_name': 'עדי לוי', 'address': 'שבטי ישראל 17 מודיעין', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 16, 19, 31, 44), 'user_id': '222151854', 'username': 'גוון ויינברגר'}, {'id': 24, 'full_name': 'עדי עזרא', 'address': 'זום', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 14, 16, 52, 45), 'user_id': '222151854', 'username': 'גוון ויינברגר'}, {'id': 32, 'full_name': 'עומרי נוף', 'address': 'זום', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 16, 19, 34, 48), 'user_id': '222151854', 'username': 'גוון ויינברגר'}, {'id': 38, 'full_name': 'עופרי עזרא', 'address': 'זום', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 17, 9, 53, 24), 'user_id': '222151854', 'username': 'גוון ויינברגר'}, {'id': 78, 'full_name': 'רומי מזרחי', 'address': 'זום', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 17, 12, 26, 7), 'user_id': '222151854', 'username': 'גוון ויינברגר'}, {'id': 34, 'full_name': 'שירה זנטי', 'address': 'גורדון 23 נווה שאנן חיפה', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 16, 19, 36, 30), 'user_id': '222151854', 'username': 'גוון ויינברגר'}]
+2023-12-18 11:40:06,818 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-18 11:40:08,182 - main_logger - INFO - Connected to DB
+2023-12-18 11:40:58,008 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-18 11:40:59,238 - main_logger - INFO - Connected to DB

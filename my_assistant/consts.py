@@ -12,7 +12,7 @@ DB_NAME = 'myAssistantBotDB'
 ADD_CLIENT_FULL_NAME, ADD_CLIENT_ADDRESS, ADD_ANOTHER_CLIENT = range(3)
 
 # Define states for delete_client conversation
-ASK_IF_DELETE, DELETE_OR_NOT_CLIENT, DELETE_ANOTHER_CLIENT = range(3)
+ASK_IF_DELETE, DELETE_OR_NOT_CLIENT = range(2)
 
 # limit for clients per page
 CLIENTS_PER_PAGE = 10
