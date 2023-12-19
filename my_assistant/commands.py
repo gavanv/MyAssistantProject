@@ -16,7 +16,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
 
     reply_markup = ReplyKeyboardMarkup(keyboard)
 
-    await update.message.reply_text(text="היי, במה אוכל לעזור?", reply_markup=reply_markup, parse_mode='HTML')
+    await update.message.reply_text(text="היי, במה אוכל לעזור?", reply_markup=reply_markup)
     return ConversationHandler.END
 
 

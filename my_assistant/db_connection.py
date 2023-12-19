@@ -5,8 +5,10 @@ from consts import (
     DB_USER,
     DB_PASSWORD,
     DB_NAME,
+    PORT,
     CLIENTS_PER_PAGE
 )
+from exceptions import ClientAlreadyExists
 
 db_connection_logger = setup_logger("db_connection_logger")
 
@@ -22,7 +24,7 @@ def connect_to_db():
         user=DB_USER,
         password=DB_PASSWORD,
         database=DB_NAME,
-        port=3306
+        port=PORT
     )
 
     db_cursor = db_connector.cursor(dictionary=True)
@@ -31,8 +33,8 @@ def connect_to_db():
 def add_client_to_db(user_data: dict) -> bool:
     global db_cursor, db_connector
 
-    if user_data["full_name"] is None or user_data["address"] is None or user_data["user_id"] is None:
-        db_connection_logger.error("clients details not full!")
+    if user_data.get("full_name") is None or user_data.get("address") is None or user_data.get("user_id") is None:
+        db_connection_logger.info("clients details are not full.")
         raise KeyError("לא כל פרטי הלקוח מלאים, נא השלם את הפרטים החסרים.")
 
     try:
@@ -44,9 +46,7 @@ def add_client_to_db(user_data: dict) -> bool:
 
         if existing_client:
             # Client already exists, respond accordingly
-            db_connection_logger.info(
-                "user tried to add client that is already in the list")
-            raise Exception("הלקוח כבר קיים ברשימת הלקוחות שלך")
+            raise ClientAlreadyExists(user_data["full_name"])
 
         else:
             # Client does not exist, proceed to add to the table
@@ -57,8 +57,12 @@ def add_client_to_db(user_data: dict) -> bool:
             db_connector.commit()
             return True
 
+    except ClientAlreadyExists as e:
+        db_connection_logger.info(
+            "the user tried to add client that is already exists")
+        raise
+
     except Exception as e:
-        # Handle any errors
         db_connection_logger.error("unable to add client to data base")
         raise
 
@@ -105,7 +109,6 @@ def delete_client_from_db(user_id, client_id):
         return True
 
     except Exception as e:
-        # Handle any errors
         db_connection_logger.error("unable to delete client from data base")
         raise
 
