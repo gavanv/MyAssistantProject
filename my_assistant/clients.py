@@ -22,7 +22,7 @@ from consts import (
 )
 from commands import start
 from urllib.parse import quote
-from exceptions import ClientAlreadyExists, IndexOfClientIsTooBig
+from exceptions import ClientAlreadyExists, IndexOfClientIsOutOfRange, DebtToDeleteIsNegative
 
 clients_logger = setup_logger("clients_logger")
 
@@ -64,6 +64,10 @@ async def add_client_full_name(update: Update, context: CallbackContext) -> int:
     username = user_details.first_name + " " + user_details.last_name
     full_name = update.message.text
 
+    # to prevent telegram error in markdown mode
+    if "*" in full_name:
+        full_name = full_name.replace("*", "")
+
     user_data["user_id"] = user_id
     user_data["username"] = username
     user_data["full_name"] = full_name
@@ -77,6 +81,11 @@ async def add_client_address(update: Update, context: CallbackContext) -> int:
     global user_data
 
     address = update.message.text
+
+    # to prevent telegram error in markdown mode
+    if "*" in address:
+        address = address.replace("*", "")
+
     user_data["address"] = address
 
     keyboard = [["כן", "לא"]]
@@ -140,6 +149,7 @@ async def show_clients_callback(update: Update, context: CallbackContext) -> Non
             await update.callback_query.message.reply_text(text="*רשימת לקוחות:*\n" + clients_list_text, parse_mode="markdown")
 
     except Exception as e:
+        clients_logger.exception(str(e))
         await update.callback_query.message.reply_text("משהו השתבש😕 לא הצלחתי למצוא את רשימת הלקוחות שלך")
 
     finally:
@@ -356,13 +366,13 @@ async def debt_amount_to_add(update, context):
     try:
         client_number_to_add_debt = int(update.message.text) - 1
 
-        if client_number_to_add_debt + 1 > clients_list_len_in_add_debt:
-            raise IndexOfClientIsTooBig()
+        if client_number_to_add_debt + 1 > clients_list_len_in_add_debt or client_number_to_add_debt < 0:
+            raise IndexOfClientIsOutOfRange()
 
         await update.message.reply_text(f'מהו סכום החוב שתרצה להוסיף ללקוח?\n לביטול הפעולה לחץ /cancel')
         return ADD_DEBT
 
-    except IndexOfClientIsTooBig as e:
+    except IndexOfClientIsOutOfRange as e:
         clients_logger.exception(
             "user send number that is bigger than the clients list length")
         await update.message.reply_text(str(e))
@@ -462,8 +472,8 @@ async def ask_amount_to_delete(update, context):
         clients_with_debt_list = [
             client for client in clients_list if client["debt"] != 0]
 
-        if client_number + 1 > len(clients_with_debt_list):
-            raise IndexOfClientIsTooBig()
+        if client_number + 1 > len(clients_with_debt_list) or client_number < 0:
+            raise IndexOfClientIsOutOfRange()
 
         delete_debt_data["client_id"] = (
             clients_with_debt_list[client_number])["id"]
@@ -494,7 +504,7 @@ async def ask_amount_to_delete(update, context):
         await update.message.reply_text("לא הבנתי מה שכתבת, אנא הקלד מספר תקין.")
         return ASK_AMOUNT_TO_DELETE
 
-    except IndexOfClientIsTooBig as e:
+    except IndexOfClientIsOutOfRange as e:
         clients_logger.exception(
             "user send number that is bigger than the clients list length")
         await update.message.reply_text(str(e))
@@ -559,6 +569,9 @@ async def delete_part_debt(update, context):
     try:
         debt_to_delete = int(update.message.text)
 
+        if debt_to_delete < 0:
+            raise DebtToDeleteIsNegative()
+
         delete_debt_from_db(
             user_id=user_id, client_id=delete_debt_data["client_id"], debt_to_delete=debt_to_delete)
 
@@ -578,6 +591,12 @@ async def delete_part_debt(update, context):
         clients_logger.exception(
             "the user send something that cannot be converted to int")
         await update.message.reply_text("לא הבנתי מה שכתבת, אנא הקלד מספר תקין.")
+        return DELETE_PART_DEBT
+
+    except DebtToDeleteIsNegative as e:
+        clients_logger.exception(
+            "the user send negative number of debt to delete")
+        await update.message.reply_text(str(e))
         return DELETE_PART_DEBT
 
     except Exception as e:
@@ -626,8 +645,8 @@ async def send_link(update, context):
 
         clients_list = get_user_clients_from_db(user_id)
 
-        if client_number + 1 > len(clients_list):
-            raise IndexOfClientIsTooBig()
+        if client_number + 1 > len(clients_list) or client_number < 0:
+            raise IndexOfClientIsOutOfRange()
 
         address = (clients_list[client_number])["address"]
 
@@ -641,7 +660,7 @@ async def send_link(update, context):
         await update.message.reply_text("לא הבנתי מה שכתבת, אנא הקלד מספר תקין.")
         return SEND_LINK
 
-    except IndexOfClientIsTooBig as e:
+    except IndexOfClientIsOutOfRange as e:
         clients_logger.exception(
             "user send number that is bigger than the clients list length")
         await update.message.reply_text(str(e))
@@ -760,3 +779,14 @@ waze_link_conv_handler = ConversationHandler(
     fallbacks=[CommandHandler('cancel', cancel), CommandHandler("start", start),
                CommandHandler("clients", clients_command),
                MessageHandler(filters.TEXT & ~filters.COMMAND, send_link)])
+
+
+clients_text_handler = MessageHandler(filters.Regex("לקוחות"), clients_command)
+
+clients_command_handler = CommandHandler("clients", clients_command)
+
+clients_features_handlers = [return_to_clients_handler, add_client_conv_handler,
+                             show_clients_conv_handler, show_debts_conv_handler,
+                             delete_client_conv_handler, add_debt_conv_handler,
+                             delete_debt_conv_handler, waze_link_conv_handler,
+                             clients_text_handler, clients_command_handler]

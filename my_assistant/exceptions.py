@@ -7,7 +7,13 @@ class ClientAlreadyExists(Exception):
         return f"הלקוח/ה {self._client_name} כבר נמצא/ת ברשימת הלקוחות שלך."
 
 
-class IndexOfClientIsTooBig(Exception):
+class IndexOfClientIsOutOfRange(Exception):
 
     def __str__(self):
-        return "הקלדת מספר גדול מידיי שלא נמצא ברשימת הלקוחות, אנא הקלד מספר תקין."
+        return "הקלדת מספר שלא נמצא ברשימת הלקוחות, אנא הקלד מספר תקין."
+
+
+class DebtToDeleteIsNegative(Exception):
+
+    def __str__(self):
+        return "לא ניתן להוריד חוב שמספרו שלילי, אנא הזן מספר חיובי."

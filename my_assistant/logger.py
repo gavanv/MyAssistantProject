@@ -13,6 +13,7 @@ def setup_logger(logger_name):
     formatter = logging.Formatter(
         "%(asctime)s - %(name)s - %(levelname)s - %(message)s")
     file_handler.setFormatter(formatter)
+    file_handler.setLevel(logging.DEBUG)
 
     # Create a stream handler to print log messages to the console
     stream_handler = logging.StreamHandler()
