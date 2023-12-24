@@ -30,6 +30,7 @@ def connect_to_db():
     db_cursor = db_connector.cursor(dictionary=True)
 
 
+# functions for clients
 def add_client_to_db(user_data: dict) -> bool:
     global db_cursor, db_connector
 
@@ -143,4 +144,39 @@ def delete_debt_from_db(user_id, client_id, debt_to_delete):
         # Handle any errors
         db_connection_logger.error(
             "unable to delete debt to the client in the data base")
+        raise
+
+
+# functions for to do list
+
+def add_task_to_db(user_data: dict) -> bool:
+    global db_cursor, db_connector
+
+    try:
+
+        sql_insert_task = "INSERT INTO to_do_list (user_id, username, task, category, level) VALUES (%s, %s, %s, %s, %s)"
+        values = (user_data.get("user_id"), user_data.get("username"),
+                  user_data.get("task"), user_data.get("category"), user_data.get("level"))
+        db_cursor.execute(sql_insert_task, values)
+        db_connector.commit()
+        return True
+
+    except Exception as e:
+        db_connection_logger.error("unable to add task to db")
+        raise
+
+
+def get_user_all_tasks_from_db(user_id):
+    global db_cursor
+
+    try:
+        # Fetch all tasks from the database based on the user_id
+        sql_get_all_tasks = "SELECT * FROM to_do_list WHERE user_id = %s ORDER BY level"
+        db_cursor.execute(sql_get_all_tasks, (user_id,))
+        clients_list = db_cursor.fetchall()
+        return clients_list
+
+    except Exception as e:
+        db_connection_logger.exception(
+            "unable to get all tasks from the db")
         raise

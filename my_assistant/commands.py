@@ -9,7 +9,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
             KeyboardButton("לקוחות"),
             KeyboardButton("shopping"),
         ],
-        [KeyboardButton("To Do List"),
+        [KeyboardButton("ניהול משימות"),
          KeyboardButton("wellness")
          ]
     ]

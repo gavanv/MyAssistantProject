@@ -9,6 +9,7 @@ DB_PASSWORD = 'gavan1121g'
 DB_NAME = 'myAssistantBotDB'
 PORT = 3306
 
+# constans for clients part
 CLIENTS_MENU_KEYBOARD = [
     [
         InlineKeyboardButton(
@@ -26,7 +27,6 @@ CLIENTS_MENU_KEYBOARD = [
 
 ]
 
-# constants keyboards
 ADD_CLIENT_OR_RETURN_TO_MENU_KEYBOARD = [[InlineKeyboardButton(
     "הוספת לקוח", callback_data="add_client")],
     [InlineKeyboardButton(
@@ -59,3 +59,45 @@ SEND_LINK = 0
 
 # limit for clients per page
 CLIENTS_PER_PAGE = 10
+
+
+# constants for to do list part
+TO_DO_LIST_MENU_KEYBOARD = [
+    [
+        InlineKeyboardButton("מחיקת משימה", callback_data="delete_task"),
+        InlineKeyboardButton("הוספת משימה", callback_data="add_task")
+
+    ],
+    [
+        InlineKeyboardButton("משימות C", callback_data="C_tasks"),
+        InlineKeyboardButton("משימות B", callback_data="B_tasks"),
+        InlineKeyboardButton("משימות A", callback_data="A_tasks")
+    ],
+    [
+        InlineKeyboardButton(
+            "כל המשימות", callback_data="show_todo_list")
+    ],
+    [
+        InlineKeyboardButton(
+            "הוספת תזכורת", callback_data="set_reminder")
+    ]
+]
+
+ADD_TASK_OR_RETURN_TO_TODOLIST_MENU_KEYBOARD = [
+    [
+        InlineKeyboardButton("הוספת משימה נוספת", callback_data="add_task")
+    ],
+    [InlineKeyboardButton("חזרה לתפריט ניהול משימות",
+                          callback_data="return_to_todolist")
+     ]
+]
+
+RETURN_TO_TODOLIST_MENU_KEYBOARD = [[
+    InlineKeyboardButton("חזרה לתפריט ניהול משימות",
+                         callback_data="return_to_todolist")
+]]
+
+TASKS_CATEGORIES = ["בית", "בריאות וכושר", "לימודים", "עבודה", "אישי", "שונות"]
+
+# Define states dor add_task conversation
+WRITE_TASK, CHOOSE_LEVEL, ADD_TASK = range(3)

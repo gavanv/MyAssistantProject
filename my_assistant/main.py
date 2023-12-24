@@ -7,6 +7,7 @@ from consts import (
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, KeyboardButton, ReplyKeyboardMarkup, ReplyKeyboardRemove, Update
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes, CallbackQueryHandler, CallbackContext, ConversationHandler
 from clients import clients_features_handlers
+from todolist import todolist_features_handlers
 from commands import start, shopping
 from db_connection import connect_to_db
 
@@ -82,14 +83,12 @@ def main():
     # on different commands - answer in Telegram
 
     app.add_handlers(clients_features_handlers)
+    app.add_handlers(todolist_features_handlers)
 
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CommandHandler("shopping", shopping))
-    app.add_handler(CommandHandler("todolist", todolist))
     app.add_handler(CommandHandler("wellness", todolist))
-
     app.add_handler(MessageHandler(filters.Regex("shopping"), shopping))
-    app.add_handler(MessageHandler(filters.Regex("To Do List"), todolist))
     app.add_handler(MessageHandler(filters.Regex("wellness"), wellness))
     # app.add_handler(MessageHandler(filters.TEXT, generalMsgHandler))
 
