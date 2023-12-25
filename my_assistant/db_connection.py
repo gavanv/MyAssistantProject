@@ -180,3 +180,17 @@ def get_user_all_tasks_from_db(user_id):
         db_connection_logger.exception(
             "unable to get all tasks from the db")
         raise
+
+
+def delete_task_from_db(user_id, task_id):
+    global db_cursor, db_connector
+
+    try:
+        sql_delete_client = "DELETE FROM to_do_list WHERE id = %s AND user_id = %s"
+        db_cursor.execute(sql_delete_client, (task_id, user_id))
+        db_connector.commit()
+        return True
+
+    except Exception as e:
+        db_connection_logger.error("unable to delete object from db.")
+        raise

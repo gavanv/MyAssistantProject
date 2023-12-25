@@ -92,6 +92,15 @@ ADD_TASK_OR_RETURN_TO_TODOLIST_MENU_KEYBOARD = [
      ]
 ]
 
+DELETE_TASK_OR_RETURN_TO_TODOLIST_MENU_KEYBOARD = [
+    [
+        InlineKeyboardButton("מחיקה משימה נוספת", callback_data="delete_task")
+    ],
+    [InlineKeyboardButton("חזרה לתפריט ניהול משימות",
+                          callback_data="return_to_todolist")
+     ]
+]
+
 RETURN_TO_TODOLIST_MENU_KEYBOARD = [[
     InlineKeyboardButton("חזרה לתפריט ניהול משימות",
                          callback_data="return_to_todolist")
@@ -99,5 +108,8 @@ RETURN_TO_TODOLIST_MENU_KEYBOARD = [[
 
 TASKS_CATEGORIES = ["בית", "בריאות וכושר", "לימודים", "עבודה", "אישי", "שונות"]
 
-# Define states dor add_task conversation
+# Define states for add_task conversation
 WRITE_TASK, CHOOSE_LEVEL, ADD_TASK = range(3)
+
+# Define states gor delete_task conversation
+CHOOSE_TASK_TO_DELETE, DELETE_TASK = range(2)

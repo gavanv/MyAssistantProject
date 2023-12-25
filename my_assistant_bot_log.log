@@ -855,3 +855,93 @@ ValueError: invalid literal for int() with base 10: 'לרוץ'
 2023-12-23 16:55:47,343 - main_logger - INFO - Connected to DB
 2023-12-23 16:56:29,434 - main_logger - INFO - Bot started! Connecting to DB...
 2023-12-23 16:56:30,725 - main_logger - INFO - Connected to DB
+2023-12-25 10:00:51,488 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-25 10:00:53,307 - main_logger - INFO - Connected to DB
+2023-12-25 10:01:41,620 - todolist_logger - ERROR - unable to delete task from the chosen category.
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\todolist.py", line 229, in delete_task
+    if task_number + 1 > user_data_delete_task["len_of_category_tasks_list"] or task_number < 0:
+                         ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'len_of_category_tasks_list'
+2023-12-25 10:04:05,707 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-25 10:04:07,810 - main_logger - INFO - Connected to DB
+2023-12-25 10:04:30,749 - todolist_logger - ERROR - unable to delete task from the chosen category.
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\todolist.py", line 229, in delete_task
+    if task_number + 1 > user_data_delete_task["len_of_category_tasks_list"] or task_number < 0:
+                         ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'len_of_category_tasks_list'
+2023-12-25 10:05:29,449 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-25 10:05:31,343 - main_logger - INFO - Connected to DB
+2023-12-25 10:05:41,743 - db_connection_logger - ERROR - unable to delete object from db.
+2023-12-25 10:05:41,744 - todolist_logger - ERROR - unable to delete task from the chosen category.
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 639, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''to_do_list' WHERE id = 5 AND user_id = 222151854' at line 1
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\todolist.py", line 238, in delete_task
+    delete_object_from_db(
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\db_connection.py", line 190, in delete_object_from_db
+    db_cursor.execute(sql_delete_client, (table_name, object_id, user_id))
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 647, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''to_do_list' WHERE id = 5 AND user_id = 222151854' at line 1
+2023-12-25 10:09:11,439 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-25 10:09:14,188 - main_logger - INFO - Connected to DB
+2023-12-25 10:09:56,449 - todolist_logger - ERROR - user send number that is not in the list of tasks
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\todolist.py", line 230, in delete_task
+    raise IndexIsOutOfRange()
+exceptions.IndexIsOutOfRange: הקלדת מספר שלא נמצא ברשימה, אנא הקלד מספר תקין.
+2023-12-25 10:10:02,384 - todolist_logger - ERROR - user send number that is not in the list of tasks
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\todolist.py", line 230, in delete_task
+    raise IndexIsOutOfRange()
+exceptions.IndexIsOutOfRange: הקלדת מספר שלא נמצא ברשימה, אנא הקלד מספר תקין.
+2023-12-25 10:10:08,372 - todolist_logger - ERROR - user send task number to delete that cannot be converted to int
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\todolist.py", line 227, in delete_task
+    task_number = int(update.message.text) - 1
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'vyt6'
+2023-12-25 10:10:20,054 - todolist_logger - ERROR - user send number that is not in the list of tasks
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\todolist.py", line 230, in delete_task
+    raise IndexIsOutOfRange()
+exceptions.IndexIsOutOfRange: הקלדת מספר שלא נמצא ברשימה, אנא הקלד מספר תקין.
+2023-12-25 10:10:23,966 - todolist_logger - ERROR - user send task number to delete that cannot be converted to int
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\todolist.py", line 227, in delete_task
+    task_number = int(update.message.text) - 1
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'hbj7'
+2023-12-25 10:10:31,913 - todolist_logger - ERROR - user send task number to delete that cannot be converted to int
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\todolist.py", line 227, in delete_task
+    task_number = int(update.message.text) - 1
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '1.'
+2023-12-25 10:13:10,134 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-25 10:13:12,077 - main_logger - INFO - Connected to DB
+2023-12-25 10:13:53,922 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-25 10:13:55,904 - main_logger - INFO - Connected to DB
+2023-12-25 10:38:08,744 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-25 10:38:10,645 - main_logger - INFO - Connected to DB
+2023-12-25 10:51:34,392 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-25 10:51:36,324 - main_logger - INFO - Connected to DB
+2023-12-25 10:52:07,258 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-25 10:52:08,842 - main_logger - INFO - Connected to DB
+2023-12-25 10:53:34,513 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-25 10:53:36,122 - main_logger - INFO - Connected to DB
+2023-12-25 21:24:42,005 - main_logger - INFO - Bot started! Connecting to DB...
+2023-12-25 21:24:45,877 - main_logger - INFO - Connected to DB

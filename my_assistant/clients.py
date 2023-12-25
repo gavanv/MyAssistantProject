@@ -141,13 +141,15 @@ async def show_clients_callback(update: Update, context: CallbackContext) -> Non
 
             reply_markup = InlineKeyboardMarkup(
                 ADD_CLIENT_OR_RETURN_TO_MENU_KEYBOARD)
-            await update.callback_query.message.reply_text(text="אין לך לקוחות קיימים ברשימה.", reply_markup=reply_markup)
+            await update.callback_query.message.reply_text(text="אין לך לקוחות קיימים ברשימה.",
+                                                           reply_markup=reply_markup)
 
         else:
             clients_list_text = "\n".join([f"{index + 1}. {client['full_name']} - {
                                           client['address']}" for index, client in enumerate(clients_list)])
             clients_list_text += "\n🔚"
-            await update.callback_query.message.reply_text(text="*רשימת לקוחות:*\n" + clients_list_text, parse_mode="markdown")
+            await update.callback_query.message.reply_text(text="*רשימת לקוחות:*\n" + clients_list_text,
+                                                           parse_mode="markdown")
 
     except Exception as e:
         clients_logger.exception(str(e))
@@ -158,7 +160,8 @@ async def show_clients_callback(update: Update, context: CallbackContext) -> Non
 
 
 # callback for the "show debts" button in the clients menu
-async def show_debts_callback(update: Update, context: CallbackContext) -> None:
+async def show_debts_callback(update: Update,
+                              context: CallbackContext) -> None:
 
     query = update.callback_query
     await query.answer()
@@ -174,13 +177,16 @@ async def show_debts_callback(update: Update, context: CallbackContext) -> None:
 
             reply_markup = InlineKeyboardMarkup(
                 ADD_DEBT_OR_RETURN_TO_CLIENTS_MENU_KEYBOARD)
-            await update.callback_query.message.reply_text(text="*לא קיימים לקוחות עם חוב.*", reply_markup=reply_markup, parse_mode="markdown")
+            await update.callback_query.message.reply_text(text="*לא קיימים לקוחות עם חוב.*",
+                                                           reply_markup=reply_markup,
+                                                           parse_mode="markdown")
 
         else:
             clients_list_text = "\n".join([f"{index + 1}. {client["full_name"]} - {
                                           client["debt"]}₪" for index, client in enumerate(clients_with_debt_list)])
             clients_list_text += "\n🔚"
-            await update.callback_query.message.reply_text(text="*רשימת לקוחות עם חוב:*\n" + clients_list_text, parse_mode="markdown")
+            await update.callback_query.message.reply_text(text="*רשימת לקוחות עם חוב:*\n" + clients_list_text,
+                                                           parse_mode="markdown")
 
     except Exception as e:
         await update.callback_query.message.reply_text("משהו השתבש😕 לא הצלחתי למצוא את רשימת הלקוחות שלך")
@@ -646,7 +652,7 @@ async def send_link(update, context):
 
     except IndexIsOutOfRange as e:
         clients_logger.exception(
-            "user send number that is bigger than the clients list length")
+            "user send number that is not in the clients list.")
         await update.message.reply_text(str(e))
         return SEND_LINK
 
