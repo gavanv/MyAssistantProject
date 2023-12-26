@@ -332,14 +332,16 @@ async def add_debt_callback(update, context):
 
             reply_markup = InlineKeyboardMarkup(
                 ADD_CLIENT_OR_RETURN_TO_MENU_KEYBOARD)
-            await update.callback_query.message.reply_text(text="אין לך לקוחות קיימים ברשימה.", reply_markup=reply_markup)
+            await update.callback_query.message.reply_text(text="אין לך לקוחות קיימים ברשימה.",
+                                                           reply_markup=reply_markup)
             return ConversationHandler.END
 
         else:
             clients_list_text = "\n".join([f"{index + 1}. {client['full_name']} - {
                                           client['debt']}₪" for index, client in enumerate(clients_list)])
             clients_list_text += "\n🔚"
-            await update.callback_query.message.reply_text(text="*הקש את מספר הלקוח שתרצה להוסיף לו חוב:*\nלביטול הפעולה לחץ /cancel\n" + clients_list_text, parse_mode="markdown")
+            await update.callback_query.message.reply_text(text="*הקש את מספר הלקוח שתרצה להוסיף לו חוב:*\nלביטול הפעולה לחץ /cancel\n" + clients_list_text,
+                                                           parse_mode="markdown")
             return DEBT_AMOUNT_TO_ADD
 
     except Exception as e:

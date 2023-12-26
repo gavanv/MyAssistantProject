@@ -3,7 +3,7 @@ from telegram import InlineKeyboardButton, InlineKeyboardMarkup, KeyboardButton,
 from telegram.ext import ContextTypes, CallbackContext, ConversationHandler, CallbackQueryHandler, MessageHandler, CommandHandler, filters
 from commands import start
 from utils import create_keyboard
-from db_connection import add_task_to_db, get_user_all_tasks_from_db, delete_task_from_db
+from db_connection import add_task_to_db, get_user_all_tasks_from_db, delete_task_from_db, add_reminder_to_db
 from exceptions import IndexIsOutOfRange
 from consts import (
     TO_DO_LIST_MENU_KEYBOARD,
@@ -11,11 +11,16 @@ from consts import (
     ADD_TASK_OR_RETURN_TO_TODOLIST_MENU_KEYBOARD,
     DELETE_TASK_OR_RETURN_TO_TODOLIST_MENU_KEYBOARD,
     RETURN_TO_TODOLIST_MENU_KEYBOARD,
+    FREQUENCIES_FOR_REMINDERS_KEYBOARD,
+    ADD_REMINDER_OR_RETURN_TO_TODOLIST_MENU_KEYBOARD,
     WRITE_TASK,
     CHOOSE_LEVEL,
     ADD_TASK,
     CHOOSE_TASK_TO_DELETE,
-    DELETE_TASK
+    DELETE_TASK,
+    ASK_FREQUENCY,
+    ASK_TIME,
+    SET_REMINDER
 )
 todolist_logger = setup_logger("todolist_logger")
 
@@ -24,6 +29,9 @@ user_data_add_task = {}
 
 # global dict to store the user_date for deleting task
 user_data_delete_task = {}
+
+# global dict to store the user_data for seting a reminder
+user_data_set_reminder = {}
 
 
 async def todolist_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
@@ -356,6 +364,74 @@ async def delete_task(update, context):
         return ConversationHandler.END
 
 
+# functions for set reminder conversation
+async def set_reminder_callback(update, context):
+
+    query = update.callback_query
+    await query.answer()
+
+    await update.callback_query.message.reply_text(text="*הקלד את המשימה שתרצה לקבל עליה תזכורת* \nאו לחץ /cancel לביטול.", parse_mode="markdown")
+    return ASK_FREQUENCY
+
+
+async def ask_frequency(update, context):
+
+    global user_data_set_reminder
+
+    user_details = update.message.from_user
+    username = user_details.first_name + " " + user_details.last_name
+
+    user_data_set_reminder["username"] = username
+
+    user_data_set_reminder["user_id"] = user_details.id
+
+    user_data_set_reminder["reminder_text"] = update.message.text
+
+    reply_markup = InlineKeyboardMarkup(FREQUENCIES_FOR_REMINDERS_KEYBOARD)
+
+    await update.message.reply_text(text="*מהי התדירות שתרצה לקבל בה את התזכורת?* \nאו לחץ /cancel לביטול.",
+                                    reply_markup=reply_markup,
+                                    parse_mode="markdown")
+    return ASK_TIME
+
+
+async def ask_time(update, context):
+
+    global user_data_set_reminder
+
+    query = update.callback_query
+    await query.answer()
+
+    user_data_set_reminder["reminder_frequency"] = query.data
+
+    await update.callback_query.message.reply_text(text="*באיזה שעה תרצה לקבל את התזכורת?*\n*בפורמט: XX:YY* \nאו לחץ /cancel לביטול.",
+                                                   parse_mode="markdown")
+    return SET_REMINDER
+
+
+async def set_reminder(update, context):
+
+    global user_data_set_reminder
+
+    try:
+
+        user_data_set_reminder["reminder_time"] = update.message.text
+
+        add_reminder_to_db(user_data_set_reminder)
+
+        reply_markup = InlineKeyboardMarkup(
+            ADD_REMINDER_OR_RETURN_TO_TODOLIST_MENU_KEYBOARD)
+
+        await update.message.reply_text(text=f"התזכורת: *{user_data_set_reminder["reminder_text"]}* נוספה בהצלחה.", reply_markup=reply_markup, parse_mode="markdown")
+
+    except Exception as e:
+        todolist_logger.exception(str(e))
+        await update.message.reply_text("משהו השתבש😕 לא הצלחתי להוסיף את התזכורת.")
+
+    finally:
+        return ConversationHandler.END
+
+
 # cancel function for to do list menu
 async def cancel(update, context):
 
@@ -399,9 +475,28 @@ delete_task_conv_handler = ConversationHandler(
                CommandHandler("cancel", cancel)],
     allow_reentry=True)
 
+
+# set reminder conv handler
+set_reminder_conv_handler = ConversationHandler(
+    entry_points=[CallbackQueryHandler(
+        set_reminder_callback, pattern='^set_reminder$')],
+    states={
+        ASK_FREQUENCY: [MessageHandler(
+            filters.TEXT & ~filters.COMMAND, ask_frequency)],
+        ASK_TIME: [CallbackQueryHandler(ask_time)],
+        SET_REMINDER: [MessageHandler(
+            filters.TEXT & ~filters.COMMAND, set_reminder)]
+    },
+    fallbacks=[CommandHandler("start", start),
+               CommandHandler("cancel", cancel)],
+    allow_reentry=True)
+
+
 return_to_todolist_handler = CallbackQueryHandler(
     return_to_todolist, pattern="^return_to_todolist$")
 
 
 todolist_features_handlers = [CommandHandler("todolist", todolist_command), MessageHandler(
-    filters.Regex("ניהול משימות"), todolist_command), add_task_conv_handler, return_to_todolist_handler, show_all_tasks_handler, show_level_tasks_handler, delete_task_conv_handler]
+    filters.Regex("ניהול משימות"), todolist_command), add_task_conv_handler,
+    return_to_todolist_handler, show_all_tasks_handler, show_level_tasks_handler,
+    delete_task_conv_handler, set_reminder_conv_handler]

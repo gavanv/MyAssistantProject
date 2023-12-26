@@ -94,7 +94,7 @@ ADD_TASK_OR_RETURN_TO_TODOLIST_MENU_KEYBOARD = [
 
 DELETE_TASK_OR_RETURN_TO_TODOLIST_MENU_KEYBOARD = [
     [
-        InlineKeyboardButton("מחיקה משימה נוספת", callback_data="delete_task")
+        InlineKeyboardButton("מחיקת משימה נוספת", callback_data="delete_task")
     ],
     [InlineKeyboardButton("חזרה לתפריט ניהול משימות",
                           callback_data="return_to_todolist")
@@ -106,10 +106,35 @@ RETURN_TO_TODOLIST_MENU_KEYBOARD = [[
                          callback_data="return_to_todolist")
 ]]
 
+FREQUENCIES_FOR_REMINDERS_KEYBOARD = [
+    [
+        InlineKeyboardButton("כל יום", callback_data="every_day")
+    ],
+    [InlineKeyboardButton("כל שבוע",
+                          callback_data="every_week")
+     ],
+    [InlineKeyboardButton("כל חודש",
+                          callback_data="every_month")
+     ]
+]
+
+ADD_REMINDER_OR_RETURN_TO_TODOLIST_MENU_KEYBOARD = [
+    [
+        InlineKeyboardButton("הוספת תזכורת נוספת",
+                             callback_data="set_reminder")
+    ],
+    [InlineKeyboardButton("חזרה לתפריט ניהול משימות",
+                          callback_data="return_to_todolist")
+     ]
+]
+
 TASKS_CATEGORIES = ["בית", "בריאות וכושר", "לימודים", "עבודה", "אישי", "שונות"]
 
 # Define states for add_task conversation
 WRITE_TASK, CHOOSE_LEVEL, ADD_TASK = range(3)
 
-# Define states gor delete_task conversation
+# Define states for delete_task conversation
 CHOOSE_TASK_TO_DELETE, DELETE_TASK = range(2)
+
+# Define states for set_reminder conversation
+ASK_FREQUENCY, ASK_TIME, SET_REMINDER = range(3)

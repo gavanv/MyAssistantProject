@@ -194,3 +194,21 @@ def delete_task_from_db(user_id, task_id):
     except Exception as e:
         db_connection_logger.error("unable to delete object from db.")
         raise
+
+
+def add_reminder_to_db(user_data):
+
+    global db_cursor, db_connector
+
+    try:
+
+        sql_insert_reminder = "INSERT INTO tasks_reminders (user_id, username, reminder_text, reminder_frequency, reminder_time) VALUES (%s, %s, %s, %s, %s)"
+        values = (user_data.get("user_id"), user_data.get("username"),
+                  user_data.get("reminder_text"), user_data.get("reminder_frequency"), user_data.get("reminder_time"))
+        db_cursor.execute(sql_insert_reminder, values)
+        db_connector.commit()
+        return True
+
+    except Exception as e:
+        db_connection_logger.error("unable to add reminder to db")
+        raise
