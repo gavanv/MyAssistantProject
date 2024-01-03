@@ -1,13 +1,15 @@
+import threading
+import asyncio
 from logger import setup_logger
 
 from consts import (
     TOKEN
 )
 
-from telegram import InlineKeyboardButton, InlineKeyboardMarkup, KeyboardButton, ReplyKeyboardMarkup, ReplyKeyboardRemove, Update
+from telegram import InlineKeyboardButton, InlineKeyboardMarkup, KeyboardButton, ReplyKeyboardMarkup, ReplyKeyboardRemove, Update, Bot
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes, CallbackQueryHandler, CallbackContext, ConversationHandler
 from clients import clients_features_handlers
-from todolist import todolist_features_handlers
+from todolist import todolist_features_handlers, reminder_bot_message
 from commands import start, shopping
 from db_connection import connect_to_db
 
@@ -65,6 +67,14 @@ async def wellness(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     await update.message.reply_text("Please choose:", reply_markup=reply_markup)
 
 
+def wrap_async_func():
+
+    reminder_bot_message_loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(reminder_bot_message_loop)
+    reminder_bot_message_loop.run_until_complete(reminder_bot_message())
+    reminder_bot_message_loop.close()
+
+
 def main():
 
     main_logger.info("Bot started! Connecting to DB...")
@@ -81,7 +91,6 @@ def main():
     app = Application.builder().token(TOKEN).build()
 
     # on different commands - answer in Telegram
-
     app.add_handlers(clients_features_handlers)
     app.add_handlers(todolist_features_handlers)
 
@@ -92,7 +101,11 @@ def main():
     app.add_handler(MessageHandler(filters.Regex("wellness"), wellness))
     # app.add_handler(MessageHandler(filters.TEXT, generalMsgHandler))
 
-    # Start the Bot
+    tasks_reminders_thread = threading.Thread(
+        target=wrap_async_func, daemon=True)
+
+    tasks_reminders_thread.start()
+
     app.run_polling()
 
     print("bot finished")
