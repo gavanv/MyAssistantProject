@@ -217,13 +217,13 @@ def delete_task_from_db(user_id, task_id):
 
     try:
         with db_lock_for_threading:
-            sql_delete_client = "DELETE FROM to_do_list WHERE id = %s AND user_id = %s"
-            db_cursor.execute(sql_delete_client, (task_id, user_id))
+            sql_delete_task = "DELETE FROM to_do_list WHERE id = %s AND user_id = %s"
+            db_cursor.execute(sql_delete_task, (task_id, user_id))
             db_connector.commit()
             return True
 
     except Exception as e:
-        db_connection_logger.error("unable to delete object from db.")
+        db_connection_logger.exception("unable to delete object from db.")
         raise
 
 
@@ -276,4 +276,18 @@ def update_reminder_time(reminder_data):
 
     except Exception as e:
         db_connection_logger.exception("unable to Supdate reminder time in db")
+        raise
+
+
+def delete_reminder_from_db(user_id, task_reminder):
+    global db_cursor, db_connector
+
+    try:
+        with db_lock_for_threading:
+            sql_delete_reminder = "DELETE FROM tasks_reminders WHERE user_id = %s AND reminder_text = %s"
+            db_cursor.execute(sql_delete_reminder, (user_id, task_reminder))
+            db_connector.commit()
+
+    except Exception as e:
+        db_connection_logger.exception("unable to delete object from db.")
         raise

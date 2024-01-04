@@ -756,9 +756,9 @@ delete_debt_conv_handler = ConversationHandler(
             filters.TEXT & ~filters.COMMAND, delete_part_debt)]
     },
     fallbacks=[CommandHandler('cancel', cancel), CommandHandler("start", start),
-               CommandHandler("clients", clients_command), MessageHandler(
-                   filters.TEXT & ~filters.COMMAND, ask_amount_to_delete),
-               MessageHandler(filters.TEXT & ~filters.COMMAND, delete_part_debt), return_to_clients_handler])
+               CommandHandler("clients", clients_command),
+               MessageHandler(filters.TEXT & ~filters.COMMAND, delete_part_debt), return_to_clients_handler],
+    allow_reentry=True)
 
 
 # conversation handler for send waze link

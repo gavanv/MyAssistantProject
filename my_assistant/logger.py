@@ -8,12 +8,12 @@ def setup_logger(logger_name):
     # Set the logging level
     logger.setLevel(logging.DEBUG)
 
-    # Create a file handler and set the formatter
-    file_handler = logging.FileHandler("my_assistant_bot_log.log")
     formatter = logging.Formatter(
         "%(asctime)s - %(name)s - %(levelname)s - %(message)s")
+
+    # Create a file handler and set the formatter
+    file_handler = logging.FileHandler("logs_my_assistant_bot.log")
     file_handler.setFormatter(formatter)
-    file_handler.setLevel(logging.DEBUG)
 
     # Create a stream handler to print log messages to the console
     stream_handler = logging.StreamHandler()

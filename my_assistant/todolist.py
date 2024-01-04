@@ -4,8 +4,8 @@ from datetime import datetime
 from telegram import Bot, InlineKeyboardButton, InlineKeyboardMarkup, KeyboardButton, ReplyKeyboardMarkup, ReplyKeyboardRemove, Update
 from telegram.ext import ContextTypes, CallbackContext, ConversationHandler, CallbackQueryHandler, MessageHandler, CommandHandler, filters
 from commands import start
-from utils import create_keyboard
-from db_connection import (db_lock_for_threading, add_task_to_db, get_user_all_tasks_from_db,
+from utils import create_keyboard, check_if_time_already_occurred
+from db_connection import (db_lock_for_threading, add_task_to_db, delete_reminder_from_db, get_user_all_tasks_from_db,
                            delete_task_from_db, add_reminder_to_db, get_all_reminders, update_reminder_time)
 from exceptions import IndexIsOutOfRange
 from datetime import datetime, timedelta
@@ -422,7 +422,37 @@ async def set_reminder(update, context):
 
     try:
 
-        user_data_set_reminder["reminder_time"] = update.message.text
+        reminder_time_from_user = update.message.text
+
+        # parse the input as a time with the corrct format, will raise ValueError if the input isn't valid
+        parsed_time = datetime.strptime(reminder_time_from_user, "%H:%M")
+
+        now = datetime.now()
+
+        if check_if_time_already_occurred(reminder_time_from_user):
+
+            todolist_logger.debug(
+                "the user chose time that was already pass today")
+
+            timedelta_from_next_reminder = int(user_data_set_reminder.get(
+                "reminder_frequency"))
+
+        else:
+            timedelta_from_next_reminder = 0
+
+        combined_datetime_str = f"{now.strftime(
+            '%d/%m/%y')} {reminder_time_from_user}"
+
+        combined_datetime = datetime.strptime(
+            combined_datetime_str, "%d/%m/%y %H:%M")
+
+        next_reminder_time = combined_datetime + \
+            timedelta(days=timedelta_from_next_reminder)
+
+        user_data_set_reminder["reminder_time"] = next_reminder_time
+
+        todolist_logger.debug(f"the user set time: {reminder_time_from_user} and the next reminder is on: {
+                              user_data_set_reminder["reminder_time"]}")
 
         add_reminder_to_db(user_data_set_reminder)
 
@@ -432,12 +462,15 @@ async def set_reminder(update, context):
         await update.message.reply_text(text=f"התזכורת: *{user_data_set_reminder["reminder_text"]}* נוספה בהצלחה.",
                                         reply_markup=reply_markup,
                                         parse_mode="markdown")
+        return ConversationHandler.END
+
+    except ValueError as e:
+        await update.message.reply_text("לא הבנתי את השעה שכתבת. אנא הקלד שעה תקינה בפורמט: XX:YY.")
+        return SET_REMINDER
 
     except Exception as e:
         todolist_logger.exception(str(e))
         await update.message.reply_text("משהו השתבש😕 לא הצלחתי להוסיף את התזכורת.")
-
-    finally:
         return ConversationHandler.END
 
 
@@ -447,6 +480,7 @@ async def reminder_bot_message():
 
         # get all of the reminders from the db
         reminders_list = get_all_reminders()
+        now = datetime.now()
 
         for reminder in reminders_list:
             reminder_data = {}
@@ -457,47 +491,88 @@ async def reminder_bot_message():
             reminder_data["chat_id"] = reminder.get("chat_id")
 
             reminder_time_str = str(reminder_data["time"])
-            now = datetime.now()
 
             # Format current date and time as DD/MM/YY HH:MM:SS
-            current_datetime = now.strftime("%d/%m/%y %H:%M:%S")
+            current_datetime_str = now.strftime("%d/%m/%y %H:%M")
 
-            reminder_time = datetime.strptime(
-                reminder_time_str, "%H:%M:%S").replace(year=now.year, month=now.month, day=now.day)
+            reminder_time_str = reminder_data["time"].strftime(
+                "%d/%m/%y %H:%M")
 
-            # Format reminder date and time as DD/MM/YY HH:MM:SS
-            reminder_time = reminder_time.strftime("%d/%m/%y %H:%M:%S")
-
-            todolist_logger.debug(f"current time: {current_datetime}")
-            todolist_logger.debug(f"reminder time: {reminder_time}")
+            # todolist_logger.debug(f"current time: {current_datetime_str}")
+            # todolist_logger.debug(f"reminder time: {reminder_time_str}")
 
             # Check if it's time to send a reminder
-            if current_datetime[:-3] == reminder_time[:-3]:
+            if current_datetime_str == reminder_time_str:
                 todolist_logger.debug("the time for reminder is now")
                 # Send reminder to the user
                 bot = Bot(token=TOKEN)
-                await bot.send_message(chat_id=reminder_data["chat_id"], text=f"*תזכורת:* {reminder_data["task"]}", parse_mode="markdown")
+
+                TASK_DONE_OR_KEEP_REMINDER_KEYBOARD = [
+                    [
+                        InlineKeyboardButton("המשימה בוצעה✅ - עצירת תזכורת",
+                                             callback_data="task_is_done:" + reminder_data["task"])
+                    ],
+                    [InlineKeyboardButton("המשימה לא בוצעה❌ - המשך להזכיר לי",
+                                          callback_data="task_is_not_done:" + reminder_data["task"])
+                     ]
+                ]
+
+                reply_markup = InlineKeyboardMarkup(
+                    TASK_DONE_OR_KEEP_REMINDER_KEYBOARD)
+
+                await bot.send_message(chat_id=reminder_data["chat_id"], text=f"*תזכורת:* {reminder_data["task"]}",
+                                       reply_markup=reply_markup, parse_mode="markdown")
 
                 # Update reminder for the next occurrence based on frequency
-                if reminder_data["frequency"] == 'every_day':
+                if reminder_data["frequency"] == "1":
                     next_reminder_time = now + timedelta(days=1)
-                    todolist_logger.debug(f"next reminder time: {
-                                          next_reminder_time}")
-                elif reminder_data["frequency"] == 'every_week':
-                    next_reminder_time = now + timedelta(weeks=1)
-                elif reminder_data["frequency"] == 'every_month':
+
+                elif reminder_data["frequency"] == "7":
+                    next_reminder_time = now + timedelta(days=7)
+                elif reminder_data["frequency"] == "30":
                     """approximation for simplicity - the purpose of the bot is not
                     to give a specific reminder in date and time, but a general one.
                     """
                     next_reminder_time = now + timedelta(days=30)
 
-                reminder_data["time"] = next_reminder_time.strftime("%H:%M")
-                todolist_logger.debug(f"next reminder time after format: {
-                                      next_reminder_time}")
+                reminder_data["time"] = next_reminder_time
 
                 update_reminder_time(reminder_data)
 
         time.sleep(5)
+
+
+async def reply_to_reminder_message(update, context):
+
+    query = update.callback_query
+    await query.answer()
+
+    user_id = update.effective_user.id
+
+    # the callback data is: "task_is_done:" + task as str or: "task_is_not_done" + task as str
+    callback_data_parts = (query.data).split(":")
+
+    task_reminder = callback_data_parts[1]
+
+    if "task_is_not_done" in callback_data_parts:
+
+        reply_markup = InlineKeyboardMarkup(RETURN_TO_TODOLIST_MENU_KEYBOARD)
+
+        await update.callback_query.message.reply_text(text=f"אמשיך להזכיר לך את המשימה: *{task_reminder}*.", reply_markup=reply_markup, parse_mode="markdown")
+
+    else:
+
+        reply_markup = InlineKeyboardMarkup(
+            RETURN_TO_TODOLIST_MENU_KEYBOARD)
+
+        try:
+            delete_reminder_from_db(user_id, task_reminder)
+
+            await update.callback_query.message.reply_text(text=f"המשימה: *{task_reminder}* בוצעה✅ התזכורת למשימה זו נמחקה.", reply_markup=reply_markup, parse_mode="markdown")
+
+        except Exception as e:
+            todolist_logger.exception("cannot delete reminder from db")
+            await update.callback_query.message.reply_text(text=f"משהו השתבש😕 לא הצלחתי למחוק את התזכורת למשימה שלך.", reply_markup=reply_markup)
 
 
 # cancel function for to do list menu
@@ -563,8 +638,11 @@ set_reminder_conv_handler = ConversationHandler(
 return_to_todolist_handler = CallbackQueryHandler(
     return_to_todolist, pattern="^return_to_todolist$")
 
+reply_to_reminder_message_handler = CallbackQueryHandler(
+    reply_to_reminder_message, pattern="^task_is")
+
 
 todolist_features_handlers = [CommandHandler("todolist", todolist_command), MessageHandler(
     filters.Regex("ניהול משימות"), todolist_command), add_task_conv_handler,
     return_to_todolist_handler, show_all_tasks_handler, show_level_tasks_handler,
-    delete_task_conv_handler, set_reminder_conv_handler]
+    delete_task_conv_handler, set_reminder_conv_handler, reply_to_reminder_message_handler]

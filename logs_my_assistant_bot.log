@@ -1,0 +1,193 @@
+2024-01-04 11:11:00,628 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-04 11:11:02,428 - main_logger - INFO - Connected to DB
+2024-01-04 11:11:04,171 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:04,172 - todolist_logger - DEBUG - reminder time: 04/01/24 12:52
+2024-01-04 11:11:04,173 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:04,174 - todolist_logger - DEBUG - reminder time: 04/01/24 12:53
+2024-01-04 11:11:04,176 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:04,179 - todolist_logger - DEBUG - reminder time: 04/01/24 12:00
+2024-01-04 11:11:04,199 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:04,200 - todolist_logger - DEBUG - reminder time: 04/01/24 12:54
+2024-01-04 11:11:04,202 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:04,203 - todolist_logger - DEBUG - reminder time: 04/01/24 12:55
+2024-01-04 11:11:04,204 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:04,205 - todolist_logger - DEBUG - reminder time: 04/01/24 12:57
+2024-01-04 11:11:04,207 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:04,208 - todolist_logger - DEBUG - reminder time: 04/01/24 13:05
+2024-01-04 11:11:04,209 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:04,211 - todolist_logger - DEBUG - reminder time: 04/01/24 13:05
+2024-01-04 11:11:04,212 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:04,213 - todolist_logger - DEBUG - reminder time: 03/01/24 13:09
+2024-01-04 11:11:04,214 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:04,215 - todolist_logger - DEBUG - reminder time: 04/01/24 13:17
+2024-01-04 11:11:04,218 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:04,219 - todolist_logger - DEBUG - reminder time: 10/01/24 13:10
+2024-01-04 11:11:04,220 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:04,222 - todolist_logger - DEBUG - reminder time: 05/01/24 10:11
+2024-01-04 11:11:04,224 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:04,225 - todolist_logger - DEBUG - reminder time: 05/01/24 11:03
+2024-01-04 11:11:09,496 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:09,497 - todolist_logger - DEBUG - reminder time: 04/01/24 12:52
+2024-01-04 11:11:09,498 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:09,499 - todolist_logger - DEBUG - reminder time: 04/01/24 12:53
+2024-01-04 11:11:09,500 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:09,501 - todolist_logger - DEBUG - reminder time: 04/01/24 12:00
+2024-01-04 11:11:09,503 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:09,504 - todolist_logger - DEBUG - reminder time: 04/01/24 12:54
+2024-01-04 11:11:09,505 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:09,506 - todolist_logger - DEBUG - reminder time: 04/01/24 12:55
+2024-01-04 11:11:09,508 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:09,509 - todolist_logger - DEBUG - reminder time: 04/01/24 12:57
+2024-01-04 11:11:09,510 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:09,512 - todolist_logger - DEBUG - reminder time: 04/01/24 13:05
+2024-01-04 11:11:09,513 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:09,515 - todolist_logger - DEBUG - reminder time: 04/01/24 13:05
+2024-01-04 11:11:09,517 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:09,517 - todolist_logger - DEBUG - reminder time: 03/01/24 13:09
+2024-01-04 11:11:09,519 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:09,520 - todolist_logger - DEBUG - reminder time: 04/01/24 13:17
+2024-01-04 11:11:09,521 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:09,523 - todolist_logger - DEBUG - reminder time: 10/01/24 13:10
+2024-01-04 11:11:09,524 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:09,526 - todolist_logger - DEBUG - reminder time: 05/01/24 10:11
+2024-01-04 11:11:09,527 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:09,529 - todolist_logger - DEBUG - reminder time: 05/01/24 11:03
+2024-01-04 11:11:14,821 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:14,822 - todolist_logger - DEBUG - reminder time: 04/01/24 12:52
+2024-01-04 11:11:14,824 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:14,825 - todolist_logger - DEBUG - reminder time: 04/01/24 12:53
+2024-01-04 11:11:14,826 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:14,827 - todolist_logger - DEBUG - reminder time: 04/01/24 12:00
+2024-01-04 11:11:14,828 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:14,830 - todolist_logger - DEBUG - reminder time: 04/01/24 12:54
+2024-01-04 11:11:14,831 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:14,833 - todolist_logger - DEBUG - reminder time: 04/01/24 12:55
+2024-01-04 11:11:14,834 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:14,836 - todolist_logger - DEBUG - reminder time: 04/01/24 12:57
+2024-01-04 11:11:14,837 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:14,838 - todolist_logger - DEBUG - reminder time: 04/01/24 13:05
+2024-01-04 11:11:14,840 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:14,841 - todolist_logger - DEBUG - reminder time: 04/01/24 13:05
+2024-01-04 11:11:14,842 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:14,844 - todolist_logger - DEBUG - reminder time: 03/01/24 13:09
+2024-01-04 11:11:14,845 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:14,847 - todolist_logger - DEBUG - reminder time: 04/01/24 13:17
+2024-01-04 11:11:14,848 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:14,850 - todolist_logger - DEBUG - reminder time: 10/01/24 13:10
+2024-01-04 11:11:14,852 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:14,854 - todolist_logger - DEBUG - reminder time: 05/01/24 10:11
+2024-01-04 11:11:14,855 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:14,856 - todolist_logger - DEBUG - reminder time: 05/01/24 11:03
+2024-01-04 11:11:20,046 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:20,048 - todolist_logger - DEBUG - reminder time: 04/01/24 12:52
+2024-01-04 11:11:20,049 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:20,051 - todolist_logger - DEBUG - reminder time: 04/01/24 12:53
+2024-01-04 11:11:20,052 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:20,053 - todolist_logger - DEBUG - reminder time: 04/01/24 12:00
+2024-01-04 11:11:20,055 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:20,056 - todolist_logger - DEBUG - reminder time: 04/01/24 12:54
+2024-01-04 11:11:20,058 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:20,059 - todolist_logger - DEBUG - reminder time: 04/01/24 12:55
+2024-01-04 11:11:20,061 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:20,063 - todolist_logger - DEBUG - reminder time: 04/01/24 12:57
+2024-01-04 11:11:20,064 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:20,066 - todolist_logger - DEBUG - reminder time: 04/01/24 13:05
+2024-01-04 11:11:20,068 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:20,069 - todolist_logger - DEBUG - reminder time: 04/01/24 13:05
+2024-01-04 11:11:20,071 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:20,073 - todolist_logger - DEBUG - reminder time: 03/01/24 13:09
+2024-01-04 11:11:20,074 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:20,076 - todolist_logger - DEBUG - reminder time: 04/01/24 13:17
+2024-01-04 11:11:20,077 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:20,079 - todolist_logger - DEBUG - reminder time: 10/01/24 13:10
+2024-01-04 11:11:20,080 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:20,082 - todolist_logger - DEBUG - reminder time: 05/01/24 10:11
+2024-01-04 11:11:20,083 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:20,085 - todolist_logger - DEBUG - reminder time: 05/01/24 11:03
+2024-01-04 11:11:25,266 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:25,267 - todolist_logger - DEBUG - reminder time: 04/01/24 12:52
+2024-01-04 11:11:25,268 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:25,269 - todolist_logger - DEBUG - reminder time: 04/01/24 12:53
+2024-01-04 11:11:25,270 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:25,271 - todolist_logger - DEBUG - reminder time: 04/01/24 12:00
+2024-01-04 11:11:25,273 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:25,274 - todolist_logger - DEBUG - reminder time: 04/01/24 12:54
+2024-01-04 11:11:25,275 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:25,277 - todolist_logger - DEBUG - reminder time: 04/01/24 12:55
+2024-01-04 11:11:25,278 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:25,279 - todolist_logger - DEBUG - reminder time: 04/01/24 12:57
+2024-01-04 11:11:25,280 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:25,282 - todolist_logger - DEBUG - reminder time: 04/01/24 13:05
+2024-01-04 11:11:25,283 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:25,284 - todolist_logger - DEBUG - reminder time: 04/01/24 13:05
+2024-01-04 11:11:25,285 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:25,287 - todolist_logger - DEBUG - reminder time: 03/01/24 13:09
+2024-01-04 11:11:25,288 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:25,289 - todolist_logger - DEBUG - reminder time: 04/01/24 13:17
+2024-01-04 11:11:25,290 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:25,292 - todolist_logger - DEBUG - reminder time: 10/01/24 13:10
+2024-01-04 11:11:25,293 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:25,294 - todolist_logger - DEBUG - reminder time: 05/01/24 10:11
+2024-01-04 11:11:25,295 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:25,297 - todolist_logger - DEBUG - reminder time: 05/01/24 11:03
+2024-01-04 11:11:25,770 - todolist_logger - ERROR - time data '04/01/24 13929e' does not match format '%d/%m/%y %H:%M'
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\todolist.py", line 429, in set_reminder
+    if check_if_time_already_occurred(reminder_time_from_user):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\utils.py", line 44, in check_if_time_already_occurred
+    target_time = datetime.strptime(combined_datetime_str, "%d/%m/%y %H:%M")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\_strptime.py", line 555, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\_strptime.py", line 333, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '04/01/24 13929e' does not match format '%d/%m/%y %H:%M'
+2024-01-04 11:11:31,119 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:31,120 - todolist_logger - DEBUG - reminder time: 04/01/24 12:52
+2024-01-04 11:11:31,121 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:31,122 - todolist_logger - DEBUG - reminder time: 04/01/24 12:53
+2024-01-04 11:11:31,124 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:31,124 - todolist_logger - DEBUG - reminder time: 04/01/24 12:00
+2024-01-04 11:11:31,126 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:31,127 - todolist_logger - DEBUG - reminder time: 04/01/24 12:54
+2024-01-04 11:11:31,129 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:31,130 - todolist_logger - DEBUG - reminder time: 04/01/24 12:55
+2024-01-04 11:11:31,131 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:31,132 - todolist_logger - DEBUG - reminder time: 04/01/24 12:57
+2024-01-04 11:11:31,134 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:31,135 - todolist_logger - DEBUG - reminder time: 04/01/24 13:05
+2024-01-04 11:11:31,136 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:31,137 - todolist_logger - DEBUG - reminder time: 04/01/24 13:05
+2024-01-04 11:11:31,138 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:31,140 - todolist_logger - DEBUG - reminder time: 03/01/24 13:09
+2024-01-04 11:11:31,141 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:31,142 - todolist_logger - DEBUG - reminder time: 04/01/24 13:17
+2024-01-04 11:11:31,143 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:31,145 - todolist_logger - DEBUG - reminder time: 10/01/24 13:10
+2024-01-04 11:11:31,146 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:31,147 - todolist_logger - DEBUG - reminder time: 05/01/24 10:11
+2024-01-04 11:11:31,148 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:31,150 - todolist_logger - DEBUG - reminder time: 05/01/24 11:03
+2024-01-04 11:20:49,688 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-04 11:20:51,393 - main_logger - INFO - Connected to DB
+2024-01-04 11:23:03,980 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-04 11:23:05,895 - main_logger - INFO - Connected to DB
+2024-01-04 11:23:33,491 - todolist_logger - DEBUG - the user chose time that was already pass today
+2024-01-04 11:23:33,493 - todolist_logger - DEBUG - the user set time: 8:50 and the next reminder is on: 2024-01-05 08:50:00
+2024-01-04 12:09:30,112 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-04 12:09:32,724 - main_logger - INFO - Connected to DB
+2024-01-04 12:09:51,603 - todolist_logger - DEBUG - the user set time: 12:20 and the next reminder is on: 2024-01-04 12:20:00
+2024-01-04 12:13:31,072 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-04 12:13:33,027 - main_logger - INFO - Connected to DB
+2024-01-04 12:16:54,405 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-04 12:16:56,295 - main_logger - INFO - Connected to DB
+2024-01-04 12:17:26,666 - clients_logger - ERROR - user send client number to add debt that cannot be converted to int
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\clients.py", line 387, in add_debt
+    debt = int(update.message.text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '1—'
+2024-01-04 12:21:47,710 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-04 12:21:49,868 - main_logger - INFO - Connected to DB

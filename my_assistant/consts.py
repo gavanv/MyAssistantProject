@@ -108,13 +108,13 @@ RETURN_TO_TODOLIST_MENU_KEYBOARD = [[
 
 FREQUENCIES_FOR_REMINDERS_KEYBOARD = [
     [
-        InlineKeyboardButton("כל יום", callback_data="every_day")
+        InlineKeyboardButton("כל יום", callback_data="1")
     ],
     [InlineKeyboardButton("כל שבוע",
-                          callback_data="every_week")
+                          callback_data="7")
      ],
     [InlineKeyboardButton("כל חודש",
-                          callback_data="every_month")
+                          callback_data="30")
      ]
 ]
 
