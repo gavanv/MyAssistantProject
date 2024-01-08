@@ -1,0 +1,610 @@
+2024-01-04 11:11:00,628 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-04 11:11:02,428 - main_logger - INFO - Connected to DB
+2024-01-04 11:11:04,171 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:04,172 - todolist_logger - DEBUG - reminder time: 04/01/24 12:52
+2024-01-04 11:11:04,173 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:04,174 - todolist_logger - DEBUG - reminder time: 04/01/24 12:53
+2024-01-04 11:11:04,176 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:04,179 - todolist_logger - DEBUG - reminder time: 04/01/24 12:00
+2024-01-04 11:11:04,199 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:04,200 - todolist_logger - DEBUG - reminder time: 04/01/24 12:54
+2024-01-04 11:11:04,202 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:04,203 - todolist_logger - DEBUG - reminder time: 04/01/24 12:55
+2024-01-04 11:11:04,204 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:04,205 - todolist_logger - DEBUG - reminder time: 04/01/24 12:57
+2024-01-04 11:11:04,207 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:04,208 - todolist_logger - DEBUG - reminder time: 04/01/24 13:05
+2024-01-04 11:11:04,209 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:04,211 - todolist_logger - DEBUG - reminder time: 04/01/24 13:05
+2024-01-04 11:11:04,212 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:04,213 - todolist_logger - DEBUG - reminder time: 03/01/24 13:09
+2024-01-04 11:11:04,214 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:04,215 - todolist_logger - DEBUG - reminder time: 04/01/24 13:17
+2024-01-04 11:11:04,218 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:04,219 - todolist_logger - DEBUG - reminder time: 10/01/24 13:10
+2024-01-04 11:11:04,220 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:04,222 - todolist_logger - DEBUG - reminder time: 05/01/24 10:11
+2024-01-04 11:11:04,224 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:04,225 - todolist_logger - DEBUG - reminder time: 05/01/24 11:03
+2024-01-04 11:11:09,496 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:09,497 - todolist_logger - DEBUG - reminder time: 04/01/24 12:52
+2024-01-04 11:11:09,498 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:09,499 - todolist_logger - DEBUG - reminder time: 04/01/24 12:53
+2024-01-04 11:11:09,500 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:09,501 - todolist_logger - DEBUG - reminder time: 04/01/24 12:00
+2024-01-04 11:11:09,503 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:09,504 - todolist_logger - DEBUG - reminder time: 04/01/24 12:54
+2024-01-04 11:11:09,505 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:09,506 - todolist_logger - DEBUG - reminder time: 04/01/24 12:55
+2024-01-04 11:11:09,508 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:09,509 - todolist_logger - DEBUG - reminder time: 04/01/24 12:57
+2024-01-04 11:11:09,510 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:09,512 - todolist_logger - DEBUG - reminder time: 04/01/24 13:05
+2024-01-04 11:11:09,513 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:09,515 - todolist_logger - DEBUG - reminder time: 04/01/24 13:05
+2024-01-04 11:11:09,517 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:09,517 - todolist_logger - DEBUG - reminder time: 03/01/24 13:09
+2024-01-04 11:11:09,519 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:09,520 - todolist_logger - DEBUG - reminder time: 04/01/24 13:17
+2024-01-04 11:11:09,521 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:09,523 - todolist_logger - DEBUG - reminder time: 10/01/24 13:10
+2024-01-04 11:11:09,524 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:09,526 - todolist_logger - DEBUG - reminder time: 05/01/24 10:11
+2024-01-04 11:11:09,527 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:09,529 - todolist_logger - DEBUG - reminder time: 05/01/24 11:03
+2024-01-04 11:11:14,821 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:14,822 - todolist_logger - DEBUG - reminder time: 04/01/24 12:52
+2024-01-04 11:11:14,824 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:14,825 - todolist_logger - DEBUG - reminder time: 04/01/24 12:53
+2024-01-04 11:11:14,826 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:14,827 - todolist_logger - DEBUG - reminder time: 04/01/24 12:00
+2024-01-04 11:11:14,828 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:14,830 - todolist_logger - DEBUG - reminder time: 04/01/24 12:54
+2024-01-04 11:11:14,831 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:14,833 - todolist_logger - DEBUG - reminder time: 04/01/24 12:55
+2024-01-04 11:11:14,834 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:14,836 - todolist_logger - DEBUG - reminder time: 04/01/24 12:57
+2024-01-04 11:11:14,837 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:14,838 - todolist_logger - DEBUG - reminder time: 04/01/24 13:05
+2024-01-04 11:11:14,840 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:14,841 - todolist_logger - DEBUG - reminder time: 04/01/24 13:05
+2024-01-04 11:11:14,842 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:14,844 - todolist_logger - DEBUG - reminder time: 03/01/24 13:09
+2024-01-04 11:11:14,845 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:14,847 - todolist_logger - DEBUG - reminder time: 04/01/24 13:17
+2024-01-04 11:11:14,848 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:14,850 - todolist_logger - DEBUG - reminder time: 10/01/24 13:10
+2024-01-04 11:11:14,852 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:14,854 - todolist_logger - DEBUG - reminder time: 05/01/24 10:11
+2024-01-04 11:11:14,855 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:14,856 - todolist_logger - DEBUG - reminder time: 05/01/24 11:03
+2024-01-04 11:11:20,046 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:20,048 - todolist_logger - DEBUG - reminder time: 04/01/24 12:52
+2024-01-04 11:11:20,049 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:20,051 - todolist_logger - DEBUG - reminder time: 04/01/24 12:53
+2024-01-04 11:11:20,052 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:20,053 - todolist_logger - DEBUG - reminder time: 04/01/24 12:00
+2024-01-04 11:11:20,055 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:20,056 - todolist_logger - DEBUG - reminder time: 04/01/24 12:54
+2024-01-04 11:11:20,058 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:20,059 - todolist_logger - DEBUG - reminder time: 04/01/24 12:55
+2024-01-04 11:11:20,061 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:20,063 - todolist_logger - DEBUG - reminder time: 04/01/24 12:57
+2024-01-04 11:11:20,064 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:20,066 - todolist_logger - DEBUG - reminder time: 04/01/24 13:05
+2024-01-04 11:11:20,068 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:20,069 - todolist_logger - DEBUG - reminder time: 04/01/24 13:05
+2024-01-04 11:11:20,071 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:20,073 - todolist_logger - DEBUG - reminder time: 03/01/24 13:09
+2024-01-04 11:11:20,074 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:20,076 - todolist_logger - DEBUG - reminder time: 04/01/24 13:17
+2024-01-04 11:11:20,077 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:20,079 - todolist_logger - DEBUG - reminder time: 10/01/24 13:10
+2024-01-04 11:11:20,080 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:20,082 - todolist_logger - DEBUG - reminder time: 05/01/24 10:11
+2024-01-04 11:11:20,083 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:20,085 - todolist_logger - DEBUG - reminder time: 05/01/24 11:03
+2024-01-04 11:11:25,266 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:25,267 - todolist_logger - DEBUG - reminder time: 04/01/24 12:52
+2024-01-04 11:11:25,268 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:25,269 - todolist_logger - DEBUG - reminder time: 04/01/24 12:53
+2024-01-04 11:11:25,270 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:25,271 - todolist_logger - DEBUG - reminder time: 04/01/24 12:00
+2024-01-04 11:11:25,273 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:25,274 - todolist_logger - DEBUG - reminder time: 04/01/24 12:54
+2024-01-04 11:11:25,275 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:25,277 - todolist_logger - DEBUG - reminder time: 04/01/24 12:55
+2024-01-04 11:11:25,278 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:25,279 - todolist_logger - DEBUG - reminder time: 04/01/24 12:57
+2024-01-04 11:11:25,280 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:25,282 - todolist_logger - DEBUG - reminder time: 04/01/24 13:05
+2024-01-04 11:11:25,283 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:25,284 - todolist_logger - DEBUG - reminder time: 04/01/24 13:05
+2024-01-04 11:11:25,285 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:25,287 - todolist_logger - DEBUG - reminder time: 03/01/24 13:09
+2024-01-04 11:11:25,288 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:25,289 - todolist_logger - DEBUG - reminder time: 04/01/24 13:17
+2024-01-04 11:11:25,290 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:25,292 - todolist_logger - DEBUG - reminder time: 10/01/24 13:10
+2024-01-04 11:11:25,293 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:25,294 - todolist_logger - DEBUG - reminder time: 05/01/24 10:11
+2024-01-04 11:11:25,295 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:25,297 - todolist_logger - DEBUG - reminder time: 05/01/24 11:03
+2024-01-04 11:11:25,770 - todolist_logger - ERROR - time data '04/01/24 13929e' does not match format '%d/%m/%y %H:%M'
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\todolist.py", line 429, in set_reminder
+    if check_if_time_already_occurred(reminder_time_from_user):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\utils.py", line 44, in check_if_time_already_occurred
+    target_time = datetime.strptime(combined_datetime_str, "%d/%m/%y %H:%M")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\_strptime.py", line 555, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\_strptime.py", line 333, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '04/01/24 13929e' does not match format '%d/%m/%y %H:%M'
+2024-01-04 11:11:31,119 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:31,120 - todolist_logger - DEBUG - reminder time: 04/01/24 12:52
+2024-01-04 11:11:31,121 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:31,122 - todolist_logger - DEBUG - reminder time: 04/01/24 12:53
+2024-01-04 11:11:31,124 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:31,124 - todolist_logger - DEBUG - reminder time: 04/01/24 12:00
+2024-01-04 11:11:31,126 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:31,127 - todolist_logger - DEBUG - reminder time: 04/01/24 12:54
+2024-01-04 11:11:31,129 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:31,130 - todolist_logger - DEBUG - reminder time: 04/01/24 12:55
+2024-01-04 11:11:31,131 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:31,132 - todolist_logger - DEBUG - reminder time: 04/01/24 12:57
+2024-01-04 11:11:31,134 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:31,135 - todolist_logger - DEBUG - reminder time: 04/01/24 13:05
+2024-01-04 11:11:31,136 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:31,137 - todolist_logger - DEBUG - reminder time: 04/01/24 13:05
+2024-01-04 11:11:31,138 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:31,140 - todolist_logger - DEBUG - reminder time: 03/01/24 13:09
+2024-01-04 11:11:31,141 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:31,142 - todolist_logger - DEBUG - reminder time: 04/01/24 13:17
+2024-01-04 11:11:31,143 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:31,145 - todolist_logger - DEBUG - reminder time: 10/01/24 13:10
+2024-01-04 11:11:31,146 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:31,147 - todolist_logger - DEBUG - reminder time: 05/01/24 10:11
+2024-01-04 11:11:31,148 - todolist_logger - DEBUG - current time: 04/01/24 11:11
+2024-01-04 11:11:31,150 - todolist_logger - DEBUG - reminder time: 05/01/24 11:03
+2024-01-04 11:20:49,688 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-04 11:20:51,393 - main_logger - INFO - Connected to DB
+2024-01-04 11:23:03,980 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-04 11:23:05,895 - main_logger - INFO - Connected to DB
+2024-01-04 11:23:33,491 - todolist_logger - DEBUG - the user chose time that was already pass today
+2024-01-04 11:23:33,493 - todolist_logger - DEBUG - the user set time: 8:50 and the next reminder is on: 2024-01-05 08:50:00
+2024-01-04 12:09:30,112 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-04 12:09:32,724 - main_logger - INFO - Connected to DB
+2024-01-04 12:09:51,603 - todolist_logger - DEBUG - the user set time: 12:20 and the next reminder is on: 2024-01-04 12:20:00
+2024-01-04 12:13:31,072 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-04 12:13:33,027 - main_logger - INFO - Connected to DB
+2024-01-04 12:16:54,405 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-04 12:16:56,295 - main_logger - INFO - Connected to DB
+2024-01-04 12:17:26,666 - clients_logger - ERROR - user send client number to add debt that cannot be converted to int
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\clients.py", line 387, in add_debt
+    debt = int(update.message.text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '1—'
+2024-01-04 12:21:47,710 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-04 12:21:49,868 - main_logger - INFO - Connected to DB
+2024-01-08 08:37:59,329 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-08 08:38:01,479 - main_logger - INFO - Connected to DB
+2024-01-08 08:47:20,411 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-08 08:47:22,605 - main_logger - INFO - Connected to DB
+2024-01-08 08:49:35,963 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-08 08:49:37,808 - main_logger - INFO - Connected to DB
+2024-01-08 08:58:18,029 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-08 08:58:19,852 - main_logger - INFO - Connected to DB
+2024-01-08 09:04:09,425 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-08 09:04:11,294 - main_logger - INFO - Connected to DB
+2024-01-08 09:05:40,626 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-08 09:05:42,326 - main_logger - INFO - Connected to DB
+2024-01-08 09:10:41,704 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-08 09:10:43,452 - main_logger - INFO - Connected to DB
+2024-01-08 09:12:42,892 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-08 09:12:45,128 - main_logger - INFO - Connected to DB
+2024-01-08 09:16:35,380 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-08 09:16:37,288 - main_logger - INFO - Connected to DB
+2024-01-08 09:36:01,462 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-08 09:36:03,437 - main_logger - INFO - Connected to DB
+2024-01-08 09:39:42,808 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-08 09:39:44,628 - main_logger - INFO - Connected to DB
+2024-01-08 09:42:12,064 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-08 09:42:14,027 - main_logger - INFO - Connected to DB
+2024-01-08 10:15:11,794 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-08 10:15:11,795 - main_logger - INFO - Connected to DB
+2024-01-08 10:15:12,993 - db_connection_logger - ERROR - unable to get all reminders from db
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\db_connection.py", line 290, in get_all_reminders
+    db_cursor.execute(sql_select_reminders)
+    ^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'execute'
+2024-01-08 10:37:18,266 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-08 10:37:18,268 - main_logger - INFO - Connected to DB
+2024-01-08 10:41:23,536 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-08 10:41:23,540 - main_logger - INFO - Connected to DB
+2024-01-08 10:41:31,566 - db_connection_logger - ERROR - unable to get all reminders from db.
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\cursor_cext.py", line 300, in execute
+    raise ProgrammingError
+mysql.connector.errors.ProgrammingError: Unknown error
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\db_connection.py", line 40, in wrapper
+    result = query_func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\db_connection.py", line 187, in get_all_reminders
+    db_cursor.execute(sql_get_all_reminders)
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\cursor_cext.py", line 302, in execute
+    raise ProgrammingError("Cursor is not connected", 2055) from err
+mysql.connector.errors.ProgrammingError: 2055: Cursor is not connected
+2024-01-08 10:42:16,667 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-08 10:42:16,668 - main_logger - INFO - Connected to DB
+2024-01-08 10:59:17,043 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-08 10:59:17,044 - main_logger - INFO - Connected to DB
+2024-01-08 11:01:21,887 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-08 11:01:21,888 - main_logger - INFO - Connected to DB
+2024-01-08 11:01:45,940 - db_connection_logger - ERROR - unable to add client to db.
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\db_connection.py", line 40, in wrapper
+    result = query_func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\db_connection.py", line 76, in add_client_to_db
+    raise ClientAlreadyExists(user_data.get("full_name"))
+exceptions.ClientAlreadyExists: הלקוח/ה בדיקה כבר נמצא/ת ברשימת הלקוחות שלך.
+2024-01-08 11:06:52,051 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-08 11:06:52,053 - main_logger - INFO - Connected to DB
+2024-01-08 11:07:19,643 - db_connection_logger - ERROR - unable to add client to db.
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\db_connection.py", line 40, in wrapper
+    result = query_func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\db_connection.py", line 76, in add_client_to_db
+    raise ClientAlreadyExists(user_data.get("full_name"))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: ClientAlreadyExists.__init__() missing 1 required positional argument: 'client_address'
+2024-01-08 11:07:54,408 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-08 11:07:54,411 - main_logger - INFO - Connected to DB
+2024-01-08 11:08:10,047 - db_connection_logger - ERROR - unable to add client to db.
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\db_connection.py", line 40, in wrapper
+    result = query_func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\db_connection.py", line 76, in add_client_to_db
+    raise ClientAlreadyExists(user_data.get(
+exceptions.ClientAlreadyExists: הלקוח/ה: *בדיקה* בכתובת: *גווןבדיקה* כבר נמצא/ת ברשימת הלקוחות שלך.
+2024-01-08 11:08:56,575 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-08 11:08:56,578 - main_logger - INFO - Connected to DB
+2024-01-08 11:09:14,046 - db_connection_logger - ERROR - unable to add client to db.
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\db_connection.py", line 40, in wrapper
+    result = query_func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\db_connection.py", line 76, in add_client_to_db
+    raise ClientAlreadyExists(user_data.get(
+exceptions.ClientAlreadyExists: הלקוח/ה: *בדיקה* בכתובת: *גווןבדיקה* כבר נמצא/ת ברשימת הלקוחות שלך.
+2024-01-08 11:37:32,511 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-08 11:37:32,512 - main_logger - INFO - Connected to DB
+2024-01-08 11:37:45,486 - db_connection_logger - ERROR - unable to add client to db.
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\db_connection.py", line 40, in wrapper
+    result = query_func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\db_connection.py", line 76, in add_client_to_db
+    raise ClientAlreadyExists(user_data.get(
+exceptions.ClientAlreadyExists: הלקוח/ה: *בדיקה* בכתובת: *בדיקה* כבר נמצא/ת ברשימת הלקוחות שלך.
+2024-01-08 11:38:59,414 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-08 11:38:59,416 - main_logger - INFO - Connected to DB
+2024-01-08 11:39:12,583 - db_connection_logger - ERROR - unable to add client to db.
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\db_connection.py", line 40, in wrapper
+    result = query_func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\db_connection.py", line 76, in add_client_to_db
+    raise ClientAlreadyExists(user_data.get(
+exceptions.ClientAlreadyExists: הלקוח/ה: *בדיקה* בכתובת: *בדיקה* כבר נמצא/ת ברשימת הלקוחות שלך.
+2024-01-08 13:11:30,124 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-08 13:11:30,126 - main_logger - INFO - Connected to DB
+2024-01-08 13:15:53,050 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-08 13:15:53,052 - main_logger - INFO - Connected to DB
+2024-01-08 13:17:40,274 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-08 13:17:40,275 - main_logger - INFO - Connected to DB
+2024-01-08 13:19:26,813 - todolist_logger - DEBUG - the user set time: 13:20 and the next reminder is on: 2024-01-08 13:20:00
+2024-01-08 13:20:03,687 - todolist_logger - DEBUG - the time for reminder is now
+2024-01-08 14:06:10,214 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-08 14:06:10,216 - main_logger - INFO - Connected to DB
+2024-01-08 14:10:36,092 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-08 14:10:36,094 - main_logger - INFO - Connected to DB
+2024-01-08 14:50:52,813 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-08 14:50:52,815 - main_logger - INFO - Connected to DB
+2024-01-08 14:54:28,059 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-08 14:54:28,059 - main_logger - INFO - Connected to DB
+2024-01-08 15:15:10,620 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-08 15:15:10,621 - main_logger - INFO - Connected to DB
+2024-01-08 15:15:28,099 - clients_logger - ERROR - user send number that is not in the given list.
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\utils.py", line 80, in wrapper
+    return await func(update, context, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\clients.py", line 308, in debt_amount_to_add
+    raise IndexIsOutOfRange()
+exceptions.IndexIsOutOfRange: הקלדת מספר שלא נמצא ברשימה, אנא הקלד מספר תקין.
+2024-01-08 15:15:33,458 - clients_logger - ERROR - user send number that cannot be converted to int
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\utils.py", line 80, in wrapper
+    return await func(update, context, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\clients.py", line 305, in debt_amount_to_add
+    client_number_to_add_debt = int(update.message.text) - 1
+                                ^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'vlfc'
+2024-01-08 15:15:59,273 - clients_logger - ERROR - user send number that is not in the given list.
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\utils.py", line 80, in wrapper
+    return await func(update, context, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\clients.py", line 445, in ask_amount_to_delete
+    raise IndexIsOutOfRange()
+exceptions.IndexIsOutOfRange: הקלדת מספר שלא נמצא ברשימה, אנא הקלד מספר תקין.
+2024-01-08 15:16:03,824 - clients_logger - ERROR - user send number that is not in the given list.
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\utils.py", line 80, in wrapper
+    return await func(update, context, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\clients.py", line 445, in ask_amount_to_delete
+    raise IndexIsOutOfRange()
+exceptions.IndexIsOutOfRange: הקלדת מספר שלא נמצא ברשימה, אנא הקלד מספר תקין.
+2024-01-08 15:16:06,346 - clients_logger - ERROR - user send number that cannot be converted to int
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\utils.py", line 80, in wrapper
+    return await func(update, context, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\clients.py", line 435, in ask_amount_to_delete
+    client_number = int(update.message.text) - 1
+                    ^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'fdlv'
+2024-01-08 15:16:18,331 - clients_logger - ERROR - user send number that cannot be converted to int
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\utils.py", line 80, in wrapper
+    return await func(update, context, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\clients.py", line 574, in delete_part_debt
+    debt_to_delete = int(update.message.text)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'ckdk'
+2024-01-08 15:16:37,798 - clients_logger - ERROR - user send number that cannot be converted to int
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\utils.py", line 80, in wrapper
+    return await func(update, context, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\clients.py", line 671, in send_link
+    client_number = int(update.message.text) - 1
+                    ^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'fdkf'
+2024-01-08 15:16:40,598 - clients_logger - ERROR - user send number that is not in the given list.
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\utils.py", line 80, in wrapper
+    return await func(update, context, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\clients.py", line 676, in send_link
+    raise IndexIsOutOfRange()
+exceptions.IndexIsOutOfRange: הקלדת מספר שלא נמצא ברשימה, אנא הקלד מספר תקין.
+2024-01-08 15:16:42,962 - clients_logger - ERROR - user send number that is not in the given list.
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\utils.py", line 80, in wrapper
+    return await func(update, context, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\clients.py", line 676, in send_link
+    raise IndexIsOutOfRange()
+exceptions.IndexIsOutOfRange: הקלדת מספר שלא נמצא ברשימה, אנא הקלד מספר תקין.
+2024-01-08 15:16:44,214 - clients_logger - ERROR - user send number that cannot be converted to int
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\utils.py", line 80, in wrapper
+    return await func(update, context, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\clients.py", line 671, in send_link
+    client_number = int(update.message.text) - 1
+                    ^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'f'
+2024-01-08 18:37:18,436 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-08 18:37:18,440 - main_logger - INFO - Connected to DB
+2024-01-08 18:37:46,631 - clients_logger - ERROR - user send number that is not in the given list.
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\utils.py", line 79, in wrapper
+    return await func(update, context, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\clients.py", line 304, in debt_amount_to_add
+    raise IndexIsOutOfRange()
+exceptions.IndexIsOutOfRange: הקלדת מספר שלא נמצא ברשימה, אנא הקלד מספר תקין.
+2024-01-08 18:37:50,010 - clients_logger - ERROR - user send number that is not in the given list.
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\utils.py", line 79, in wrapper
+    return await func(update, context, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\clients.py", line 304, in debt_amount_to_add
+    raise IndexIsOutOfRange()
+exceptions.IndexIsOutOfRange: הקלדת מספר שלא נמצא ברשימה, אנא הקלד מספר תקין.
+2024-01-08 18:37:54,906 - clients_logger - ERROR - user send number that cannot be converted to int
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\utils.py", line 79, in wrapper
+    return await func(update, context, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\clients.py", line 301, in debt_amount_to_add
+    client_number_to_add_debt = int(update.message.text) - 1
+                                ^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'fhsdjlv\\'
+2024-01-08 18:38:16,717 - clients_logger - ERROR - An error occurred in show_clients_callback: Can't parse entities: can't find end of the entity starting at byte offset 50
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\utils.py", line 63, in wrapper
+    return await func(update, context, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\clients.py", line 121, in show_clients_callback
+    await update.callback_query.message.reply_text(text="*רשימת לקוחות:*\n" + clients_list_text,
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\_message.py", line 1094, in reply_text
+    return await self.get_bot().send_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\ext\_extbot.py", line 2624, in send_message
+    return await super().send_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\_bot.py", line 846, in send_message
+    return await self._send_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\ext\_extbot.py", line 522, in _send_message
+    result = await super()._send_message(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\_bot.py", line 703, in _send_message
+    result = await self._post(
+             ^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\_bot.py", line 613, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\ext\_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\_bot.py", line 641, in _do_post
+    return await request.post(
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\request\_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\request\_baserequest.py", line 379, in _request_wrapper
+    raise BadRequest(message)
+telegram.error.BadRequest: Can't parse entities: can't find end of the entity starting at byte offset 50
+2024-01-08 18:39:09,200 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-08 18:39:09,203 - main_logger - INFO - Connected to DB
+2024-01-08 18:39:13,101 - clients_logger - ERROR - An error occurred in show_clients_callback: Can't parse entities: can't find end of the entity starting at byte offset 50
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\utils.py", line 63, in wrapper
+    return await func(update, context, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\clients.py", line 121, in show_clients_callback
+    await update.callback_query.message.reply_text(text="*רשימת לקוחות:*\n" + clients_list_text,
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\_message.py", line 1094, in reply_text
+    return await self.get_bot().send_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\ext\_extbot.py", line 2624, in send_message
+    return await super().send_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\_bot.py", line 846, in send_message
+    return await self._send_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\ext\_extbot.py", line 522, in _send_message
+    result = await super()._send_message(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\_bot.py", line 703, in _send_message
+    result = await self._post(
+             ^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\_bot.py", line 613, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\ext\_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\_bot.py", line 641, in _do_post
+    return await request.post(
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\request\_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\request\_baserequest.py", line 379, in _request_wrapper
+    raise BadRequest(message)
+telegram.error.BadRequest: Can't parse entities: can't find end of the entity starting at byte offset 50
+2024-01-08 18:46:27,323 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-08 18:46:27,324 - main_logger - INFO - Connected to DB
+2024-01-08 18:46:30,617 - clients_logger - DEBUG - [{'id': 91, 'full_name': 'Eee', 'address': '“ OR delete * from clients “', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 19, 12, 11, 4), 'user_id': '2047863143', 'username': 'Nir Gofman'}]
+2024-01-08 18:46:30,721 - clients_logger - ERROR - An error occurred in show_clients_callback: Can't parse entities: can't find end of the entity starting at byte offset 50
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\utils.py", line 63, in wrapper
+    return await func(update, context, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\clients.py", line 123, in show_clients_callback
+    await update.callback_query.message.reply_text(text="*רשימת לקוחות:*\n" + clients_list_text,
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\_message.py", line 1094, in reply_text
+    return await self.get_bot().send_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\ext\_extbot.py", line 2624, in send_message
+    return await super().send_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\_bot.py", line 846, in send_message
+    return await self._send_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\ext\_extbot.py", line 522, in _send_message
+    result = await super()._send_message(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\_bot.py", line 703, in _send_message
+    result = await self._post(
+             ^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\_bot.py", line 613, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\ext\_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\_bot.py", line 641, in _do_post
+    return await request.post(
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\request\_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\request\_baserequest.py", line 379, in _request_wrapper
+    raise BadRequest(message)
+telegram.error.BadRequest: Can't parse entities: can't find end of the entity starting at byte offset 50
+2024-01-08 18:47:43,008 - clients_logger - DEBUG - [{'id': 91, 'full_name': 'Eee', 'address': '“ OR delete * from clients “', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 19, 12, 11, 4), 'user_id': '2047863143', 'username': 'Nir Gofman'}]
+2024-01-08 18:47:43,100 - clients_logger - ERROR - An error occurred in show_clients_callback: Can't parse entities: can't find end of the entity starting at byte offset 50
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\utils.py", line 63, in wrapper
+    return await func(update, context, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\clients.py", line 123, in show_clients_callback
+    await update.callback_query.message.reply_text(text="*רשימת לקוחות:*\n" + clients_list_text,
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\_message.py", line 1094, in reply_text
+    return await self.get_bot().send_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\ext\_extbot.py", line 2624, in send_message
+    return await super().send_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\_bot.py", line 846, in send_message
+    return await self._send_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\ext\_extbot.py", line 522, in _send_message
+    result = await super()._send_message(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\_bot.py", line 703, in _send_message
+    result = await self._post(
+             ^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\_bot.py", line 613, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\ext\_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\_bot.py", line 641, in _do_post
+    return await request.post(
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\request\_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\request\_baserequest.py", line 379, in _request_wrapper
+    raise BadRequest(message)
+telegram.error.BadRequest: Can't parse entities: can't find end of the entity starting at byte offset 50
+2024-01-08 18:48:09,601 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-08 18:48:09,602 - main_logger - INFO - Connected to DB
+2024-01-08 18:48:13,010 - clients_logger - DEBUG - []
