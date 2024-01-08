@@ -81,7 +81,7 @@ async def write_task(update, context):
 
     user_data_add_task["category"] = update.callback_query.data
 
-    await update.callback_query.message.reply_text(text=f"הקלד את המשימה שתרצה להוסיף לקטגוריה: *{user_data_add_task["category"]}*\n או לחץ /cancel כדי לבטל",
+    await update.callback_query.message.reply_text(text=f"הקלד את המשימה שתרצה להוסיף לקטגוריה: *{user_data_add_task['category']}*\n או לחץ /cancel כדי לבטל",
                                                    parse_mode="markdown")
     return CHOOSE_LEVEL
 
@@ -120,7 +120,7 @@ async def add_task(update, context):
         reply_markup = InlineKeyboardMarkup(
             ADD_TASK_OR_RETURN_TO_TODOLIST_MENU_KEYBOARD)
 
-        await update.callback_query.message.reply_text(text=f"המשימה: <b>{user_data_add_task["task"]}</b> נוספה בהצלחה לקטגוריה: <b>{user_data_add_task["category"]}</b>", reply_markup=reply_markup, parse_mode='HTML')
+        await update.callback_query.message.reply_text(text=f"המשימה: <b>{user_data_add_task['task']}</b> נוספה בהצלחה לקטגוריה: <b>{user_data_add_task['category']}</b>", reply_markup=reply_markup, parse_mode='HTML')
 
     except Exception as e:
         todolist_logger.exception(str(e))
@@ -174,8 +174,7 @@ def create_tasks_list_text(tasks_list, categories):
 
         if len(tasks_in_category) > 0:
 
-            result_text = result_text + f"*{category}:*\n" + "\n".join([f"{index + 1}. {
-                                                                       task.get("task")} ({task.get("level")})" for index, task in enumerate(tasks_in_category)])
+            result_text = result_text + f"*{category}:*\n" + "\n".join([f"{index + 1}. {task.get('task')} ({task.get('level')})" for index, task in enumerate(tasks_in_category)])
             result_text += "\n\n"
 
     return result_text
@@ -312,7 +311,7 @@ async def choose_task_to_delete(update, context):
 
             reply_markup = InlineKeyboardMarkup(
                 ADD_TASK_OR_RETURN_TO_TODOLIST_MENU_KEYBOARD)
-            await update.callback_query.message.reply_text(text=f"*לא קיימות משימות בקטגוריה: {user_data_delete_task["category"]}.*", reply_markup=reply_markup, parse_mode="markdown")
+            await update.callback_query.message.reply_text(text=f"*לא קיימות משימות בקטגוריה: {user_data_delete_task['category']}.*", reply_markup=reply_markup, parse_mode="markdown")
             return ConversationHandler.END
 
         else:
@@ -440,8 +439,7 @@ async def set_reminder(update, context):
         else:
             timedelta_from_next_reminder = 0
 
-        combined_datetime_str = f"{now.strftime(
-            '%d/%m/%y')} {reminder_time_from_user}"
+        combined_datetime_str = f"{now.strftime('%d/%m/%y')} {reminder_time_from_user}"
 
         combined_datetime = datetime.strptime(
             combined_datetime_str, "%d/%m/%y %H:%M")
@@ -451,15 +449,14 @@ async def set_reminder(update, context):
 
         user_data_set_reminder["reminder_time"] = next_reminder_time
 
-        todolist_logger.debug(f"the user set time: {reminder_time_from_user} and the next reminder is on: {
-                              user_data_set_reminder["reminder_time"]}")
+        todolist_logger.debug(f"the user set time: {reminder_time_from_user} and the next reminder is on: {user_data_set_reminder['reminder_time']}")
 
         add_reminder_to_db(user_data_set_reminder)
 
         reply_markup = InlineKeyboardMarkup(
             ADD_REMINDER_OR_RETURN_TO_TODOLIST_MENU_KEYBOARD)
 
-        await update.message.reply_text(text=f"התזכורת: *{user_data_set_reminder["reminder_text"]}* נוספה בהצלחה.",
+        await update.message.reply_text(text=f"התזכורת: *{user_data_set_reminder['reminder_text']}* נוספה בהצלחה.",
                                         reply_markup=reply_markup,
                                         parse_mode="markdown")
         return ConversationHandler.END
@@ -520,7 +517,7 @@ async def reminder_bot_message():
                 reply_markup = InlineKeyboardMarkup(
                     TASK_DONE_OR_KEEP_REMINDER_KEYBOARD)
 
-                await bot.send_message(chat_id=reminder_data["chat_id"], text=f"*תזכורת:* {reminder_data["task"]}",
+                await bot.send_message(chat_id=reminder_data["chat_id"], text=f"*תזכורת:* {reminder_data['task']}",
                                        reply_markup=reply_markup, parse_mode="markdown")
 
                 # Update reminder for the next occurrence based on frequency
