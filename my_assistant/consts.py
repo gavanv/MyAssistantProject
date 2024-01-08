@@ -9,6 +9,9 @@ DB_PASSWORD = 'gavan1121g'
 DB_NAME = 'myAssistantBotDB'
 PORT = 3306
 
+YES_OR_NO_KEYBOARD = [[InlineKeyboardButton("כן", callback_data="yes"),
+                       InlineKeyboardButton("לא", callback_data="No")]]
+
 # constans for clients part
 CLIENTS_MENU_KEYBOARD = [
     [

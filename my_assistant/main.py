@@ -11,7 +11,7 @@ from telegram.ext import Application, CommandHandler, MessageHandler, filters, C
 from clients import clients_features_handlers
 from todolist import todolist_features_handlers, reminder_bot_message
 from commands import start, shopping
-from db_connection import connect_to_db
+# from db_connection import connect_to_db
 
 main_logger = setup_logger("main_logger")
 
@@ -78,12 +78,12 @@ def wrap_async_func():
 def main():
 
     main_logger.info("Bot started! Connecting to DB...")
-    try:
-        connect_to_db()
+    # try:
+    #     connect_to_db()
 
-    except Exception as e:
-        main_logger.exception(
-            "An error occurred - Unable to connect to the database")
+    # except Exception as e:
+    #     main_logger.exception(
+    #         "An error occurred - Unable to connect to the database")
 
     main_logger.info("Connected to DB")
 
