@@ -40,6 +40,6 @@ jobs:
               run: |
                   docker image build -t "gavan777/my-assistant:${{ github.sha }}" .
                   docker image push "gavan777/my-assistant:${{ github.sha }}"
-                #  docker -H 44.214.99.189 run -d my-assistant-app:${{ github.sha }}
+                  docker -H 44.214.99.189 run -d "gavan777/my-assistant:${{ github.sha }}"
                 #   docker push "${{ vars.CLARITY_DOCKER_REGISTRY }}/platform/clarity-statements-service:${{ github.sha }}"
 
