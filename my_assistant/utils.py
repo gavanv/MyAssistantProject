@@ -55,6 +55,13 @@ def check_if_time_already_occurred(time_str):
         return False
 
 
+async def cancel(update, context, keyboard):
+
+    reply_markup = InlineKeyboardMarkup(keyboard)
+    await update.message.reply_text(text="*הפעולה בוטלה בהצלחה.*", reply_markup=reply_markup, parse_mode="markdown")
+    return ConversationHandler.END
+
+
 def callback_query_errors_handler_decorator(logger):
     def decorator(func):
         @wraps(func)
@@ -86,7 +93,7 @@ def message_errors_handler_decorator(logger, conversation_state):
 
             except ValueError as e:
                 logger.exception(
-                    "user send number that cannot be converted to int")
+                    "user send input that cannot be converted to the needed type")
                 await update.message.reply_text("לא הבנתי מה שכתבת, אנא הקלד מספר תקין.")
                 return conversation_state
 

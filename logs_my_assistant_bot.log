@@ -610,3 +610,60 @@ telegram.error.BadRequest: Can't parse entities: can't find end of the entity st
 2024-01-08 18:48:13,010 - clients_logger - DEBUG - []
 2024-01-08 20:11:57,008 - main_logger - INFO - Bot started! Connecting to DB...
 2024-01-08 20:11:57,011 - main_logger - INFO - Connected to DB
+2024-01-08 22:39:20,819 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-08 22:39:20,829 - main_logger - INFO - Connected to DB
+2024-01-08 22:40:15,620 - todolist_logger - ERROR - user send number that is not in the given list.
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\utils.py", line 86, in wrapper
+    return await func(update, context, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\todolist.py", line 319, in delete_task
+    raise IndexIsOutOfRange()
+exceptions.IndexIsOutOfRange: הקלדת מספר שלא נמצא ברשימה, אנא הקלד מספר תקין.
+2024-01-08 22:40:20,032 - todolist_logger - ERROR - user send number that is not in the given list.
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\utils.py", line 86, in wrapper
+    return await func(update, context, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\todolist.py", line 319, in delete_task
+    raise IndexIsOutOfRange()
+exceptions.IndexIsOutOfRange: הקלדת מספר שלא נמצא ברשימה, אנא הקלד מספר תקין.
+2024-01-08 22:40:23,731 - todolist_logger - ERROR - user send input that cannot be converted to the needed type
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\utils.py", line 86, in wrapper
+    return await func(update, context, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\todolist.py", line 316, in delete_task
+    task_number = int(update.message.text) - 1
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'cek4'
+2024-01-08 22:41:02,008 - todolist_logger - ERROR - user send input that cannot be converted to the needed type
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\utils.py", line 86, in wrapper
+    return await func(update, context, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\todolist.py", line 391, in set_reminder
+    parsed_time = datetime.strptime(reminder_time_from_user, "%H:%M")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\_strptime.py", line 555, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\_strptime.py", line 333, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data 'קחכ5' does not match format '%H:%M'
+2024-01-08 22:41:06,474 - todolist_logger - ERROR - user send input that cannot be converted to the needed type
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\utils.py", line 86, in wrapper
+    return await func(update, context, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\todolist.py", line 391, in set_reminder
+    parsed_time = datetime.strptime(reminder_time_from_user, "%H:%M")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\_strptime.py", line 555, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\_strptime.py", line 333, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '950' does not match format '%H:%M'
+2024-01-08 22:41:16,356 - todolist_logger - DEBUG - the user set time: 22:42 and the next reminder is on: 2024-01-08 22:42:00
+2024-01-08 22:42:00,133 - todolist_logger - DEBUG - the time for reminder is now

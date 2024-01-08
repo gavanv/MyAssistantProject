@@ -2,7 +2,7 @@ from logger import setup_logger
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ReplyKeyboardRemove, Update
 from telegram.ext import ContextTypes, CallbackContext, ConversationHandler, CallbackQueryHandler, MessageHandler, CommandHandler, filters
 from db_connection import add_client_to_db, get_user_clients_from_db, get_ten_clients_from_db, delete_client_from_db, add_debt_to_db, delete_debt_from_db
-from utils import group_buttons, callback_query_errors_handler_decorator, message_errors_handler_decorator
+from utils import group_buttons, callback_query_errors_handler_decorator, message_errors_handler_decorator, cancel
 from consts import (
     CLIENTS_MENU_KEYBOARD,
     ADD_CLIENT_OR_RETURN_TO_MENU_KEYBOARD,
@@ -523,11 +523,8 @@ async def send_link(update, context):
 
 
 # define the cancel command to end the conversation
-async def cancel(update, context):
-
-    reply_markup = InlineKeyboardMarkup(RETURN_TO_CLIENTS_MENU_KEYBOARD)
-    await update.message.reply_text(text="*הפעולה בוטלה בהצלחה.*", reply_markup=reply_markup, parse_mode="markdown")
-    return ConversationHandler.END
+async def cancel_for_clients_conv(update, context):
+    cancel(RETURN_TO_CLIENTS_MENU_KEYBOARD)
 
 
 # call back function for the Inline button "return to clients menu"
@@ -548,14 +545,13 @@ return_to_clients_handler = CallbackQueryHandler(
 
 # Conversation handler for adding a client to the db
 add_client_conv_handler = ConversationHandler(
-    entry_points=[CallbackQueryHandler(
-        add_client_callback, pattern='^add_client$')],
+    entry_points=[CallbackQueryHandler(add_client_callback, pattern='^add_client$')],
     states={
         ADD_CLIENT_FULL_NAME: [MessageHandler(filters.TEXT & ~filters.COMMAND, add_client_full_name)],
         ADD_CLIENT_ADDRESS: [MessageHandler(
             filters.TEXT & ~filters.COMMAND, add_client_address)]
     },
-    fallbacks=[CommandHandler('cancel', cancel), CommandHandler("start", start),
+    fallbacks=[CommandHandler('cancel', cancel_for_clients_conv), CommandHandler("start", start),
                CommandHandler("clients", clients_command)])
 
 # handler for pressing the show clients list button in the clients menu
@@ -563,69 +559,68 @@ show_clients_conv_handler = ConversationHandler(
     entry_points=[CallbackQueryHandler(
         show_clients_callback, pattern='^show_clients_list$')],
     states={},
-    fallbacks=[CommandHandler('cancel', cancel), CommandHandler("start", start), CommandHandler("clients", clients_command), return_to_clients_handler])
+    fallbacks=[CommandHandler('cancel', cancel_for_clients_conv), CommandHandler("start", start), CommandHandler("clients", clients_command), return_to_clients_handler])
 
 
 # handler for pressing the show debts button in the clients menu
 show_debts_conv_handler = ConversationHandler(
-    entry_points=[CallbackQueryHandler(
-        show_debts_callback, pattern='^show_debts$')],
+    entry_points=[CallbackQueryHandler(show_debts_callback, pattern='^show_debts$')],
     states={},
-    fallbacks=[CommandHandler('cancel', cancel), CommandHandler("start", start), CommandHandler("clients", clients_command), return_to_clients_handler])
+    fallbacks=[CommandHandler('cancel', cancel_for_clients_conv), CommandHandler("start", start), CommandHandler("clients", clients_command), return_to_clients_handler])
 
 
 # Conversation handler for deleting client from the db
 delete_client_conv_handler = ConversationHandler(
-    entry_points=[CallbackQueryHandler(
-        delete_client_callback, pattern='^delete_client$'), CallbackQueryHandler(ask_if_delete, pattern='^clientId:'),
-        CallbackQueryHandler(next_page, pattern='^nextPage:')],
+    entry_points=[CallbackQueryHandler(delete_client_callback, pattern='^delete_client$'), 
+                  CallbackQueryHandler(ask_if_delete, pattern='^clientId:'),
+                  CallbackQueryHandler(next_page, pattern='^nextPage:')],
     states={
         ASK_IF_DELETE: [CallbackQueryHandler(ask_if_delete, pattern='^clientId:')],
         DELETE_OR_NOT_CLIENT: [CallbackQueryHandler(
             delete_or_not_client, pattern='^(yes|no)')]
     },
-    fallbacks=[CallbackQueryHandler(next_page, pattern='^nextPage:'), CommandHandler(
-        'cancel', cancel), CommandHandler("start", start), CommandHandler("clients", clients_command),  CallbackQueryHandler(ask_if_delete, pattern='^clientId:'), return_to_clients_handler])
+    fallbacks=[CallbackQueryHandler(next_page, pattern='^nextPage:'), 
+               CommandHandler('cancel', cancel_for_clients_conv), 
+               CommandHandler("start", start), 
+               CommandHandler("clients", clients_command),  
+               CallbackQueryHandler(ask_if_delete, pattern='^clientId:'), 
+               return_to_clients_handler])
 
 
 # conversation handler for add debt to a client
 add_debt_conv_handler = ConversationHandler(
-    entry_points=[CallbackQueryHandler(
-        add_debt_callback, pattern='^add_debt$')],
+    entry_points=[CallbackQueryHandler(add_debt_callback, pattern='^add_debt$')],
     states={
         DEBT_AMOUNT_TO_ADD: [MessageHandler(filters.TEXT & ~filters.COMMAND, debt_amount_to_add)],
         ADD_DEBT: [MessageHandler(filters.TEXT & ~filters.COMMAND, add_debt)],
     },
-    fallbacks=[CommandHandler('cancel', cancel), CommandHandler("start", start),
+    fallbacks=[CommandHandler('cancel', cancel_for_clients_conv), CommandHandler("start", start),
                CommandHandler("clients", clients_command),
-               MessageHandler(filters.TEXT & ~filters.COMMAND,
-                              debt_amount_to_add),
-               MessageHandler(filters.TEXT & ~filters.COMMAND, add_debt), return_to_clients_handler])
+               MessageHandler(filters.TEXT & ~filters.COMMAND,debt_amount_to_add),
+               MessageHandler(filters.TEXT & ~filters.COMMAND, add_debt), 
+               return_to_clients_handler])
 
 
 # conversation handler for add debt to a client
 delete_debt_conv_handler = ConversationHandler(
-    entry_points=[CallbackQueryHandler(
-        delete_debt_callback, pattern='^delete_debt$')],
+    entry_points=[CallbackQueryHandler(delete_debt_callback, pattern='^delete_debt$')],
     states={
         ASK_AMOUNT_TO_DELETE: [MessageHandler(filters.TEXT & ~filters.COMMAND, ask_amount_to_delete)],
         DELETE_ALL_DEBT: [CallbackQueryHandler(delete_all_debt, pattern='^deleteDebt')],
-        DELETE_PART_DEBT:  [MessageHandler(
-            filters.TEXT & ~filters.COMMAND, delete_part_debt)]
+        DELETE_PART_DEBT:  [MessageHandler(filters.TEXT & ~filters.COMMAND, delete_part_debt)]
     },
-    fallbacks=[CommandHandler('cancel', cancel), CommandHandler("start", start),
+    fallbacks=[CommandHandler('cancel', cancel_for_clients_conv), CommandHandler("start", start),
                CommandHandler("clients", clients_command), return_to_clients_handler],
     allow_reentry=True)
 
 
 # conversation handler for send waze link
 waze_link_conv_handler = ConversationHandler(
-    entry_points=[CallbackQueryHandler(
-        waze_link_callback, pattern='^waze_link$')],
+    entry_points=[CallbackQueryHandler(waze_link_callback, pattern='^waze_link$')],
     states={
         SEND_LINK: [MessageHandler(filters.TEXT & ~filters.COMMAND, send_link)]
     },
-    fallbacks=[CommandHandler('cancel', cancel), CommandHandler("start", start),
+    fallbacks=[CommandHandler('cancel', cancel_for_clients_conv), CommandHandler("start", start),
                CommandHandler("clients", clients_command),
                MessageHandler(filters.TEXT & ~filters.COMMAND, send_link)])
 
