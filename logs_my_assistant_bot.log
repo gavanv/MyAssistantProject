@@ -412,3 +412,199 @@ Traceback (most recent call last):
     client_number = int(update.message.text) - 1
                     ^^^^^^^^^^^^^^^^^^^^^^^^
 ValueError: invalid literal for int() with base 10: 'f'
+2024-01-08 18:37:18,436 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-08 18:37:18,440 - main_logger - INFO - Connected to DB
+2024-01-08 18:37:46,631 - clients_logger - ERROR - user send number that is not in the given list.
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\utils.py", line 79, in wrapper
+    return await func(update, context, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\clients.py", line 304, in debt_amount_to_add
+    raise IndexIsOutOfRange()
+exceptions.IndexIsOutOfRange: הקלדת מספר שלא נמצא ברשימה, אנא הקלד מספר תקין.
+2024-01-08 18:37:50,010 - clients_logger - ERROR - user send number that is not in the given list.
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\utils.py", line 79, in wrapper
+    return await func(update, context, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\clients.py", line 304, in debt_amount_to_add
+    raise IndexIsOutOfRange()
+exceptions.IndexIsOutOfRange: הקלדת מספר שלא נמצא ברשימה, אנא הקלד מספר תקין.
+2024-01-08 18:37:54,906 - clients_logger - ERROR - user send number that cannot be converted to int
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\utils.py", line 79, in wrapper
+    return await func(update, context, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\clients.py", line 301, in debt_amount_to_add
+    client_number_to_add_debt = int(update.message.text) - 1
+                                ^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'fhsdjlv\\'
+2024-01-08 18:38:16,717 - clients_logger - ERROR - An error occurred in show_clients_callback: Can't parse entities: can't find end of the entity starting at byte offset 50
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\utils.py", line 63, in wrapper
+    return await func(update, context, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\clients.py", line 121, in show_clients_callback
+    await update.callback_query.message.reply_text(text="*רשימת לקוחות:*\n" + clients_list_text,
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\_message.py", line 1094, in reply_text
+    return await self.get_bot().send_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\ext\_extbot.py", line 2624, in send_message
+    return await super().send_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\_bot.py", line 846, in send_message
+    return await self._send_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\ext\_extbot.py", line 522, in _send_message
+    result = await super()._send_message(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\_bot.py", line 703, in _send_message
+    result = await self._post(
+             ^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\_bot.py", line 613, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\ext\_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\_bot.py", line 641, in _do_post
+    return await request.post(
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\request\_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\request\_baserequest.py", line 379, in _request_wrapper
+    raise BadRequest(message)
+telegram.error.BadRequest: Can't parse entities: can't find end of the entity starting at byte offset 50
+2024-01-08 18:39:09,200 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-08 18:39:09,203 - main_logger - INFO - Connected to DB
+2024-01-08 18:39:13,101 - clients_logger - ERROR - An error occurred in show_clients_callback: Can't parse entities: can't find end of the entity starting at byte offset 50
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\utils.py", line 63, in wrapper
+    return await func(update, context, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\clients.py", line 121, in show_clients_callback
+    await update.callback_query.message.reply_text(text="*רשימת לקוחות:*\n" + clients_list_text,
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\_message.py", line 1094, in reply_text
+    return await self.get_bot().send_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\ext\_extbot.py", line 2624, in send_message
+    return await super().send_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\_bot.py", line 846, in send_message
+    return await self._send_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\ext\_extbot.py", line 522, in _send_message
+    result = await super()._send_message(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\_bot.py", line 703, in _send_message
+    result = await self._post(
+             ^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\_bot.py", line 613, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\ext\_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\_bot.py", line 641, in _do_post
+    return await request.post(
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\request\_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\request\_baserequest.py", line 379, in _request_wrapper
+    raise BadRequest(message)
+telegram.error.BadRequest: Can't parse entities: can't find end of the entity starting at byte offset 50
+2024-01-08 18:46:27,323 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-08 18:46:27,324 - main_logger - INFO - Connected to DB
+2024-01-08 18:46:30,617 - clients_logger - DEBUG - [{'id': 91, 'full_name': 'Eee', 'address': '“ OR delete * from clients “', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 19, 12, 11, 4), 'user_id': '2047863143', 'username': 'Nir Gofman'}]
+2024-01-08 18:46:30,721 - clients_logger - ERROR - An error occurred in show_clients_callback: Can't parse entities: can't find end of the entity starting at byte offset 50
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\utils.py", line 63, in wrapper
+    return await func(update, context, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\clients.py", line 123, in show_clients_callback
+    await update.callback_query.message.reply_text(text="*רשימת לקוחות:*\n" + clients_list_text,
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\_message.py", line 1094, in reply_text
+    return await self.get_bot().send_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\ext\_extbot.py", line 2624, in send_message
+    return await super().send_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\_bot.py", line 846, in send_message
+    return await self._send_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\ext\_extbot.py", line 522, in _send_message
+    result = await super()._send_message(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\_bot.py", line 703, in _send_message
+    result = await self._post(
+             ^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\_bot.py", line 613, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\ext\_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\_bot.py", line 641, in _do_post
+    return await request.post(
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\request\_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\request\_baserequest.py", line 379, in _request_wrapper
+    raise BadRequest(message)
+telegram.error.BadRequest: Can't parse entities: can't find end of the entity starting at byte offset 50
+2024-01-08 18:47:43,008 - clients_logger - DEBUG - [{'id': 91, 'full_name': 'Eee', 'address': '“ OR delete * from clients “', 'debt': 0, 'create_time': datetime.datetime(2023, 12, 19, 12, 11, 4), 'user_id': '2047863143', 'username': 'Nir Gofman'}]
+2024-01-08 18:47:43,100 - clients_logger - ERROR - An error occurred in show_clients_callback: Can't parse entities: can't find end of the entity starting at byte offset 50
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\utils.py", line 63, in wrapper
+    return await func(update, context, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\clients.py", line 123, in show_clients_callback
+    await update.callback_query.message.reply_text(text="*רשימת לקוחות:*\n" + clients_list_text,
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\_message.py", line 1094, in reply_text
+    return await self.get_bot().send_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\ext\_extbot.py", line 2624, in send_message
+    return await super().send_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\_bot.py", line 846, in send_message
+    return await self._send_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\ext\_extbot.py", line 522, in _send_message
+    result = await super()._send_message(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\_bot.py", line 703, in _send_message
+    result = await self._post(
+             ^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\_bot.py", line 613, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\ext\_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\_bot.py", line 641, in _do_post
+    return await request.post(
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\request\_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\request\_baserequest.py", line 379, in _request_wrapper
+    raise BadRequest(message)
+telegram.error.BadRequest: Can't parse entities: can't find end of the entity starting at byte offset 50
+2024-01-08 18:48:09,601 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-08 18:48:09,602 - main_logger - INFO - Connected to DB
+2024-01-08 18:48:13,010 - clients_logger - DEBUG - []
