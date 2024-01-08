@@ -286,8 +286,7 @@ async def add_debt_callback(update, context):
         return ConversationHandler.END
 
     else:
-        clients_list_text = "\n".join([f"{index + 1}. {client['full_name']} - {
-                                      client['debt']}₪" for index, client in enumerate(clients_list)])
+        clients_list_text = "\n".join([f"{index + 1}. {client['full_name']} - {client['debt']}₪" for index, client in enumerate(clients_list)])
         clients_list_text += "\n🔚"
         await update.callback_query.message.reply_text(text="*הקש את מספר הלקוח שתרצה להוסיף לו חוב:*\nלביטול הפעולה לחץ /cancel\n" + clients_list_text,
                                                        parse_mode="markdown")
@@ -356,8 +355,7 @@ async def delete_debt_callback(update, context):
         await update.callback_query.message.reply_text(text="*לא קיימים לקוחות עם חוב.*", reply_markup=reply_markup, parse_mode="markdown")
 
     else:
-        clients_list_text = "\n".join([f"{index + 1}. {client['full_name']} - {
-                                      client['debt']}₪" for index, client in enumerate(clients_with_debt_list)])
+        clients_list_text = "\n".join([f"{index + 1}. {client['full_name']} - {client['debt']}₪" for index, client in enumerate(clients_with_debt_list)])
         clients_list_text += "\n🔚"
 
         await update.callback_query.message.reply_text(text="*הקלד את מספר הלקוח שתרצה למחוק לו חוב:*\nלביטול הפעולה לחץ /cancel\n" + clients_list_text, parse_mode="markdown")
@@ -497,8 +495,7 @@ async def waze_link_callback(update, context):
         return ConversationHandler.END
 
     else:
-        clients_list_text = "\n".join([f"{index + 1}. {client['full_name']} - {
-                                      client['address']}" for index, client in enumerate(clients_list)])
+        clients_list_text = "\n".join([f"{index + 1}. {client['full_name']} - {client['address']}" for index, client in enumerate(clients_list)])
         clients_list_text += "\n🔚"
         await update.callback_query.message.reply_text(text="*הקש את מספר הלקוח שתרצה לנוט לכתובת שלו:*\nלביטול הפעולה לחץ /cancel\n" + clients_list_text,
                                                        parse_mode="markdown")
