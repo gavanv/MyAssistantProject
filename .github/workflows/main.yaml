@@ -3,11 +3,11 @@ run-name: My assistant CD Run - DEV
 on:
     push:
         branches:
-            - dev
+            - main
         paths:
             - "!*"
             - "my_assistant/**"
-            - ".github/workflows/dev.yaml"
+            - ".github/workflows/main.yaml"
 permissions:
     id-token: write
     contents: read

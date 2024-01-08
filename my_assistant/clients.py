@@ -146,8 +146,7 @@ async def show_debts_callback(update: Update, context: CallbackContext) -> None:
                                                        parse_mode="markdown")
 
     else:
-        clients_list_text = "\n".join([f"{index + 1}. {client['full_name']} - {
-                                      client['debt']}₪" for index, client in enumerate(clients_with_debt_list)])
+        clients_list_text = "\n".join([f"{index + 1}. {client['full_name']} - {client['debt']}₪" for index, client in enumerate(clients_with_debt_list)])
         clients_list_text += "\n🔚"
         await update.callback_query.message.reply_text(text="*רשימת לקוחות עם חוב:*\n" + clients_list_text,
                                                        parse_mode="markdown")
