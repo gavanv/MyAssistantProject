@@ -63,8 +63,7 @@ def callback_query_errors_handler_decorator(logger):
                 return await func(update, context, *args, **kwargs)
 
             except Exception as e:
-                logger.exception(f"An error occurred in {
-                                 func.__name__}: {str(e)}")
+                logger.exception(f"An error occurred in {func.__name__}: {str(e)}")
                 await update.callback_query.message.reply_text("משהו השתבש😕 לא הצלחתי לבצע את הפעולה שרצית.")
                 return ConversationHandler.END
 
@@ -104,8 +103,7 @@ def message_errors_handler_decorator(logger, conversation_state):
                 return conversation_state
 
             except Exception as e:
-                logger.exception(f"An error occurred in {
-                    func.__name__}: {str(e)}")
+                logger.exception(f"An error occurred in {func.__name__}: {str(e)}")
                 await update.message.reply_text("משהו השתבש😕 לא הצלחתי לבצע את הפעולה שרצית.")
                 return ConversationHandler.END
 
