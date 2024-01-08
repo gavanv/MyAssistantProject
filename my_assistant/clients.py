@@ -117,8 +117,7 @@ async def show_clients_callback(update: Update, context: CallbackContext) -> Non
                                                        reply_markup=reply_markup)
 
     else:
-        clients_list_text = "\n".join([f"{index + 1}. {client['full_name']} - {
-                                      client['address']}" for index, client in enumerate(clients_list)])
+        clients_list_text = "\n".join([f"{index + 1}. {client['full_name']} - {client['address']}" for index, client in enumerate(clients_list)])
         clients_list_text += "\n🔚"
         await update.callback_query.message.reply_text(text="*רשימת לקוחות:*\n" + clients_list_text,
                                                        parse_mode="markdown")
