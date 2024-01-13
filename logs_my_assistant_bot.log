@@ -981,3 +981,17 @@ telegram.error.BadRequest: Message is too long
 2024-01-13 15:34:10,819 - main_logger - INFO - Bot started!
 2024-01-13 15:34:31,011 - main_logger - INFO - Bot finished!
 2024-01-13 15:34:43,719 - main_logger - INFO - Bot started!
+2024-01-13 15:56:10,157 - main_logger - INFO - Bot started!
+2024-01-13 15:58:47,209 - todolist_logger - DEBUG - the user set time: 16:00 and the next reminder is on: 2024-01-13 16:00:00
+2024-01-13 16:00:04,457 - todolist_logger - DEBUG - the time for reminder is now
+2024-01-13 16:00:50,932 - resturants_logger - ERROR - user send number that is not in the given list.
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\utils.py", line 81, in wrapper
+    return await func(update, context, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\resturants.py", line 295, in delete_resturant
+    raise IndexIsOutOfRange()
+exceptions.IndexIsOutOfRange: הקלדת מספר שלא נמצא ברשימה, אנא הקלד מספר תקין.
+2024-01-13 16:02:06,851 - main_logger - INFO - Bot started!
+2024-01-13 16:02:44,056 - main_logger - INFO - Bot finished!
+2024-01-13 16:03:03,795 - main_logger - INFO - Bot started!
