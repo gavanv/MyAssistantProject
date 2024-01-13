@@ -40,7 +40,7 @@ jobs:
               run: |
                   docker image build -t "gavan777/my-assistant:${{ github.sha }}" .
                   docker image push "gavan777/my-assistant:${{ github.sha }}"
-                  docker -H 44.214.99.189 run \
+                  docker -H ${{ secrets.MY_SQL_HOST }} run \
                     -e MY_SQL_HOST="${{ secrets.MY_SQL_HOST }}"\
                     -e MY_SQL_USER="${{ secrets.MY_SQL_USER }}"\
                     -e MY_SQL_PASSWORD="${{ secrets.MY_SQL_PASSWORD }}"\
