@@ -207,7 +207,7 @@ RESTURANTS_MENU_KEYBOARD = [
         [
              InlineKeyboardButton("רשימת כל המקומות",
                                  callback_data="my_resturants_list"),
-            InlineKeyboardButton("רשימת מקומות לפי אזור",
+            InlineKeyboardButton("מקומות לפי אזור",
                                  callback_data="area_resturants_list")
         ],
         [
