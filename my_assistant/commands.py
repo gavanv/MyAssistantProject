@@ -7,10 +7,10 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
     keyboard = [
         [
             KeyboardButton("לקוחות"),
-            KeyboardButton("shopping"),
+            KeyboardButton("קניות"),
         ],
         [KeyboardButton("ניהול משימות"),
-         KeyboardButton("wellness")
+         KeyboardButton("מסעדות וטיולים")
          ]
     ]
 
@@ -20,18 +20,3 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
     return ConversationHandler.END
 
 
-async def shopping(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-
-    keyboard = [
-        [
-            InlineKeyboardButton("add item", callback_data="add item"),
-            InlineKeyboardButton("delete items", callback_data="delete items")
-
-        ],
-        [InlineKeyboardButton("show shopping list",
-                              callback_data="show shopping list")]
-    ]
-
-    reply_markup = InlineKeyboardMarkup(keyboard)
-
-    await update.message.reply_text("Please choose:", reply_markup=reply_markup)

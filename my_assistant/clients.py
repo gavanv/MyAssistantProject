@@ -1,8 +1,8 @@
 from logger import setup_logger
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ReplyKeyboardRemove, Update
 from telegram.ext import ContextTypes, CallbackContext, ConversationHandler, CallbackQueryHandler, MessageHandler, CommandHandler, filters
-from db_connection import add_client_to_db, get_user_clients_from_db, get_ten_clients_from_db, delete_client_from_db, add_debt_to_db, delete_debt_from_db
-from utils import group_buttons, callback_query_errors_handler_decorator, message_errors_handler_decorator, cancel
+from db_connection import add_client_to_db, get_user_clients_from_db, get_limit_clients_from_db, delete_client_from_db, add_debt_to_db, delete_debt_from_db
+from utils import arrange_text_in_lines, group_buttons, callback_query_errors_handler_decorator, message_errors_handler_decorator
 from consts import (
     CLIENTS_MENU_KEYBOARD,
     ADD_CLIENT_OR_RETURN_TO_MENU_KEYBOARD,
@@ -41,7 +41,8 @@ async def clients_command(update: Update, context: ContextTypes.DEFAULT_TYPE) ->
 
     reply_markup = InlineKeyboardMarkup(CLIENTS_MENU_KEYBOARD)
 
-    await update.message.reply_text("*איזה פעולה לבצע?*", reply_markup=reply_markup, parse_mode='Markdown')
+    await update.message.reply_text("*איזה פעולה לבצע?*", 
+                                    reply_markup=reply_markup, parse_mode='Markdown')
     return ConversationHandler.END
 
 
@@ -72,7 +73,8 @@ async def add_client_full_name(update: Update, context: CallbackContext) -> int:
     user_data_add_client["username"] = username
     user_data_add_client["full_name"] = full_name
 
-    await update.message.reply_text(text="*מה הכתובת של הלקוח/ה?*\nלביטול הפעולה לחץ /cancel", parse_mode="markdown")
+    await update.message.reply_text(text="*מה הכתובת של הלקוח/ה?*\nלביטול הפעולה לחץ /cancel", 
+                                    parse_mode="markdown")
     return ADD_CLIENT_ADDRESS
 
 
@@ -107,7 +109,6 @@ async def show_clients_callback(update: Update, context: CallbackContext) -> Non
     user_id = update.effective_user.id
 
     clients_list = get_user_clients_from_db(user_id)
-    clients_logger.debug(clients_list)
 
     if len(clients_list) == 0:
 
@@ -119,8 +120,15 @@ async def show_clients_callback(update: Update, context: CallbackContext) -> Non
     else:
         clients_list_text = "\n".join([f"{index + 1}. {client['full_name']} - {client['address']}" for index, client in enumerate(clients_list)])
         clients_list_text += "\n🔚"
-        await update.callback_query.message.reply_text(text="*רשימת לקוחות:*\n" + clients_list_text,
-                                                       parse_mode="markdown")
+
+        lines_list = arrange_text_in_lines(clients_list_text)
+
+        for i, lines in enumerate(lines_list):
+            text = "\n".join(lines)
+            if i < len(lines_list) - 1:
+                text += "\n*המשך⬇️*\n"
+            await update.callback_query.message.reply_text(text=text, parse_mode="markdown")
+            
     return ConversationHandler.END
 
 
@@ -162,7 +170,7 @@ def create_clients_buttons(clients_list, page):
 
     if CLIENTS_PER_PAGE <= len(clients_buttons):
         clients_buttons.append([InlineKeyboardButton(
-            "next", callback_data="nextPage:" + str(page+1))])
+            "next", callback_data="clients_nextPage:" + str(page+1))])
 
     return clients_buttons
 
@@ -177,13 +185,14 @@ async def delete_client_callback(update, context):
 
     user_id = update.effective_user.id
 
-    clients_list = get_ten_clients_from_db(user_id, offset=0)
+    clients_list = get_limit_clients_from_db(user_id, offset=0)
     keyboard = create_clients_buttons(clients_list, page=0)
     arranged_keyboard = group_buttons(keyboard)
 
     reply_markup = InlineKeyboardMarkup(arranged_keyboard)
 
-    await update.callback_query.message.reply_text("*איזה לקוח/ה למחוק?*\nאו לחץ /cancel כדי לבטל", reply_markup=reply_markup, parse_mode='Markdown')
+    await update.callback_query.message.reply_text("*איזה לקוח/ה למחוק?*\nאו לחץ /cancel כדי לבטל", 
+                                                   reply_markup=reply_markup, parse_mode='Markdown')
     return ASK_IF_DELETE
 
 
@@ -206,7 +215,8 @@ async def ask_if_delete(update, context):
 
     reply_markup = InlineKeyboardMarkup(keyboard)
 
-    await update.callback_query.message.reply_text(text=f"*האם אתה בטוח שברצונך למחוק את הלקוח/ה: {client_name}?*", reply_markup=reply_markup, parse_mode='markdown')
+    await update.callback_query.message.reply_text(text=f"*האם אתה בטוח שברצונך למחוק את הלקוח/ה: {client_name}?*", 
+                                                   reply_markup=reply_markup, parse_mode='markdown')
     return DELETE_OR_NOT_CLIENT
 
 
@@ -227,7 +237,8 @@ async def delete_or_not_client(update, context):
     if "yes" in query.data:
         try:
             delete_client_from_db(user_id, client_id)
-            await update.callback_query.message.reply_text(text=f"*הלקוח/ה {client_name} נמחק/ה בהצלחה.* למחיקת לקוח נוסף לחץ על שם הלקוח שתרצה למחוק.", reply_markup=reply_markup, parse_mode='Markdown')
+            await update.callback_query.message.reply_text(text=f"*הלקוח/ה {client_name} נמחק/ה בהצלחה.* למחיקת לקוח נוסף לחץ על שם הלקוח שתרצה למחוק.", 
+                                                           reply_markup=reply_markup, parse_mode='Markdown')
 
         except Exception as e:
             await update.callback_query.message.reply_text(".משהו השתבש😕 לא הצלחתי למחוק את הלקוח שבחרת", reply_markup=reply_markup)
@@ -236,7 +247,6 @@ async def delete_or_not_client(update, context):
         await update.callback_query.message.reply_text(text=f"*הלקוח/ה {client_name} לא נמחק/ה.* למחיקת לקוח אחר לחץ על שם הלקוח שתרצה למחוק.",
                                                        reply_markup=reply_markup, parse_mode='Markdown')
 
-    return ConversationHandler.END
 
 
 @callback_query_errors_handler_decorator(clients_logger)
@@ -247,17 +257,18 @@ async def next_page(update, context):
 
     user_id = update.effective_user.id
 
-    # get the page number according to the call back button next in the format - nextPage:next_page
+    # get the page number according to the call back button next in the format - clients_nextPage:next_page
     page = int((query.data.split(":"))[1])
 
-    clients_list = get_ten_clients_from_db(
+    clients_list = get_limit_clients_from_db(
         user_id=user_id, offset=CLIENTS_PER_PAGE*page)
 
     keyboard = create_clients_buttons(clients_list, page=page)
     arranged_keyboard = group_buttons(keyboard)
     reply_markup = InlineKeyboardMarkup(arranged_keyboard)
 
-    await update.callback_query.message.reply_text("*איזה לקוח/ה למחוק?*\nאו לחץ /cancel כדי לבטל", reply_markup=reply_markup, parse_mode='Markdown')
+    await update.callback_query.message.reply_text("*איזה לקוח/ה למחוק?*\nאו לחץ /cancel כדי לבטל", 
+                                                   reply_markup=reply_markup, parse_mode='Markdown')
     return ASK_IF_DELETE
 
 
@@ -524,7 +535,11 @@ async def send_link(update, context):
 
 # define the cancel command to end the conversation
 async def cancel_for_clients_conv(update, context):
-    cancel(RETURN_TO_CLIENTS_MENU_KEYBOARD)
+
+    reply_markup = InlineKeyboardMarkup(RETURN_TO_CLIENTS_MENU_KEYBOARD)
+    await update.message.reply_text(text="*הפעולה בוטלה בהצלחה.*", 
+                                    reply_markup=reply_markup, parse_mode="markdown")
+    return ConversationHandler.END
 
 
 # call back function for the Inline button "return to clients menu"
@@ -551,40 +566,40 @@ add_client_conv_handler = ConversationHandler(
         ADD_CLIENT_ADDRESS: [MessageHandler(
             filters.TEXT & ~filters.COMMAND, add_client_address)]
     },
-    fallbacks=[CommandHandler('cancel', cancel_for_clients_conv), CommandHandler("start", start),
-               CommandHandler("clients", clients_command)])
+    fallbacks=[CommandHandler('cancel', cancel_for_clients_conv)],
+    allow_reentry=True)
 
 # handler for pressing the show clients list button in the clients menu
 show_clients_conv_handler = ConversationHandler(
     entry_points=[CallbackQueryHandler(
         show_clients_callback, pattern='^show_clients_list$')],
     states={},
-    fallbacks=[CommandHandler('cancel', cancel_for_clients_conv), CommandHandler("start", start), CommandHandler("clients", clients_command), return_to_clients_handler])
+    fallbacks=[CommandHandler('cancel', cancel_for_clients_conv)],
+    allow_reentry=True)
 
 
 # handler for pressing the show debts button in the clients menu
 show_debts_conv_handler = ConversationHandler(
     entry_points=[CallbackQueryHandler(show_debts_callback, pattern='^show_debts$')],
     states={},
-    fallbacks=[CommandHandler('cancel', cancel_for_clients_conv), CommandHandler("start", start), CommandHandler("clients", clients_command), return_to_clients_handler])
+    fallbacks=[CommandHandler('cancel', cancel_for_clients_conv)],
+    allow_reentry=True)
 
 
 # Conversation handler for deleting client from the db
 delete_client_conv_handler = ConversationHandler(
     entry_points=[CallbackQueryHandler(delete_client_callback, pattern='^delete_client$'), 
                   CallbackQueryHandler(ask_if_delete, pattern='^clientId:'),
-                  CallbackQueryHandler(next_page, pattern='^nextPage:')],
+                  CallbackQueryHandler(next_page, pattern='^clients_nextPage:')],
     states={
         ASK_IF_DELETE: [CallbackQueryHandler(ask_if_delete, pattern='^clientId:')],
         DELETE_OR_NOT_CLIENT: [CallbackQueryHandler(
             delete_or_not_client, pattern='^(yes|no)')]
     },
-    fallbacks=[CallbackQueryHandler(next_page, pattern='^nextPage:'), 
+    fallbacks=[CallbackQueryHandler(next_page, pattern='^clients_nextPage:'), 
                CommandHandler('cancel', cancel_for_clients_conv), 
-               CommandHandler("start", start), 
-               CommandHandler("clients", clients_command),  
-               CallbackQueryHandler(ask_if_delete, pattern='^clientId:'), 
-               return_to_clients_handler])
+               CallbackQueryHandler(ask_if_delete, pattern='^clientId:')],
+    allow_reentry=True)
 
 
 # conversation handler for add debt to a client
@@ -594,11 +609,10 @@ add_debt_conv_handler = ConversationHandler(
         DEBT_AMOUNT_TO_ADD: [MessageHandler(filters.TEXT & ~filters.COMMAND, debt_amount_to_add)],
         ADD_DEBT: [MessageHandler(filters.TEXT & ~filters.COMMAND, add_debt)],
     },
-    fallbacks=[CommandHandler('cancel', cancel_for_clients_conv), CommandHandler("start", start),
-               CommandHandler("clients", clients_command),
+    fallbacks=[CommandHandler('cancel', cancel_for_clients_conv),
                MessageHandler(filters.TEXT & ~filters.COMMAND,debt_amount_to_add),
-               MessageHandler(filters.TEXT & ~filters.COMMAND, add_debt), 
-               return_to_clients_handler])
+               MessageHandler(filters.TEXT & ~filters.COMMAND, add_debt)],
+    allow_reentry=True)
 
 
 # conversation handler for add debt to a client
@@ -609,8 +623,7 @@ delete_debt_conv_handler = ConversationHandler(
         DELETE_ALL_DEBT: [CallbackQueryHandler(delete_all_debt, pattern='^deleteDebt')],
         DELETE_PART_DEBT:  [MessageHandler(filters.TEXT & ~filters.COMMAND, delete_part_debt)]
     },
-    fallbacks=[CommandHandler('cancel', cancel_for_clients_conv), CommandHandler("start", start),
-               CommandHandler("clients", clients_command), return_to_clients_handler],
+    fallbacks=[CommandHandler('cancel', cancel_for_clients_conv)],
     allow_reentry=True)
 
 
@@ -620,9 +633,9 @@ waze_link_conv_handler = ConversationHandler(
     states={
         SEND_LINK: [MessageHandler(filters.TEXT & ~filters.COMMAND, send_link)]
     },
-    fallbacks=[CommandHandler('cancel', cancel_for_clients_conv), CommandHandler("start", start),
-               CommandHandler("clients", clients_command),
-               MessageHandler(filters.TEXT & ~filters.COMMAND, send_link)])
+    fallbacks=[CommandHandler('cancel', cancel_for_clients_conv),
+               MessageHandler(filters.TEXT & ~filters.COMMAND, send_link)],
+    allow_reentry=True)
 
 
 clients_text_handler = MessageHandler(filters.Regex("לקוחות"), clients_command)

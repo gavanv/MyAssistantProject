@@ -2,7 +2,7 @@ from datetime import datetime
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ConversationHandler
 from functools import wraps
-from consts import ADD_CLIENT_OR_RETURN_TO_MENU_KEYBOARD
+from consts import ADD_CLIENT_OR_RETURN_TO_MENU_KEYBOARD, MAX_LINES_PER_MESSAGE
 
 from exceptions import ClientAlreadyExists, DebtToDeleteIsNegative, IndexIsOutOfRange
 
@@ -53,13 +53,6 @@ def check_if_time_already_occurred(time_str):
         return True
     else:
         return False
-
-
-async def cancel(update, context, keyboard):
-
-    reply_markup = InlineKeyboardMarkup(keyboard)
-    await update.message.reply_text(text="*הפעולה בוטלה בהצלחה.*", reply_markup=reply_markup, parse_mode="markdown")
-    return ConversationHandler.END
 
 
 def callback_query_errors_handler_decorator(logger):
@@ -116,3 +109,14 @@ def message_errors_handler_decorator(logger, conversation_state):
 
         return wrapper
     return decorator
+
+
+def arrange_text_in_lines(text):
+
+    # Split the text into lines
+    lines = text.splitlines()
+
+    # Split lines into lists
+    result_lists = [lines[i:i + MAX_LINES_PER_MESSAGE] for i in range(0, len(lines), MAX_LINES_PER_MESSAGE)]
+
+    return result_lists

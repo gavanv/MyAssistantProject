@@ -4,7 +4,7 @@ from datetime import datetime
 from telegram import Bot, InlineKeyboardButton, InlineKeyboardMarkup, KeyboardButton, ReplyKeyboardMarkup, ReplyKeyboardRemove, Update
 from telegram.ext import ContextTypes, CallbackContext, ConversationHandler, CallbackQueryHandler, MessageHandler, CommandHandler, filters
 from commands import start
-from utils import create_keyboard, check_if_time_already_occurred, callback_query_errors_handler_decorator, message_errors_handler_decorator, cancel
+from utils import arrange_text_in_lines, create_keyboard, check_if_time_already_occurred, callback_query_errors_handler_decorator, message_errors_handler_decorator
 from db_connection import (db_lock_for_threading, add_task_to_db, delete_reminder_from_db, get_user_all_tasks_from_db,
                            delete_task_from_db, add_reminder_to_db, get_all_reminders, update_reminder_time)
 from exceptions import IndexIsOutOfRange
@@ -156,8 +156,14 @@ async def show_all_tasks_callback(update, context):
             tasks_list, TASKS_CATEGORIES)
 
         tasks_list_text += "🔚"
+        
+        lines_list = arrange_text_in_lines(tasks_list_text)
 
-        await update.callback_query.message.reply_text(text=tasks_list_text, parse_mode="markdown")
+        for i, lines in enumerate(lines_list):
+            text = "\n".join(lines)
+            if i < len(lines_list) - 1:
+                text += "\n*המשך⬇️*\n"
+            await update.callback_query.message.reply_text(text=text, parse_mode="markdown")
 
     return ConversationHandler.END
 
@@ -179,42 +185,6 @@ def create_tasks_list_text(tasks_list, categories):
 
 
 # functions for show A,B,C tasks buttons
-
-@callback_query_errors_handler_decorator(todolist_logger)
-# async def show_A_tasks_callback(update, context):
-
-#     query = update.callback_query
-#     await query.answer()
-
-#     user_id = update.effective_user.id
-
-#         tasks_list = get_user_all_tasks_from_db(user_id)
-
-#         A_tasks_list = list(
-#             filter(lambda x: x.get("level") == "A", tasks_list))
-
-#         if len(A_tasks_list) == 0:
-
-#             reply_markup = InlineKeyboardMarkup(
-#                 ADD_TASK_OR_RETURN_TO_TODOLIST_MENU_KEYBOARD)
-#             await update.callback_query.message.reply_text(text="*לא קיימות משימות A ברשימה.*", reply_markup=reply_markup, parse_mode="markdown")
-
-#         else:
-
-#             A_tasks_list_text = create_tasks_list_text(
-#                 A_tasks_list, TASKS_CATEGORIES)
-
-#             A_tasks_list_text += "🔚"
-
-#             await update.callback_query.message.reply_text(text=A_tasks_list_text, parse_mode="markdown")
-
-#     except Exception as e:
-#         await update.callback_query.message.reply_text("משהו השתבש😕 לא הצלחתי למצוא את רשימת המשימות ברמה A שלך.")
-
-#     finally:
-#         return ConversationHandler.END
-
-
 async def show_level_tasks_callback(update, context):
 
     query = update.callback_query
@@ -521,7 +491,9 @@ async def reply_to_reminder_message(update, context):
 # cancel function for to do list menu
 async def cancel_for_todolist_conv(update, context):
 
-    cancel(RETURN_TO_TODOLIST_MENU_KEYBOARD)
+    reply_markup = InlineKeyboardMarkup(RETURN_TO_TODOLIST_MENU_KEYBOARD)
+    await update.message.reply_text(text="*הפעולה בוטלה בהצלחה.*", reply_markup=reply_markup, parse_mode="markdown")
+    return ConversationHandler.END
 
 
 # conversation handler for add task button
@@ -533,8 +505,7 @@ add_task_conv_handler = ConversationHandler(
             filters.TEXT & ~filters.COMMAND, choose_level)],
         ADD_TASK: [CallbackQueryHandler(add_task)]
     },
-    fallbacks=[CommandHandler("start", start),
-               CommandHandler("cancel", cancel_for_todolist_conv)],
+    fallbacks=[CommandHandler("cancel", cancel_for_todolist_conv)],
     allow_reentry=True)
 
 # call back handler for show all tasks button
@@ -554,10 +525,8 @@ delete_task_conv_handler = ConversationHandler(
         DELETE_TASK: [MessageHandler(
             filters.TEXT & ~filters.COMMAND, delete_task)]
     },
-    fallbacks=[CommandHandler("start", start),
-               CommandHandler("cancel", cancel_for_todolist_conv)],
+    fallbacks=[CommandHandler("cancel", cancel_for_todolist_conv)],
     allow_reentry=True)
-
 
 # set reminder conv handler
 set_reminder_conv_handler = ConversationHandler(
@@ -569,10 +538,8 @@ set_reminder_conv_handler = ConversationHandler(
         SET_REMINDER: [MessageHandler(
             filters.TEXT & ~filters.COMMAND, set_reminder)]
     },
-    fallbacks=[CommandHandler("start", start),
-               CommandHandler("cancel", cancel_for_todolist_conv)],
+    fallbacks=[CommandHandler("cancel", cancel_for_todolist_conv)],
     allow_reentry=True)
-
 
 return_to_todolist_handler = CallbackQueryHandler(
     return_to_todolist, pattern="^return_to_todolist$")

@@ -61,7 +61,7 @@ ASK_AMOUNT_TO_DELETE, DELETE_ALL_DEBT, DELETE_PART_DEBT = range(3)
 SEND_LINK = 0
 
 # limit for clients per page
-CLIENTS_PER_PAGE = 10
+CLIENTS_PER_PAGE = 12
 
 
 # constants for to do list part
@@ -141,3 +141,101 @@ CHOOSE_TASK_TO_DELETE, DELETE_TASK = range(2)
 
 # Define states for set_reminder conversation
 ASK_FREQUENCY, ASK_TIME, SET_REMINDER = range(3)
+
+
+# constants for shopping part
+SHOPPING_MENU_KEYBOARD = [
+        [
+            InlineKeyboardButton("מחיקת פריט", callback_data="delete_item"),
+            InlineKeyboardButton("הוספת פריט", callback_data="add_item")
+
+        ],
+        [InlineKeyboardButton("רשימת קניות",
+                              callback_data="show_shopping_list")]
+    ]
+
+RETURN_TO_SHOPPING_MENU_KEYBOARD = [
+    [InlineKeyboardButton("חזרה לתפריט קניות",
+                          callback_data="return_to_shopping")
+     ]
+]
+
+
+ADD_ITEM_OR_RETURN_TO_SHOPPING_MENU_KEYBOARD = [
+    [
+        InlineKeyboardButton("הוספת פריט", callback_data="add_item")
+    ],
+    [InlineKeyboardButton("חזרה לתפריט קניות",
+                          callback_data="return_to_shopping")
+     ]
+]
+
+
+# Define states for add item conversation
+ADD_ITEM_TO_LIST = 0
+
+# Define states for delete item conversation
+DELETE_ITEM, NEXT_PAGE_OF_ITEMS = range(2)
+
+# limit for items per page
+ITEMS_PER_PAGE = 16
+
+# constants for resturants part
+
+RESTURANTS_MENU_KEYBOARD = [
+        [
+             InlineKeyboardButton("מחיקת מקום", 
+                                 callback_data="delete_resturant"),
+            InlineKeyboardButton("הוספת מקום", 
+                                 callback_data="add_resturant")
+        ],
+        [
+             InlineKeyboardButton("רשימת כל המקומות",
+                                 callback_data="my_resturants_list"),
+            InlineKeyboardButton("רשימת מקומות לפי אזור",
+                                 callback_data="area_resturants_list")
+        ],
+        [
+             InlineKeyboardButton("רשימת המקומות של גוון",
+                                 callback_data="gavan_resturants_list")
+        ]
+]
+
+RESTURANTS_AREAS= ["גוש דן", "השרון", "שפלה והרי ירושלים", "כרמל ועמק יזרעאל", "רמת הגולן", "גליל עליון ותחתון", "נגב ואילת"]
+
+ADD_RESTURANT_OR_RETURN_TO_RESTURANTS_MENU_KEYBOARD = [
+    [
+        InlineKeyboardButton("הוספת מקום", callback_data="add_resturant")
+    ],
+    [InlineKeyboardButton("חזרה לתפריט מסעדות וטיולים",
+                          callback_data="return_to_resturants")
+     ]
+]
+
+DELETE_RESTURANT_OR_RETURN_TO_RESTURANTS_MENU_KEYBOARD = [
+    [
+        InlineKeyboardButton("מחיקת מקום", callback_data="delete_resturant")
+    ],
+    [InlineKeyboardButton("חזרה לתפריט מסעדות וטיולים",
+                          callback_data="return_to_resturants")
+     ]
+]
+
+RETURN_TO_RESTURANTS_MENU_KEYBOARD = [
+    [InlineKeyboardButton("חזרה לתפריט מסעדות וטיולים",
+                          callback_data="return_to_resturants")
+     ]
+]
+
+GAVAN_USER_ID = 222151854
+
+# Define states for add resturant conversation
+WRITE_RESTURANT, ADD_RESTURANT = range(2)
+
+# Define states for delete resturant conversation
+CHOOSE_RESTURANT_TO_DELETE, DELETE_RESTURANT = range(2)
+
+# Define states for show area resturants conversation
+SHOW_AREA_RESTURANTS = 0
+
+MAX_LINES_PER_MESSAGE = 101

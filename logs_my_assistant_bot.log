@@ -667,3 +667,313 @@ Traceback (most recent call last):
 ValueError: time data '950' does not match format '%H:%M'
 2024-01-08 22:41:16,356 - todolist_logger - DEBUG - the user set time: 22:42 and the next reminder is on: 2024-01-08 22:42:00
 2024-01-08 22:42:00,133 - todolist_logger - DEBUG - the time for reminder is now
+2024-01-09 09:29:50,970 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-09 09:29:50,990 - main_logger - INFO - Connected to DB
+2024-01-09 09:30:55,950 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-09 09:30:55,953 - main_logger - INFO - Connected to DB
+2024-01-09 09:33:00,943 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-09 09:33:00,950 - main_logger - INFO - Connected to DB
+2024-01-09 09:34:03,236 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-09 09:34:03,242 - main_logger - INFO - Connected to DB
+2024-01-09 09:47:35,390 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-09 09:47:35,392 - main_logger - INFO - Connected to DB
+2024-01-09 09:48:18,818 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-09 09:48:18,821 - main_logger - INFO - Connected to DB
+2024-01-09 09:50:32,633 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-09 09:50:32,635 - main_logger - INFO - Connected to DB
+2024-01-09 09:53:27,179 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-09 09:53:27,182 - main_logger - INFO - Connected to DB
+2024-01-09 09:53:54,948 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-09 09:53:54,949 - main_logger - INFO - Connected to DB
+2024-01-09 09:58:15,957 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-09 09:58:15,960 - main_logger - INFO - Connected to DB
+2024-01-09 14:04:19,955 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-09 14:04:19,958 - main_logger - INFO - Connected to DB
+2024-01-09 14:10:47,809 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-09 14:10:47,810 - main_logger - INFO - Connected to DB
+2024-01-09 14:12:51,647 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-09 14:12:51,648 - main_logger - INFO - Connected to DB
+2024-01-09 14:17:15,063 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-09 14:17:15,064 - main_logger - INFO - Connected to DB
+2024-01-09 14:18:57,321 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-09 14:18:57,322 - main_logger - INFO - Connected to DB
+2024-01-09 14:21:33,662 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-09 14:21:33,663 - main_logger - INFO - Connected to DB
+2024-01-09 14:24:51,277 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-09 14:24:51,279 - main_logger - INFO - Connected to DB
+2024-01-09 14:25:48,114 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-09 14:25:48,114 - main_logger - INFO - Connected to DB
+2024-01-11 12:02:02,557 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-11 12:02:02,559 - main_logger - INFO - Connected to DB
+2024-01-11 12:02:25,368 - db_connection_logger - ERROR - unable to get all reminders from db.
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 308, in _open_connection
+    self._cmysql.connect(**cnx_kwargs)
+_mysql_connector.MySQLInterfaceError: Can't connect to MySQL server on '44.214.99.189:3306' (10060)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\db_connection.py", line 32, in wrapper
+    db_connector = mysql.connector.connect(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\pooling.py", line 293, in connect
+    return CMySQLConnection(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 129, in __init__
+    self.connect(**kwargs)
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\abstracts.py", line 1237, in connect
+    self._open_connection()
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 313, in _open_connection
+    raise get_mysql_exception(
+mysql.connector.errors.DatabaseError: 2003 (HY000): Can't connect to MySQL server on '44.214.99.189:3306' (10060)
+2024-01-11 12:02:56,873 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-11 12:02:56,876 - main_logger - INFO - Connected to DB
+2024-01-11 12:03:19,418 - db_connection_logger - ERROR - unable to get all reminders from db.
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 308, in _open_connection
+    self._cmysql.connect(**cnx_kwargs)
+_mysql_connector.MySQLInterfaceError: Can't connect to MySQL server on '44.214.99.189:3306' (10060)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\db_connection.py", line 32, in wrapper
+    db_connector = mysql.connector.connect(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\pooling.py", line 293, in connect
+    return CMySQLConnection(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 129, in __init__
+    self.connect(**kwargs)
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\abstracts.py", line 1237, in connect
+    self._open_connection()
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 313, in _open_connection
+    raise get_mysql_exception(
+mysql.connector.errors.DatabaseError: 2003 (HY000): Can't connect to MySQL server on '44.214.99.189:3306' (10060)
+2024-01-11 12:08:26,287 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-11 12:08:26,293 - main_logger - INFO - Connected to DB
+2024-01-11 12:08:48,705 - db_connection_logger - ERROR - unable to get all reminders from db.
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 308, in _open_connection
+    self._cmysql.connect(**cnx_kwargs)
+_mysql_connector.MySQLInterfaceError: Can't connect to MySQL server on '44.214.99.189:3306' (10060)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\db_connection.py", line 32, in wrapper
+    db_connector = mysql.connector.connect(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\pooling.py", line 293, in connect
+    return CMySQLConnection(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 129, in __init__
+    self.connect(**kwargs)
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\abstracts.py", line 1237, in connect
+    self._open_connection()
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 313, in _open_connection
+    raise get_mysql_exception(
+mysql.connector.errors.DatabaseError: 2003 (HY000): Can't connect to MySQL server on '44.214.99.189:3306' (10060)
+2024-01-11 12:46:25,414 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-11 12:46:25,419 - main_logger - INFO - Connected to DB
+2024-01-11 12:47:10,444 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-11 12:47:10,454 - main_logger - INFO - Connected to DB
+2024-01-11 12:47:32,946 - db_connection_logger - ERROR - unable to get all reminders from db.
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 308, in _open_connection
+    self._cmysql.connect(**cnx_kwargs)
+_mysql_connector.MySQLInterfaceError: Can't connect to MySQL server on '44.214.99.189:3306' (10060)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\db_connection.py", line 32, in wrapper
+    db_connector = mysql.connector.connect(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\pooling.py", line 293, in connect
+    return CMySQLConnection(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 129, in __init__
+    self.connect(**kwargs)
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\abstracts.py", line 1237, in connect
+    self._open_connection()
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 313, in _open_connection
+    raise get_mysql_exception(
+mysql.connector.errors.DatabaseError: 2003 (HY000): Can't connect to MySQL server on '44.214.99.189:3306' (10060)
+2024-01-11 12:51:27,264 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-11 12:51:27,266 - main_logger - INFO - Connected to DB
+2024-01-13 12:09:01,282 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-13 12:09:01,286 - main_logger - INFO - Connected to DB
+2024-01-13 12:09:43,560 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-13 12:09:43,561 - main_logger - INFO - Connected to DB
+2024-01-13 12:10:35,884 - db_connection_logger - ERROR - unable to add resturant to db.
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\db_connection.py", line 41, in wrapper
+    result = query_func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\db_connection.py", line 243, in add_resturant_to_db
+    db_cursor.execute(sql_add_resturant, values)
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\cursor_cext.py", line 325, in execute
+    raise ProgrammingError(
+mysql.connector.errors.ProgrammingError: Not all parameters were used in the SQL statement
+2024-01-13 12:10:35,947 - resturants_logger - ERROR - An error occurred in add_resturant: Not all parameters were used in the SQL statement
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\utils.py", line 63, in wrapper
+    return await func(update, context, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\resturants.py", line 74, in add_resturant
+    add_resturant_to_db(user_data_add_resturant)
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\db_connection.py", line 41, in wrapper
+    result = query_func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\db_connection.py", line 243, in add_resturant_to_db
+    db_cursor.execute(sql_add_resturant, values)
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\cursor_cext.py", line 325, in execute
+    raise ProgrammingError(
+mysql.connector.errors.ProgrammingError: Not all parameters were used in the SQL statement
+2024-01-13 12:12:37,577 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-13 12:12:37,582 - main_logger - INFO - Connected to DB
+2024-01-13 12:15:14,333 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-13 12:15:14,336 - main_logger - INFO - Connected to DB
+2024-01-13 12:29:45,955 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-13 12:29:45,957 - main_logger - INFO - Connected to DB
+2024-01-13 12:29:54,366 - db_connection_logger - ERROR - unable to get all resturants from db.
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\db_connection.py", line 41, in wrapper
+    result = query_func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\db_connection.py", line 252, in get_user_all_resturants_from_db
+    db_cursor.execute(sql_get_all_resturants (user_id,))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'str' object is not callable
+2024-01-13 12:29:54,391 - resturants_logger - ERROR - An error occurred in show_my_resturants_callback: 'str' object is not callable
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\utils.py", line 63, in wrapper
+    return await func(update, context, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\resturants.py", line 112, in show_my_resturants_callback
+    resturants_list = get_user_all_resturants_from_db(user_id)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\db_connection.py", line 41, in wrapper
+    result = query_func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\db_connection.py", line 252, in get_user_all_resturants_from_db
+    db_cursor.execute(sql_get_all_resturants (user_id,))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'str' object is not callable
+2024-01-13 12:30:22,504 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-13 12:30:22,506 - main_logger - INFO - Connected to DB
+2024-01-13 12:53:05,714 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-13 12:53:05,717 - main_logger - INFO - Connected to DB
+2024-01-13 12:53:16,437 - resturants_logger - ERROR - user send number that is not in the given list.
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\utils.py", line 79, in wrapper
+    return await func(update, context, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\resturants.py", line 198, in delete_resturant
+    raise IndexIsOutOfRange()
+exceptions.IndexIsOutOfRange: הקלדת מספר שלא נמצא ברשימה, אנא הקלד מספר תקין.
+2024-01-13 12:53:19,347 - resturants_logger - ERROR - user send number that is not in the given list.
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\utils.py", line 79, in wrapper
+    return await func(update, context, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\resturants.py", line 198, in delete_resturant
+    raise IndexIsOutOfRange()
+exceptions.IndexIsOutOfRange: הקלדת מספר שלא נמצא ברשימה, אנא הקלד מספר תקין.
+2024-01-13 12:53:21,602 - resturants_logger - ERROR - user send input that cannot be converted to the needed type
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\utils.py", line 79, in wrapper
+    return await func(update, context, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\resturants.py", line 195, in delete_resturant
+    resturant_number = int(update.message.text) - 1
+                       ^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'venbvlrk'
+2024-01-13 12:54:11,957 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-13 12:54:11,959 - main_logger - INFO - Connected to DB
+2024-01-13 13:07:07,804 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-13 13:07:07,807 - main_logger - INFO - Connected to DB
+2024-01-13 13:08:19,580 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-13 13:08:19,586 - main_logger - INFO - Connected to DB
+2024-01-13 13:17:21,803 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-13 13:17:21,805 - main_logger - INFO - Connected to DB
+2024-01-13 13:56:39,698 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-13 13:56:39,700 - main_logger - INFO - Connected to DB
+2024-01-13 13:56:52,478 - resturants_logger - ERROR - An error occurred in show_gavan_resturants_callback: Message is too long
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\utils.py", line 63, in wrapper
+    return await func(update, context, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\resturants.py", line 163, in show_gavan_resturants_callback
+    await update.callback_query.message.reply_text(text=resturants_list_text, parse_mode="markdown")
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\_message.py", line 1094, in reply_text
+    return await self.get_bot().send_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\ext\_extbot.py", line 2624, in send_message
+    return await super().send_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\_bot.py", line 525, in decorator
+    result = await func(self, *args, **kwargs)  # skipcq: PYL-E1102
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\_bot.py", line 846, in send_message
+    return await self._send_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\ext\_extbot.py", line 522, in _send_message
+    result = await super()._send_message(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\_bot.py", line 703, in _send_message
+    result = await self._post(
+             ^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\_bot.py", line 613, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\ext\_extbot.py", line 340, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\_bot.py", line 641, in _do_post
+    return await request.post(
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\request\_baserequest.py", line 200, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\telegram\request\_baserequest.py", line 379, in _request_wrapper
+    raise BadRequest(message)
+telegram.error.BadRequest: Message is too long
+2024-01-13 14:13:58,312 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-13 14:13:58,314 - main_logger - INFO - Connected to DB
+2024-01-13 14:19:34,929 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-13 14:19:34,931 - main_logger - INFO - Connected to DB
+2024-01-13 14:24:43,496 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-13 14:24:43,498 - main_logger - INFO - Connected to DB
+2024-01-13 14:26:21,260 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-13 14:26:21,261 - main_logger - INFO - Connected to DB
+2024-01-13 14:28:13,988 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-13 14:28:13,990 - main_logger - INFO - Connected to DB
+2024-01-13 14:28:52,711 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-13 14:28:52,714 - main_logger - INFO - Connected to DB
+2024-01-13 14:29:50,679 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-13 14:29:50,684 - main_logger - INFO - Connected to DB
+2024-01-13 14:34:59,539 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-13 14:34:59,544 - main_logger - INFO - Connected to DB
+2024-01-13 14:37:00,900 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-13 14:37:00,902 - main_logger - INFO - Connected to DB
+2024-01-13 14:38:12,207 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-13 14:38:12,211 - main_logger - INFO - Connected to DB
+2024-01-13 14:43:13,114 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-13 14:43:13,115 - main_logger - INFO - Connected to DB
+2024-01-13 14:49:18,857 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-13 14:49:18,859 - main_logger - INFO - Connected to DB
+2024-01-13 14:51:17,658 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-13 14:51:17,660 - main_logger - INFO - Connected to DB
+2024-01-13 14:54:03,106 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-13 14:54:03,108 - main_logger - INFO - Connected to DB
+2024-01-13 14:58:20,672 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-13 14:58:20,673 - main_logger - INFO - Connected to DB
+2024-01-13 15:16:40,857 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-13 15:16:40,859 - main_logger - INFO - Connected to DB
+2024-01-13 15:18:10,087 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-13 15:18:10,089 - main_logger - INFO - Connected to DB
+2024-01-13 15:20:15,767 - main_logger - INFO - Bot started! Connecting to DB...
+2024-01-13 15:20:15,769 - main_logger - INFO - Connected to DB
