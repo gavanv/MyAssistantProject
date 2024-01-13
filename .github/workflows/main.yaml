@@ -1,5 +1,5 @@
-name: My Assistant CD Run - DEV
-run-name: My assistant CD Run - DEV
+name: My Assistant CD Run
+run-name: My assistant CD Run
 on:
     push:
         branches:
@@ -40,6 +40,13 @@ jobs:
               run: |
                   docker image build -t "gavan777/my-assistant:${{ github.sha }}" .
                   docker image push "gavan777/my-assistant:${{ github.sha }}"
-                  docker -H 44.214.99.189 run -d "gavan777/my-assistant:${{ github.sha }}"
-                #   docker push "${{ vars.CLARITY_DOCKER_REGISTRY }}/platform/clarity-statements-service:${{ github.sha }}"
+                  docker -H 44.214.99.189 run \
+                    -e MY_SQL_HOST="${{ secrets.MY_SQL_HOST }}"\
+                    -e MY_SQL_USER="${{ secrets.MY_SQL_USER }}"\
+                    -e MY_SQL_PASSWORD="${{ secrets.MY_SQL_PASSWORD }}"\
+                    -e MY_SQL_DB_NAME="${{ secrets.MY_SQL_DB_NAME }}"\
+                    -e MY_SQL_PORT="${{ secrets.MY_SQL_PORT }}"\
+                    -e TOKEN="${{ secrets.TOKEN }}"\
+                    -e GAVAN_USER_ID="${{ secrets.GAVAN_USER_ID }}"\
+                    -d "gavan777/my-assistant:${{ github.sha }}"
 

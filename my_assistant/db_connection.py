@@ -7,7 +7,8 @@ from consts import (
     DB_PASSWORD,
     DB_NAME,
     PORT,
-    CLIENTS_PER_PAGE
+    CLIENTS_PER_PAGE,
+    ITEMS_PER_PAGE
 )
 
 from exceptions import ClientAlreadyExists
@@ -47,20 +48,6 @@ def db_connection_decorator(error_message="unable to perform database operation"
     return decorator
 
 
-# def connect_to_db():
-#     global db_cursor, db_connector
-
-#     db_connector = mysql.connector.connect(
-#         host=DB_HOST,
-#         user=DB_USER,
-#         password=DB_PASSWORD,
-#         database=DB_NAME,
-#         port=PORT
-#     )
-
-#     db_cursor = db_connector.cursor(dictionary=True)
-
-
 # functions for clients management menu
 @db_connection_decorator(error_message="unable to add client to db.")
 def add_client_to_db(user_data):
@@ -96,15 +83,15 @@ def get_user_clients_from_db(user_id):
     return clients_list
 
 
-@db_connection_decorator(error_message="unable to get 10 clients from db.")
-def get_ten_clients_from_db(user_id, offset):
+@db_connection_decorator(error_message="unable to get limit clients from db.")
+def get_limit_clients_from_db(user_id, offset):
 
-    # Fetch 10 clients from the database based on the user_id
+    # Fetch limit number of clients from the database based on the user_id
     sql_get_clients = "SELECT * FROM clients WHERE user_id = %s ORDER BY full_name LIMIT %s OFFSET %s"
     db_cursor.execute(
         sql_get_clients, (user_id, CLIENTS_PER_PAGE, offset))
-    ten_clients_list = db_cursor.fetchall()
-    return ten_clients_list
+    limit_clients_list = db_cursor.fetchall()
+    return limit_clients_list
 
 
 @db_connection_decorator(error_message="unable to delete client from db.")
@@ -205,3 +192,81 @@ def delete_reminder_from_db(user_id, task_reminder):
     db_cursor.execute(sql_delete_reminder, (user_id, task_reminder))
     db_connector.commit()
     return True
+
+
+# functions for shopping menu
+@db_connection_decorator(error_message="unable to add item to db.")
+def add_item_to_db(user_data):
+
+    sql_add_item = "INSERT INTO shopping_list (user_id, username, item) VALUES (%s, %s, %s)"
+    values = (user_data.get("user_id"), user_data.get("username"),
+              user_data.get("item"))
+    db_cursor.execute(sql_add_item, values)
+    db_connector.commit()
+    return True
+
+
+@db_connection_decorator(error_message="unable to get shopping list from db.")
+def get_shopping_list_from_db(user_id):
+
+    sql_get_shopping_list = "SELECT * FROM shopping_list WHERE user_id = %s"
+    db_cursor.execute(sql_get_shopping_list, (user_id,))
+    shopping_list = db_cursor.fetchall()
+    return shopping_list
+
+@db_connection_decorator(error_message="unable to get limit items from db.")
+def get_limit_items_from_db(user_id, offset):
+
+    # Fetch limit number of items from the db based on the user_id
+    sql_get_items = "SELECT * FROM shopping_list WHERE user_id = %s ORDER BY create_time LIMIT %s OFFSET %s"
+    db_cursor.execute(sql_get_items, (user_id, ITEMS_PER_PAGE, offset))
+    limit_items_list = db_cursor.fetchall()
+    return limit_items_list
+
+
+@db_connection_decorator(error_message="unable to delete item from db.")
+def delete_item_from_db(user_data):
+
+    sql_delete_item = "DELETE FROM shopping_list WHERE id = %s AND user_id = %s"
+    db_cursor.execute(sql_delete_item, (user_data.get("item_id"), user_data.get("user_id")))
+    db_connector.commit()
+    return True
+
+
+# functions for resturants menu
+@db_connection_decorator(error_message="unable to add resturant to db.")
+def add_resturant_to_db(user_data):
+
+    sql_add_resturant = "INSERT INTO resturants_list (user_id, username, resturant, area) VALUES (%s, %s, %s, %s)"
+    values = (user_data.get("user_id"), user_data.get("username"),
+              user_data.get("resturant"), user_data.get("area"))
+    db_cursor.execute(sql_add_resturant, values)
+    db_connector.commit()
+    return True
+
+
+@db_connection_decorator(error_message="unable to get all user resturants from db.")
+def get_user_all_resturants_from_db(user_id):
+
+    sql_get_all_resturants = "SELECT * FROM resturants_list WHERE user_id = %s"
+    db_cursor.execute(sql_get_all_resturants, (user_id,))
+    user_resturants = db_cursor.fetchall()
+    return user_resturants
+
+
+@db_connection_decorator(error_message="unable to delete resturant from db.")
+def delete_resturant_from_db(user_id, resturant_id):
+
+    sql_delete_resturant = "DELETE FROM resturants_list WHERE id = %s AND user_id = %s"
+    db_cursor.execute(sql_delete_resturant, (resturant_id, user_id))
+    db_connector.commit()
+    return True
+
+
+@db_connection_decorator(error_message="unable to get specific area resturants from db.")
+def get_area_resturants_from_db(user_id, area):
+
+    sql_get_area_resturants = "SELECT * FROM resturants_list WHERE user_id = %s AND area = %s"
+    db_cursor.execute(sql_get_area_resturants, (user_id,area))
+    user_tasks = db_cursor.fetchall()
+    return user_tasks

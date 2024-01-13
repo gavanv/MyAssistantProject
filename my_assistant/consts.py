@@ -1,16 +1,34 @@
-from telegram import InlineKeyboardButton
+from telegram import InlineKeyboardButton, KeyboardButton
+import os
+from dotenv import load_dotenv
 
-TOKEN = "6468413070:AAH2MqghzbnZiBG4Dx-l7DpqD6qBTEExuEw"
-BOT_USER_NAME = "@GavanAssistant_bot"
+load_dotenv()
 
-DB_HOST = '44.214.99.189'
-DB_USER = 'gavan'
-DB_PASSWORD = 'gavan1121g'
-DB_NAME = 'myAssistantBotDB'
-PORT = 3306
+# connection to db details
+DB_HOST = os.environ.get("MY_SQL_HOST")
+DB_USER = os.environ.get("MY_SQL_USER")
+DB_PASSWORD = os.environ.get("MY_SQL_PASSWORD")
+DB_NAME = os.environ.get("MY_SQL_DB_NAME")
+PORT = os.environ.get("MY_SQL_PORT")
 
-YES_OR_NO_KEYBOARD = [[InlineKeyboardButton("כן", callback_data="yes"),
-                       InlineKeyboardButton("לא", callback_data="No")]]
+# bot's token
+TOKEN = os.environ.get("TOKEN")
+
+# gavan's user is to fetch gavan's resturants list
+GAVAN_USER_ID = os.environ.get("GAVAN_USER_ID")
+
+#start command keyboard
+START_MENU_KEYBOARD = [
+        [
+        KeyboardButton("לקוחות"),
+        KeyboardButton("קניות"),
+        ],
+        [
+        KeyboardButton("ניהול משימות"),
+        KeyboardButton("מסעדות וטיולים")
+        ]
+]
+
 
 # constans for clients part
 CLIENTS_MENU_KEYBOARD = [
@@ -61,7 +79,7 @@ ASK_AMOUNT_TO_DELETE, DELETE_ALL_DEBT, DELETE_PART_DEBT = range(3)
 SEND_LINK = 0
 
 # limit for clients per page
-CLIENTS_PER_PAGE = 10
+CLIENTS_PER_PAGE = 12
 
 
 # constants for to do list part
@@ -141,3 +159,97 @@ CHOOSE_TASK_TO_DELETE, DELETE_TASK = range(2)
 
 # Define states for set_reminder conversation
 ASK_FREQUENCY, ASK_TIME, SET_REMINDER = range(3)
+
+
+# constants for shopping part
+SHOPPING_MENU_KEYBOARD = [
+        [
+            InlineKeyboardButton("מחיקת פריט", callback_data="delete_item"),
+            InlineKeyboardButton("הוספת פריט", callback_data="add_item")
+
+        ],
+        [InlineKeyboardButton("רשימת קניות",
+                              callback_data="show_shopping_list")]
+    ]
+
+RETURN_TO_SHOPPING_MENU_KEYBOARD = [
+    [InlineKeyboardButton("חזרה לתפריט קניות",
+                          callback_data="return_to_shopping")
+     ]
+]
+
+ADD_ITEM_OR_RETURN_TO_SHOPPING_MENU_KEYBOARD = [
+    [
+        InlineKeyboardButton("הוספת פריט", callback_data="add_item")
+    ],
+    [InlineKeyboardButton("חזרה לתפריט קניות",
+                          callback_data="return_to_shopping")
+     ]
+]
+
+# Define states for add item conversation
+ADD_ITEM_TO_LIST = 0
+
+# Define states for delete item conversation
+DELETE_ITEM = 0
+
+# limit for items per page
+ITEMS_PER_PAGE = 16
+
+# constants for resturants part
+RESTURANTS_MENU_KEYBOARD = [
+        [
+             InlineKeyboardButton("מחיקת מקום", 
+                                 callback_data="delete_resturant"),
+            InlineKeyboardButton("הוספת מקום", 
+                                 callback_data="add_resturant")
+        ],
+        [
+             InlineKeyboardButton("רשימת כל המקומות",
+                                 callback_data="my_resturants_list"),
+            InlineKeyboardButton("רשימת מקומות לפי אזור",
+                                 callback_data="area_resturants_list")
+        ],
+        [
+             InlineKeyboardButton("רשימת המקומות של גוון",
+                                 callback_data="gavan_resturants_list")
+        ]
+]
+
+RESTURANTS_AREAS= ["גוש דן", "השרון", "שפלה והרי ירושלים", "כרמל ועמק יזרעאל", "רמת הגולן", "גליל עליון ותחתון", "נגב ואילת"]
+
+ADD_RESTURANT_OR_RETURN_TO_RESTURANTS_MENU_KEYBOARD = [
+    [
+        InlineKeyboardButton("הוספת מקום", callback_data="add_resturant")
+    ],
+    [InlineKeyboardButton("חזרה לתפריט מסעדות וטיולים",
+                          callback_data="return_to_resturants")
+     ]
+]
+
+DELETE_RESTURANT_OR_RETURN_TO_RESTURANTS_MENU_KEYBOARD = [
+    [
+        InlineKeyboardButton("מחיקת מקום", callback_data="delete_resturant")
+    ],
+    [InlineKeyboardButton("חזרה לתפריט מסעדות וטיולים",
+                          callback_data="return_to_resturants")
+     ]
+]
+
+RETURN_TO_RESTURANTS_MENU_KEYBOARD = [
+    [InlineKeyboardButton("חזרה לתפריט מסעדות וטיולים",
+                          callback_data="return_to_resturants")
+     ]
+]
+
+
+# Define states for add resturant conversation
+WRITE_RESTURANT, ADD_RESTURANT = range(2)
+
+# Define states for delete resturant conversation
+CHOOSE_RESTURANT_TO_DELETE, DELETE_RESTURANT = range(2)
+
+# Define states for show area resturants conversation
+SHOW_AREA_RESTURANTS = 0
+
+MAX_LINES_PER_MESSAGE = 151

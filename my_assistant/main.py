@@ -1,70 +1,31 @@
 import threading
 import asyncio
+import os
+from dotenv import load_dotenv
 from logger import setup_logger
-
 from consts import (
+    START_MENU_KEYBOARD,
     TOKEN
 )
-
-from telegram import InlineKeyboardButton, InlineKeyboardMarkup, KeyboardButton, ReplyKeyboardMarkup, ReplyKeyboardRemove, Update, Bot
-from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes, CallbackQueryHandler, CallbackContext, ConversationHandler
+from telegram import ReplyKeyboardMarkup
+from telegram.ext import Application, CommandHandler, ConversationHandler
 from clients import clients_features_handlers
 from todolist import todolist_features_handlers, reminder_bot_message
-from commands import start, shopping
-# from db_connection import connect_to_db
+from shopping import shopping_features_handlers
+from resturants import resturants_features_handlers
 
 main_logger = setup_logger("main_logger")
 
 
-async def todolist(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+async def start(update, context):
 
-    keyboard = [
-        [
-            InlineKeyboardButton("add task", callback_data="add task"),
-            InlineKeyboardButton("delete task", callback_data="delete task")
+    user_details = update.message.from_user
+    private_name = user_details.first_name
 
-        ],
-        [
-            InlineKeyboardButton("show A tasks", callback_data="show A tasks"),
-            InlineKeyboardButton("show B tasks", callback_data="show B tasks"),
-            InlineKeyboardButton("show C tasks", callback_data="show C tasks")
-        ],
-        [
-            InlineKeyboardButton(
-                "show To Do List", callback_data="show to do list")
-        ]
-    ]
+    reply_markup = ReplyKeyboardMarkup(START_MENU_KEYBOARD)
 
-    reply_markup = InlineKeyboardMarkup(keyboard)
-
-    await update.message.reply_text("Please choose:", reply_markup=reply_markup)
-
-
-async def wellness(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-
-    keyboard = [
-        [
-            InlineKeyboardButton(
-                "update weight", callback_data="update weight"),
-            InlineKeyboardButton("update blood test",
-                                 callback_data="update blood tests")
-
-        ],
-        [
-            InlineKeyboardButton("show progress of weight",
-                                 callback_data="show progress of weight"),
-            InlineKeyboardButton("show progress of blood test",
-                                 callback_data="show progress of blood test"),
-        ],
-        [
-            InlineKeyboardButton("show summary of health condition",
-                                 callback_data="show summary of health condition")
-        ]
-    ]
-
-    reply_markup = InlineKeyboardMarkup(keyboard)
-
-    await update.message.reply_text("Please choose:", reply_markup=reply_markup)
+    await update.message.reply_text(text=f"היי {private_name}🙂 במה אוכל לעזור לך היום?", reply_markup=reply_markup)
+    return ConversationHandler.END
 
 
 def wrap_async_func():
@@ -77,38 +38,26 @@ def wrap_async_func():
 
 def main():
 
-    main_logger.info("Bot started! Connecting to DB...")
-    # try:
-    #     connect_to_db()
+    main_logger.info("Bot started!")
 
-    # except Exception as e:
-    #     main_logger.exception(
-    #         "An error occurred - Unable to connect to the database")
-
-    main_logger.info("Connected to DB")
-
-    # Create the Application and pass it your bot's token.
+    # Create the Application and pass it the bot token.
     app = Application.builder().token(TOKEN).build()
 
     # on different commands - answer in Telegram
     app.add_handlers(clients_features_handlers)
     app.add_handlers(todolist_features_handlers)
-
+    app.add_handlers(shopping_features_handlers)
+    app.add_handlers(resturants_features_handlers)
     app.add_handler(CommandHandler("start", start))
-    app.add_handler(CommandHandler("shopping", shopping))
-    app.add_handler(CommandHandler("wellness", todolist))
-    app.add_handler(MessageHandler(filters.Regex("shopping"), shopping))
-    app.add_handler(MessageHandler(filters.Regex("wellness"), wellness))
-    # app.add_handler(MessageHandler(filters.TEXT, generalMsgHandler))
 
-    tasks_reminders_thread = threading.Thread(
-        target=wrap_async_func, daemon=True)
+    tasks_reminders_thread = threading.Thread(target=wrap_async_func, 
+                                              daemon=True)
 
     tasks_reminders_thread.start()
 
     app.run_polling()
 
-    print("bot finished")
+    main_logger.info("Bot finished!")
 
 
 if __name__ == '__main__':
