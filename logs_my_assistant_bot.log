@@ -977,3 +977,7 @@ telegram.error.BadRequest: Message is too long
 2024-01-13 15:18:10,089 - main_logger - INFO - Connected to DB
 2024-01-13 15:20:15,767 - main_logger - INFO - Bot started! Connecting to DB...
 2024-01-13 15:20:15,769 - main_logger - INFO - Connected to DB
+2024-01-13 15:31:08,585 - main_logger - INFO - Bot started!
+2024-01-13 15:34:10,819 - main_logger - INFO - Bot started!
+2024-01-13 15:34:31,011 - main_logger - INFO - Bot finished!
+2024-01-13 15:34:43,719 - main_logger - INFO - Bot started!

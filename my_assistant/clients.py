@@ -1,8 +1,16 @@
 from logger import setup_logger
-from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ReplyKeyboardRemove, Update
-from telegram.ext import ContextTypes, CallbackContext, ConversationHandler, CallbackQueryHandler, MessageHandler, CommandHandler, filters
-from db_connection import add_client_to_db, get_user_clients_from_db, get_limit_clients_from_db, delete_client_from_db, add_debt_to_db, delete_debt_from_db
-from utils import arrange_text_in_lines, group_buttons, callback_query_errors_handler_decorator, message_errors_handler_decorator
+from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ReplyKeyboardRemove
+from telegram.ext import (ConversationHandler, CallbackQueryHandler, 
+                          MessageHandler, CommandHandler, filters)
+
+from db_connection import (add_client_to_db, get_user_clients_from_db, 
+                           get_limit_clients_from_db, delete_client_from_db, 
+                           add_debt_to_db, delete_debt_from_db)
+
+from utils import (arrange_text_in_lines, group_buttons, 
+                   callback_query_errors_handler_decorator,
+                   message_errors_handler_decorator)
+
 from consts import (
     CLIENTS_MENU_KEYBOARD,
     ADD_CLIENT_OR_RETURN_TO_MENU_KEYBOARD,
@@ -20,7 +28,7 @@ from consts import (
     DELETE_PART_DEBT,
     SEND_LINK
 )
-from commands import start
+
 from urllib.parse import quote
 from exceptions import IndexIsOutOfRange, DebtToDeleteIsNegative
 
@@ -37,7 +45,7 @@ clients_list_len_in_add_debt = 0
 delete_debt_data = {}
 
 
-async def clients_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
+async def clients_command(update, context): 
 
     reply_markup = InlineKeyboardMarkup(CLIENTS_MENU_KEYBOARD)
 
@@ -47,7 +55,7 @@ async def clients_command(update: Update, context: ContextTypes.DEFAULT_TYPE) ->
 
 
 # functions for add client conversation
-async def add_client_callback(update: Update, context: CallbackContext) -> int:
+async def add_client_callback(update, context):
 
     query = update.callback_query
     await query.answer()
@@ -56,7 +64,7 @@ async def add_client_callback(update: Update, context: CallbackContext) -> int:
     return ADD_CLIENT_FULL_NAME
 
 
-async def add_client_full_name(update: Update, context: CallbackContext) -> int:
+async def add_client_full_name(update, contetx):
 
     global user_data_add_client
 
@@ -100,9 +108,8 @@ async def add_client_address(update, context):
 
 
 # callback for the "show clients list" button in the clients menu
-
 @callback_query_errors_handler_decorator(clients_logger)
-async def show_clients_callback(update: Update, context: CallbackContext) -> None:
+async def show_clients_callback(update, context):
 
     query = update.callback_query
     await query.answer()
@@ -128,13 +135,13 @@ async def show_clients_callback(update: Update, context: CallbackContext) -> Non
             if i < len(lines_list) - 1:
                 text += "\n*המשך⬇️*\n"
             await update.callback_query.message.reply_text(text=text, parse_mode="markdown")
-            
+
     return ConversationHandler.END
 
 
 # callback for the "show debts" button in the clients menu
 @callback_query_errors_handler_decorator(clients_logger)
-async def show_debts_callback(update: Update, context: CallbackContext) -> None:
+async def show_debts_callback(update, context):
 
     query = update.callback_query
     await query.answer()
@@ -273,7 +280,6 @@ async def next_page(update, context):
 
 
 # functions for "add debt" button in clients menu
-
 @callback_query_errors_handler_decorator(clients_logger)
 async def add_debt_callback(update, context):
 
@@ -345,7 +351,6 @@ async def add_debt(update, context):
 
 
 # functions for "delete debt" button in clients menu
-
 @callback_query_errors_handler_decorator(clients_logger)
 async def delete_debt_callback(update, context):
 

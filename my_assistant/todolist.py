@@ -1,12 +1,19 @@
 from logger import setup_logger
 import time
 from datetime import datetime
-from telegram import Bot, InlineKeyboardButton, InlineKeyboardMarkup, KeyboardButton, ReplyKeyboardMarkup, ReplyKeyboardRemove, Update
-from telegram.ext import ContextTypes, CallbackContext, ConversationHandler, CallbackQueryHandler, MessageHandler, CommandHandler, filters
-from commands import start
-from utils import arrange_text_in_lines, create_keyboard, check_if_time_already_occurred, callback_query_errors_handler_decorator, message_errors_handler_decorator
-from db_connection import (db_lock_for_threading, add_task_to_db, delete_reminder_from_db, get_user_all_tasks_from_db,
-                           delete_task_from_db, add_reminder_to_db, get_all_reminders, update_reminder_time)
+from telegram import Bot, InlineKeyboardButton, InlineKeyboardMarkup
+from telegram.ext import (ConversationHandler, CallbackQueryHandler, 
+                          MessageHandler, CommandHandler, filters)
+
+from utils import (arrange_text_in_lines, create_keyboard, 
+                   check_if_time_already_occurred, callback_query_errors_handler_decorator, 
+                   message_errors_handler_decorator)
+
+from db_connection import (add_task_to_db, delete_reminder_from_db, 
+                           get_user_all_tasks_from_db, delete_task_from_db, 
+                           add_reminder_to_db, get_all_reminders, 
+                           update_reminder_time)
+
 from exceptions import IndexIsOutOfRange
 from datetime import datetime, timedelta
 from consts import (
@@ -27,6 +34,7 @@ from consts import (
     ASK_TIME,
     SET_REMINDER
 )
+
 todolist_logger = setup_logger("todolist_logger")
 
 # global dict to store the user_date for adding task
@@ -39,7 +47,7 @@ user_data_delete_task = {}
 user_data_set_reminder = {}
 
 
-async def todolist_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
+async def todolist_command(update, context):
 
     reply_markup = InlineKeyboardMarkup(TO_DO_LIST_MENU_KEYBOARD)
 
@@ -547,8 +555,12 @@ return_to_todolist_handler = CallbackQueryHandler(
 reply_to_reminder_message_handler = CallbackQueryHandler(
     reply_to_reminder_message, pattern="^task_is")
 
+todolist_command_handler = CommandHandler("todolist", todolist_command)
 
-todolist_features_handlers = [CommandHandler("todolist", todolist_command), MessageHandler(
-    filters.Regex("ניהול משימות"), todolist_command), add_task_conv_handler,
-    return_to_todolist_handler, show_all_tasks_handler, show_level_tasks_handler,
-    delete_task_conv_handler, set_reminder_conv_handler, reply_to_reminder_message_handler]
+todolist_text_handler = MessageHandler(filters.Regex("ניהול משימות"), todolist_command)
+
+todolist_features_handlers = [todolist_command_handler, todolist_text_handler,
+                              add_task_conv_handler, return_to_todolist_handler, 
+                              show_all_tasks_handler, show_level_tasks_handler, 
+                              delete_task_conv_handler, set_reminder_conv_handler, 
+                              reply_to_reminder_message_handler]

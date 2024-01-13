@@ -1,13 +1,14 @@
 from logger import setup_logger
-from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ReplyKeyboardRemove, Update
-from telegram.ext import ContextTypes, CallbackContext, ConversationHandler, CallbackQueryHandler, MessageHandler, CommandHandler, filters
-from db_connection import add_item_to_db, delete_item_from_db, get_limit_items_from_db, get_shopping_list_from_db
-from utils import group_buttons, callback_query_errors_handler_decorator, message_errors_handler_decorator
-from commands import start
+from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ReplyKeyboardRemove
+from telegram.ext import (ConversationHandler, CallbackQueryHandler, 
+                          MessageHandler, CommandHandler, filters)
+from db_connection import (add_item_to_db, delete_item_from_db, 
+                           get_limit_items_from_db, get_shopping_list_from_db)
+from utils import (group_buttons, callback_query_errors_handler_decorator, 
+                   message_errors_handler_decorator)
 from consts import (
     DELETE_ITEM,
     ITEMS_PER_PAGE,
-    NEXT_PAGE_OF_ITEMS,
     SHOPPING_MENU_KEYBOARD,
     RETURN_TO_SHOPPING_MENU_KEYBOARD,
     ADD_ITEM_OR_RETURN_TO_SHOPPING_MENU_KEYBOARD,
@@ -19,7 +20,7 @@ shopping_logger = setup_logger("shopping_logger")
 # global dict to store the user data for delete item conversation
 user_data_delete_item = {}
 
-async def shopping_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
+async def shopping_command(update, context):
 
     reply_markup = InlineKeyboardMarkup(SHOPPING_MENU_KEYBOARD)
 
@@ -28,7 +29,7 @@ async def shopping_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -
 
 
 # functions for add item conversation
-async def add_item_callback(update: Update, context: CallbackContext) -> int:
+async def add_item_callback(update, context):
 
     query = update.callback_query
     await query.answer()
@@ -38,7 +39,7 @@ async def add_item_callback(update: Update, context: CallbackContext) -> int:
 
 
 @message_errors_handler_decorator(shopping_logger, ConversationHandler.END)
-async def add_item_to_list(update: Update, context: CallbackContext) -> int:
+async def add_item_to_list(update, context):
 
     user_data_add_item = {}
 
@@ -60,7 +61,7 @@ async def add_item_to_list(update: Update, context: CallbackContext) -> int:
 
 # function for show shopping list button
 @callback_query_errors_handler_decorator(shopping_logger)
-async def show_shopping_list_callback(update: Update, context: CallbackContext) -> None:
+async def show_shopping_list_callback(update, context):
 
     query = update.callback_query
     await query.answer()
@@ -211,6 +212,10 @@ delete_item_conv_handler = ConversationHandler(
                CallbackQueryHandler(next_page_of_items_callback, pattern='^shopping_nextPage:')],
     allow_reentry=True)
 
-shopping_features_handlers = [CommandHandler("shopping", shopping_command), MessageHandler(
-    filters.Regex("קניות"), shopping_command), return_to_shopping_handler,
-    add_item_conv_handler, show_shopping_list_handler, delete_item_conv_handler]
+shopping_command_handler = CommandHandler("shopping", shopping_command)
+
+shopping_text_handler = MessageHandler(filters.Regex("קניות"), shopping_command)
+
+shopping_features_handlers = [shopping_command_handler, shopping_text_handler, 
+                              return_to_shopping_handler,add_item_conv_handler, 
+                              show_shopping_list_handler, delete_item_conv_handler]

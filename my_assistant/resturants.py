@@ -1,10 +1,17 @@
 from logger import setup_logger
-from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ReplyKeyboardRemove, Update
-from telegram.ext import ContextTypes, CallbackContext, ConversationHandler, CallbackQueryHandler, MessageHandler, CommandHandler, filters
-from db_connection import add_item_to_db, add_resturant_to_db, delete_resturant_from_db, get_area_resturants_from_db, get_user_all_resturants_from_db
+from telegram import InlineKeyboardMarkup
+from telegram.ext import (ConversationHandler, CallbackQueryHandler,
+                          MessageHandler, CommandHandler, filters)
+
+from db_connection import (add_resturant_to_db, delete_resturant_from_db, 
+                           get_area_resturants_from_db, get_user_all_resturants_from_db)
+
+from utils import (arrange_text_in_lines, create_keyboard, 
+                   callback_query_errors_handler_decorator, 
+                   message_errors_handler_decorator)
+
 from exceptions import IndexIsOutOfRange
-from utils import arrange_text_in_lines, create_keyboard, callback_query_errors_handler_decorator, message_errors_handler_decorator
-from commands import start
+
 from consts import (
   ADD_RESTURANT,
   CHOOSE_RESTURANT_TO_DELETE,

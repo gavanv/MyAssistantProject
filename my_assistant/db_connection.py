@@ -262,16 +262,6 @@ def delete_resturant_from_db(user_id, resturant_id):
     db_connector.commit()
     return True
 
-@db_connection_decorator(error_message="unable to add gavans resturant from db.")
-def add_gavan_resturants(text):
-
-    resturants_list = text.split("\n")
-
-    for resturant in resturants_list:
-        sql_gavan = "INSERT INTO resturants_list (user_id, username, resturant, area) VALUES (%s, %s, %s, %s)"
-        db_cursor.execute(sql_gavan, (222151854, "גוון ויינברגר", resturant, "נגב ואילת"))
-        db_connector.commit()
-
 
 @db_connection_decorator(error_message="unable to get specific area resturants from db.")
 def get_area_resturants_from_db(user_id, area):

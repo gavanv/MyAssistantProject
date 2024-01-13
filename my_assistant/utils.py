@@ -2,13 +2,15 @@ from datetime import datetime
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ConversationHandler
 from functools import wraps
-from consts import ADD_CLIENT_OR_RETURN_TO_MENU_KEYBOARD, MAX_LINES_PER_MESSAGE
+from consts import (ADD_CLIENT_OR_RETURN_TO_MENU_KEYBOARD, 
+                    MAX_LINES_PER_MESSAGE)
 
-from exceptions import ClientAlreadyExists, DebtToDeleteIsNegative, IndexIsOutOfRange
+from exceptions import (ClientAlreadyExists, 
+                        DebtToDeleteIsNegative, 
+                        IndexIsOutOfRange)
+
 
 # functions for arrange the buttons in pairs
-
-
 def group_buttons(buttons_list):
     result = []
     current_group = []
@@ -26,7 +28,7 @@ def group_buttons(buttons_list):
     return result
 
 
-def create_keyboard(buttons_list: list) -> list:
+def create_keyboard(buttons_list):
 
     keyboard = [[InlineKeyboardButton(button, callback_data=button)]
                 for button in buttons_list]

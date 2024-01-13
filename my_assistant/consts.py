@@ -1,4 +1,4 @@
-from telegram import InlineKeyboardButton
+from telegram import InlineKeyboardButton, KeyboardButton
 
 TOKEN = "6468413070:AAH2MqghzbnZiBG4Dx-l7DpqD6qBTEExuEw"
 BOT_USER_NAME = "@GavanAssistant_bot"
@@ -11,6 +11,19 @@ PORT = 3306
 
 YES_OR_NO_KEYBOARD = [[InlineKeyboardButton("כן", callback_data="yes"),
                        InlineKeyboardButton("לא", callback_data="No")]]
+
+#start command keyboard
+START_MENU_KEYBOARD = [
+        [
+        KeyboardButton("לקוחות"),
+        KeyboardButton("קניות"),
+        ],
+        [
+        KeyboardButton("ניהול משימות"),
+        KeyboardButton("מסעדות וטיולים")
+        ]
+]
+
 
 # constans for clients part
 CLIENTS_MENU_KEYBOARD = [
@@ -160,7 +173,6 @@ RETURN_TO_SHOPPING_MENU_KEYBOARD = [
      ]
 ]
 
-
 ADD_ITEM_OR_RETURN_TO_SHOPPING_MENU_KEYBOARD = [
     [
         InlineKeyboardButton("הוספת פריט", callback_data="add_item")
@@ -170,18 +182,16 @@ ADD_ITEM_OR_RETURN_TO_SHOPPING_MENU_KEYBOARD = [
      ]
 ]
 
-
 # Define states for add item conversation
 ADD_ITEM_TO_LIST = 0
 
 # Define states for delete item conversation
-DELETE_ITEM, NEXT_PAGE_OF_ITEMS = range(2)
+DELETE_ITEM = 0
 
 # limit for items per page
 ITEMS_PER_PAGE = 16
 
 # constants for resturants part
-
 RESTURANTS_MENU_KEYBOARD = [
         [
              InlineKeyboardButton("מחיקת מקום", 
