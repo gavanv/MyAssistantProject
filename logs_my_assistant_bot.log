@@ -995,3 +995,30 @@ exceptions.IndexIsOutOfRange: הקלדת מספר שלא נמצא ברשימה, אנא הקלד מספר תקין.
 2024-01-13 16:02:06,851 - main_logger - INFO - Bot started!
 2024-01-13 16:02:44,056 - main_logger - INFO - Bot finished!
 2024-01-13 16:03:03,795 - main_logger - INFO - Bot started!
+2024-01-13 22:14:22,009 - main_logger - INFO - Bot started!
+2024-01-13 22:16:24,345 - main_logger - INFO - Bot started!
+2024-01-13 22:17:00,190 - main_logger - INFO - Bot started!
+2024-01-13 22:30:01,169 - main_logger - INFO - Bot started!
+2024-01-13 22:30:04,483 - db_connection_logger - ERROR - unable to get all reminders from db.
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 308, in _open_connection
+    self._cmysql.connect(**cnx_kwargs)
+_mysql_connector.MySQLInterfaceError: Access denied for user '44.214.99.189'@'213.57.62.24' (using password: YES)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\שולחן העבודה\My assistant project\my_assistant\db_connection.py", line 32, in wrapper
+    db_connector = mysql.connector.connect(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\pooling.py", line 293, in connect
+    return CMySQLConnection(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 129, in __init__
+    self.connect(**kwargs)
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\abstracts.py", line 1237, in connect
+    self._open_connection()
+  File "C:\Users\User\OneDrive\שולחן העבודה\My assistant project\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 313, in _open_connection
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1045 (28000): Access denied for user '44.214.99.189'@'213.57.62.24' (using password: YES)
+2024-01-13 22:31:19,365 - main_logger - INFO - Bot started!

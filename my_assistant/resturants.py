@@ -275,7 +275,7 @@ async def choose_resturant_to_delete(update, context):
 
         reply_markup = InlineKeyboardMarkup(
             ADD_RESTURANT_OR_RETURN_TO_RESTURANTS_MENU_KEYBOARD)
-        await update.callback_query.message.reply_text(text=f"*לא קיימים מקומות באזור: {user_data_delete_resturant["area"]}.*", 
+        await update.callback_query.message.reply_text(text=f"*לא קיימים מקומות באזור: {user_data_delete_resturant['area']}.*", 
                                                        reply_markup=reply_markup, parse_mode="markdown")
         return ConversationHandler.END
 

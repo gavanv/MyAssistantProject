@@ -1,16 +1,21 @@
 from telegram import InlineKeyboardButton, KeyboardButton
+import os
+from dotenv import load_dotenv
 
-TOKEN = "6468413070:AAH2MqghzbnZiBG4Dx-l7DpqD6qBTEExuEw"
-BOT_USER_NAME = "@GavanAssistant_bot"
+load_dotenv()
 
-DB_HOST = '44.214.99.189'
-DB_USER = 'gavan'
-DB_PASSWORD = 'gavan1121g'
-DB_NAME = 'myAssistantBotDB'
-PORT = 3306
+# connection to db details
+DB_HOST = os.environ.get("MY_SQL_HOST")
+DB_USER = os.environ.get("MY_SQL_USER")
+DB_PASSWORD = os.environ.get("MY_SQL_PASSWORD")
+DB_NAME = os.environ.get("MY_SQL_DB_NAME")
+PORT = os.environ.get("MY_SQL_PORT")
 
-YES_OR_NO_KEYBOARD = [[InlineKeyboardButton("כן", callback_data="yes"),
-                       InlineKeyboardButton("לא", callback_data="No")]]
+# bot's token
+TOKEN = os.environ.get("TOKEN")
+
+# gavan's user is to fetch gavan's resturants list
+GAVAN_USER_ID = os.environ.get("GAVAN_USER_ID")
 
 #start command keyboard
 START_MENU_KEYBOARD = [
@@ -237,7 +242,6 @@ RETURN_TO_RESTURANTS_MENU_KEYBOARD = [
      ]
 ]
 
-GAVAN_USER_ID = 222151854
 
 # Define states for add resturant conversation
 WRITE_RESTURANT, ADD_RESTURANT = range(2)

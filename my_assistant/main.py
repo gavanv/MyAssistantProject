@@ -1,5 +1,7 @@
 import threading
 import asyncio
+import os
+from dotenv import load_dotenv
 from logger import setup_logger
 from consts import (
     START_MENU_KEYBOARD,

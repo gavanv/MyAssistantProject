@@ -55,7 +55,7 @@ async def add_item_to_list(update, context):
     add_item_to_db(user_data_add_item)
 
     reply_markup = InlineKeyboardMarkup(ADD_ITEM_OR_RETURN_TO_SHOPPING_MENU_KEYBOARD)
-    await update.message.reply_text(text=f"הפריט: *{user_data_add_item["item"]}* נוסף בהצלחה🥳", 
+    await update.message.reply_text(text=f"הפריט: *{user_data_add_item['item']}* נוסף בהצלחה🥳", 
                                     reply_markup=reply_markup, parse_mode="markdown")
     return ConversationHandler.END
 
@@ -139,7 +139,7 @@ async def delete_item(update, context):
 
     delete_item_from_db(user_data_delete_item)
 
-    await update.callback_query.message.reply_text(text=f"*הפריט {user_data_delete_item.get("item_name")} נמחק בהצלחה.* למחיקת פריט נוסף לחץ על שם הפריט שתרצה למחוק.", 
+    await update.callback_query.message.reply_text(text=f"*הפריט {user_data_delete_item.get('item_name')} נמחק בהצלחה.* למחיקת פריט נוסף לחץ על שם הפריט שתרצה למחוק.", 
                                                            reply_markup=reply_markup, parse_mode='Markdown')
     
 
